@@ -1,0 +1,8 @@
+# Ignore configuration files that may contain sensitive information.
+.DS_Store
+.vagrant
+puppet/
+node_modules/
+build/assets/
+config/
+
