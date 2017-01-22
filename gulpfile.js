@@ -12,11 +12,11 @@ var tinypng = require('gulp-tinypng-compress');
 
 //Define the app path
 var path = {
-    all:['*.html','./src/assets/css/*.css','./src/dist/css/*.css','./src/assets/js/*.js','./src/assets/js/lib/*.js'],
-    template:['./src/*.html'],
+    all:['./template/*.html','./src/assets/css/*.css','./src/dist/css/*.css','./src/assets/js/*.js','./src/assets/js/lib/*.js'],
+    template:['./template/*.html'],
     css:['./src/assets/css/*.css'],
     js:['./src/assets/js/lib/zepto.min.js','./src/assets/js/lib/pre-loader.js','./src/assets/js/lib/reqAnimate.js','./src/assets/js/rem.js','./src/assets/js/common.js','./src/assets/js/wxshare.js','./src/assets/js/home.js'],
-    images:['./src/assets/images/*'],
+    images:['./src/assets/images/*','./src/assets/images/*/*'],
 };
 // Browser-sync
 gulp.task('browser-sync', function() {
@@ -37,7 +37,7 @@ gulp.task('clean', function() {
 
 
 //css
-gulp.task('css',['clean'],function () {
+gulp.task('compressCss',['clean'],function () {
     // 1. 找到文件
     gulp.src(path.css)
         //.pipe(concat('style.css'))
@@ -72,15 +72,13 @@ gulp.task("tinypng", function(){
 
 
 // Watch Files For Changes
-gulp.task('watch', ['clean'],function() {
+gulp.task('watch',function() {
     //gulp.watch(path.images,['copygif']),
     //gulp.watch(path.images,['tinypng']),
-    gulp.watch(path.css,['css']);
-    gulp.watch(path.images,['tinypng']);
+    gulp.watch(path.css,['compressCss']);
     gulp.watch(path.js,['scripts']);
 });
 
 // Default Task
-gulp.task('default', ['watch','browser-sync']);
-
+gulp.task('default', ['compressCss','tinypng','scripts','watch','browser-sync']);
 
