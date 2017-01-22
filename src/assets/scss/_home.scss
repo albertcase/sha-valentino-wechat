@@ -64,3 +64,64 @@ html,body{
 }
 
 //for home page
+#landing-page{
+  .layer-bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include size(100%,100%);
+    .color-area{
+      position: absolute;
+      @include size(80%,100%);
+      background: red;
+      bottom: -10vh;
+    }
+    .pipe{
+      position: absolute;
+      width: 100vw;
+      bottom: -10%;
+      img{
+        //width: auto;
+        //height: 100%;
+      }
+    }
+    .lbg{
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      &.bg-1{
+        left: 0;
+        background: #ded3c8;
+        .color-area{
+          left: 0;
+          @include transform(rotate(-16deg));
+          @include transform-origin(0 100%);
+          background: #e3740e;
+        }
+        .pipe{
+          right: 0;
+          bottom: -10%;
+        }
+      }
+      &.bg-2{
+        right: 0;
+        background: #cfc3b7;
+        .color-area{
+          right: 0;
+          @include transform(rotate(16deg));
+          @include transform-origin(100% 100%);
+          background: #29283c;
+        }
+        .pipe{
+          left: 0;
+        }
+      }
+    }
+
+  }
+  .content{
+    position: relative;
+    z-index: 2;
+  }
+}

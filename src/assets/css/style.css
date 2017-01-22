@@ -1074,3 +1074,76 @@ html, body {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+#landing-page .layer-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#landing-page .layer-bg .color-area {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  background: red;
+  bottom: -10vh;
+}
+#landing-page .layer-bg .pipe {
+  position: absolute;
+  width: 100vw;
+  bottom: -10%;
+}
+#landing-page .layer-bg .lbg {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+#landing-page .layer-bg .lbg.bg-1 {
+  left: 0;
+  background: #ded3c8;
+}
+#landing-page .layer-bg .lbg.bg-1 .color-area {
+  left: 0;
+  -webkit-transform: rotate(-16deg);
+  -moz-transform: rotate(-16deg);
+  -ms-transform: rotate(-16deg);
+  -o-transform: rotate(-16deg);
+  transform: rotate(-16deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  background: #e3740e;
+}
+#landing-page .layer-bg .lbg.bg-1 .pipe {
+  right: 0;
+  bottom: -10%;
+}
+#landing-page .layer-bg .lbg.bg-2 {
+  right: 0;
+  background: #cfc3b7;
+}
+#landing-page .layer-bg .lbg.bg-2 .color-area {
+  right: 0;
+  -webkit-transform: rotate(16deg);
+  -moz-transform: rotate(16deg);
+  -ms-transform: rotate(16deg);
+  -o-transform: rotate(16deg);
+  transform: rotate(16deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  background: #29283c;
+}
+#landing-page .layer-bg .lbg.bg-2 .pipe {
+  left: 0;
+}
+#landing-page .content {
+  position: relative;
+  z-index: 2;
+}
