@@ -7,8 +7,6 @@ $gray50: rgba(0, 0, 0, 0.5);
 $light-gray: rgba(0, 0, 0, 0.5);
 $light-black: rgba(0, 0, 0, 0.8);
 
-$bg-gray:#9b9999;
-
 // z-index
 $z-index-1: 1;
 $z-index-2: 2;
@@ -33,15 +31,15 @@ $delay-8: 3200ms;
 $delay-9: 3600ms;
 
 
-//@media all and (orientation: landscape){
-//
-//  html{ font-size: calc(100vh / 375 * 50); }
-//}
-//
-//@media all and (orientation: portrait){
-//
-//  html{ font-size: calc(100vw / 375 * 50); }
-//}
+@media all and (orientation: landscape){
+
+  html{ font-size: calc(100vh / 375 * 50); }
+}
+
+@media all and (orientation: portrait){
+
+  html{ font-size: calc(100vw / 375 * 50); }
+}
 
 html{
   -webkit-text-size-adjust: 100%;
@@ -53,7 +51,7 @@ body {
   font-size: .24rem;
   color: #fff;
   letter-spacing: 2px;
-  background: #e61c58;
+  background: #ded3c8;
 }
 * {
   -webkit-touch-callout:none;

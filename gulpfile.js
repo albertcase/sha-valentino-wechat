@@ -73,8 +73,6 @@ gulp.task("tinypng", function(){
 
 // Watch Files For Changes
 gulp.task('watch',function() {
-    //gulp.watch(path.images,['copygif']),
-    //gulp.watch(path.images,['tinypng']),
     gulp.watch(path.css,['compressCss']);
     gulp.watch(path.js,['scripts']);
 });
