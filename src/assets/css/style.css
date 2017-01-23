@@ -1243,3 +1243,18 @@ html, body {
   width: 100%;
   height: 100%;
 }
+
+#select-page {
+  background: #e5dacf;
+}
+#select-page .switch-menu {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #d3c7bb;
+  width: 100%;
+  height: 2.1rem;
+}
+#select-page .switch-menu .tips {
+  text-align: center;
+}

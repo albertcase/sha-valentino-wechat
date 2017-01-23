@@ -169,3 +169,21 @@ html,body{
     }
   }
 }
+
+//for select page
+#select-page{
+  background: #e5dacf;
+  .switch-menu{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #d3c7bb;
+    @include size(100%,2.1rem);
+    .tips{
+      text-align: center;
+    }
+    .lists{
+
+    }
+  }
+}

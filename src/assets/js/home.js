@@ -2,7 +2,24 @@
 
     var controller = function(){
 
-
+        this.stropsList = [
+            {
+                id:'1',
+                src:'/src/dist/images/straps-1.png'
+            },
+            {
+                id:'2',
+                src:'/src/dist/images/straps-2.png'
+            },
+            {
+                id:'3',
+                src:'/src/dist/images/straps-3.png'
+            },
+            {
+                id:'4',
+                src:'/src/dist/images/straps-4.png'
+            },
+        ];
 
     };
     //init
