@@ -36,23 +36,9 @@ html,body{
 }
 
 .logo{
-  @include size(2.83rem,1.1rem);
+  @include size(3.31rem,0.94rem);
   padding-top: 0.4rem;
   margin: 0 auto 0.4rem;
-}
-.btn{
-  text-align: center;
-  span{
-    display: inline-block;
-    padding: 0.2rem 1rem;
-    background: #6c0000;
-    color: #f95f60;
-    font-size: 0.32rem;
-    &:active{
-      background: #350000;
-      color: #efc8c8;
-    }
-  }
 }
 
 //verticle align
@@ -90,6 +76,7 @@ html,body{
       top: 0;
       width: 50%;
       height: 100%;
+      z-index: 1;
       &.bg-1{
         left: 0;
         background: #ded3c8;
@@ -120,8 +107,65 @@ html,body{
     }
 
   }
+  .p1-t1{
+    @include size(4.65rem,1.97rem);
+    margin: 0 auto 0.9rem;
+  }
   .content{
     position: relative;
     z-index: 2;
+  }
+  .btn-start-custom{
+    text-align: center;
+    .text{
+      @include size(0.95rem,0.23rem);
+      margin: 0.2rem auto 0;
+    }
+    .icon{
+      position: relative;
+      display: block;
+      margin: 0.7rem auto 0;
+      @include size(0.4rem,0.4rem);
+      .circle{
+        @include size(0.4rem,0.4rem);
+        border: #000 0.03rem solid;
+        border-radius: 100%;
+        @include animation(circle 2s infinite);
+        box-sizing: border-box;
+      }
+      .dot{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include size(0.16rem,0.16rem);
+        margin-top: -0.08rem;
+        margin-left: -0.08rem;
+        background: #000;
+        border-radius: 100%;
+      }
+      @include keyframes(circle){
+        0%{
+          opacity: 1;
+          @include transform(scale(1));
+        }
+        50%{
+          opacity: 0;
+          @include transform(scale(1.2));
+        }
+        100%{
+          opacity: 0;
+          @include transform(scale(1));
+        }
+      }
+    }
+  }
+  .video-block{
+    @include size(3.1rem,1.9rem);
+    border: #fff 2px solid;
+    margin: 0 auto;
+    video{
+      @include size(100%,100%);
+
+    }
   }
 }
