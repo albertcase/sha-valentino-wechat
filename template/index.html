@@ -26,7 +26,7 @@
 </div>
 <!--main content-->
 <div class="wrapper">
-    <div class="container animate">
+    <div class="container">
         <!-- landing page-->
         <div class="pin pin-1" id="landing-page">
             <div class="layer-bg">
@@ -69,7 +69,12 @@
         <!-- select straps style, then custom the words with two-->
         <div class="pin pin-2 current" id="select-page">
             <div class="switch-content">
-                <img src="/src/dist/images/straps-1.png" alt="valentino"/>
+                <div class="show-img">
+                    <img src="/src/dist/images/straps-1.png" alt="valentino"/>
+                </div>
+                <div class="show-word">
+                    AB
+                </div>
             </div>
             <div class="switch-text">
                 <div class="p2-t1">
@@ -81,13 +86,28 @@
                 </div>
             </div>
             <div class="switch-menu">
-                <h3 class="tips">风格</h3>
-                <ul class="lists">
-                    <li class="item item-1"></li>
-                    <li class="item item-2"></li>
-                    <li class="item item-3"></li>
-                    <li class="item item-4"></li>
-                </ul>
+                <div class="step step-1 current">
+                    <h3 class="tips">风格</h3>
+                    <ul class="lists">
+                        <li class="item item-1 active"></li>
+                        <li class="item item-2"></li>
+                        <li class="item item-3"></li>
+                        <li class="item item-4"></li>
+                    </ul>
+                </div>
+                <div class="step step-2">
+                    <h3 class="tips">专属字母</h3>
+                    <div class="input-box">
+                        <ul class="lists">
+                            <li class="item item-1"></li>
+                            <li class="item item-2"></li>
+                        </ul>
+                        <input type="text" placeholder="请在此输入两个字母"/>
+                        <div class="btn btn-finish">完成</div>
+                    </div>
+
+
+                </div>
             </div>
         </div>
 

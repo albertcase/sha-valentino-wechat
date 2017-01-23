@@ -173,17 +173,113 @@ html,body{
 //for select page
 #select-page{
   background: #e5dacf;
-  .switch-menu{
+}
+.switch-menu{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  background: #d3c7bb;
+  @include size(100%,2.1rem);
+  .tips{
+    text-align: center;
+  }
+  .step{
+    display: none;
+    &.current{
+      display: block;
+    }
+  }
+  .step-1{
+    padding-top: 0.4rem;
+  }
+  .lists{
+    text-align: center;
+    .item{
+      position: relative;
+      display: inline-block;
+      @include size(0.7rem,0.7rem);
+      background: red;
+      background: url('../images/list-straps.png') no-repeat;
+      background-size: auto 100%;
+      border-radius: 100%;
+      margin: 0.2rem;
+      box-sizing: border-box;
+      &.active{
+        border: #fff 1px solid;
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0.38rem;
+          left: 0.16rem;
+          margin-top: -0.2rem;
+          margin-bottom: -0.1rem;
+          @include size(0.3rem,0.15rem);
+          border-left: #fff 3px solid;
+          border-bottom: #fff 3px solid;
+          @include transform(rotate(-40deg));
+        }
+        &:after{
+          content: '';
+          display: block;
+          border-radius: 100%;
+          @include size(100%,100%);
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 2;
+          background: rgba(0,0,0,0.4);
+        }
+      }
+    }
+    .item-2{
+      background-position: 33% 0;
+    }
+    .item-3{
+      background-position: 66% 0;
+    }
+    .item-4{
+      background-position: 100% 0;
+    }
+  }
+}
+
+.switch-content{
+  position: relative;
+  z-index: 1;
+  .show-img{
+    @include size(100%,100%);
+    //transform: translate(20%,-20%);
+    @include transform(translate(20%,-20%));
+  }
+}
+
+.switch-text{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  @include size(100%,100%);
+  .p2-t1{
+    @include size(2.31rem,1.23rem);
+    margin-top: 0.75rem;
+    margin-left: 0.25rem;
+  }
+  .steps{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+  }
+  .control{
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+  }
+  .num{
     position: absolute;
     left: 0;
-    bottom: 0;
-    background: #d3c7bb;
-    @include size(100%,2.1rem);
-    .tips{
-      text-align: center;
-    }
-    .lists{
-
-    }
+    top: 0;
   }
 }

@@ -1247,14 +1247,127 @@ html, body {
 #select-page {
   background: #e5dacf;
 }
-#select-page .switch-menu {
+
+.switch-menu {
   position: absolute;
   left: 0;
   bottom: 0;
+  z-index: 3;
   background: #d3c7bb;
   width: 100%;
   height: 2.1rem;
 }
-#select-page .switch-menu .tips {
+.switch-menu .tips {
   text-align: center;
+}
+.switch-menu .step {
+  display: none;
+}
+.switch-menu .step.current {
+  display: block;
+}
+.switch-menu .step-1 {
+  padding-top: 0.4rem;
+}
+.switch-menu .lists {
+  text-align: center;
+}
+.switch-menu .lists .item {
+  position: relative;
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: red;
+  background: url("../images/list-straps.png") no-repeat;
+  background-size: auto 100%;
+  border-radius: 100%;
+  margin: 0.2rem;
+  box-sizing: border-box;
+}
+.switch-menu .lists .item.active {
+  border: #fff 1px solid;
+}
+.switch-menu .lists .item.active:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.38rem;
+  left: 0.16rem;
+  margin-top: -0.2rem;
+  margin-bottom: -0.1rem;
+  width: 0.3rem;
+  height: 0.15rem;
+  border-left: #fff 3px solid;
+  border-bottom: #fff 3px solid;
+  -webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+}
+.switch-menu .lists .item.active:after {
+  content: '';
+  display: block;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+}
+.switch-menu .lists .item-2 {
+  background-position: 33% 0;
+}
+.switch-menu .lists .item-3 {
+  background-position: 66% 0;
+}
+.switch-menu .lists .item-4 {
+  background-position: 100% 0;
+}
+
+.switch-content {
+  position: relative;
+  z-index: 1;
+}
+.switch-content .show-img {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(20%, -20%);
+  -moz-transform: translate(20%, -20%);
+  -ms-transform: translate(20%, -20%);
+  -o-transform: translate(20%, -20%);
+  transform: translate(20%, -20%);
+}
+
+.switch-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+.switch-text .p2-t1 {
+  width: 2.31rem;
+  height: 1.23rem;
+  margin-top: 0.75rem;
+  margin-left: 0.25rem;
+}
+.switch-text .steps {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+.switch-text .control {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+.switch-text .num {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
