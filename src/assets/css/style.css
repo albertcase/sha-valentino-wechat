@@ -1262,6 +1262,15 @@ html, body {
 }
 .switch-menu .step {
   display: none;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .switch-menu .step.current {
   display: block;
@@ -1325,6 +1334,36 @@ html, body {
 }
 .switch-menu .lists .item-4 {
   background-position: 100% 0;
+}
+.switch-menu .input-box {
+  width: 6.6rem;
+  margin: 0 auto;
+}
+.switch-menu .input-box .lists {
+  float: left;
+  margin-right: 0.26rem;
+}
+.switch-menu .input-box .lists .item {
+  margin: 0;
+}
+.switch-menu .input-box .btn-finish {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  box-sizing: border-box;
+  padding: 0 0.3rem;
+}
+.switch-menu .input-box .input-custom {
+  font-size: 0.28rem;
+  float: left;
+  width: 3rem;
+  height: 0.7rem;
+  margin-right: 0.26rem;
+  line-height: 0.7rem;
+  box-sizing: border-box;
+  border: #999088 1px solid;
 }
 
 .switch-content {

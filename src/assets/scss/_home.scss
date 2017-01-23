@@ -186,6 +186,10 @@ html,body{
   }
   .step{
     display: none;
+    position: absolute;
+    top: 50%;
+    @include size(100%,auto);
+    @include transform(translateY(-50%));
     &.current{
       display: block;
     }
@@ -241,6 +245,36 @@ html,body{
     }
     .item-4{
       background-position: 100% 0;
+    }
+  }
+  .input-box{
+    width: 6.6rem;
+    margin: 0 auto;
+    .lists{
+      float: left;
+      margin-right: 0.26rem;
+      .item{
+        margin: 0;
+      }
+    }
+    .btn-finish{
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      height: 0.7rem;
+      line-height: 0.7rem;
+      box-sizing: border-box;
+      padding: 0 0.3rem;
+    }
+    .input-custom{
+      font-size: 0.28rem;
+      float: left;
+      width: 3rem;
+      height: 0.7rem;
+      margin-right: 0.26rem;
+      line-height: 0.7rem;
+      box-sizing: border-box;
+      border: #999088 1px solid;
     }
   }
 }
