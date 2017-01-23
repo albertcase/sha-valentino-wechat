@@ -644,15 +644,15 @@ $(document).ready(function(){
             },
             {
                 id:'2',
-                src:'/src/dist/images/straps-2.png'
-            },
-            {
-                id:'3',
                 src:'/src/dist/images/straps-3.png'
             },
             {
-                id:'4',
+                id:'3',
                 src:'/src/dist/images/straps-4.png'
+            },
+            {
+                id:'4',
+                src:'/src/dist/images/straps-2.png'
             },
         ];
 
@@ -660,9 +660,9 @@ $(document).ready(function(){
     //init
     controller.prototype.init = function(){
         var self = this;
-        var baseurl = 'src/dist/images/';
+        var baseurl = '/src/dist/images/';
         var imagesArray = [
-
+            baseurl+'logo.png',
         ];
         var i = 0;
         new preLoader(imagesArray, {
@@ -692,10 +692,28 @@ $(document).ready(function(){
 
     };
 
+    //go next step:custom letter
+    controller.prototype.goCustomLetter = function(){
+        var self = this;
+        $('.switch-menu .step-1').removeClass('current').siblings('.step').addClass('current');
+    };
     //bind event
     controller.prototype.bindEvent = function(){
 
         var self  = this;
+
+    //    select the style
+        $('.step-1 .lists .item').on('touchstart',function(){
+            var curIndex = $(this).index();
+            $(this).addClass('active').siblings('.item').removeClass('active');
+            $('.show-img img').attr('src',self.stropsList[curIndex].src);
+        });
+
+    //   go next step
+        $('.control').on('touchstart',function(){
+            self.goCustomLetter();
+        });
+
 
     };
 

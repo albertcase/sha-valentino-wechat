@@ -199,12 +199,12 @@ html,body{
       position: relative;
       display: inline-block;
       @include size(0.7rem,0.7rem);
-      background: red;
       background: url('../images/list-straps.png') no-repeat;
       background-size: auto 100%;
       border-radius: 100%;
       margin: 0.2rem;
       box-sizing: border-box;
+      border: #d0c4b8 1px solid;
       &.active{
         border: #fff 1px solid;
         &:before{
