@@ -438,3 +438,42 @@ html,body{
     top: 0;
   }
 }
+
+//for doneshare-page
+#doneshare-page{
+  .p3-t1{
+    padding-top: 0.3rem;
+    @include size(3.82rem,1.51rem);
+    margin: 0 auto 0.3rem;
+  }
+  .generate-show{
+    position: relative;
+    margin: 0 auto;
+    @include size(6.1rem,7.12rem);
+    overflow: hidden;
+  }
+  .show-bg{
+    position: relative;
+    z-index: 1;
+  }
+  .show-pipe{
+    position: absolute;
+    width: 2.25rem;
+    //height: 7.12rem;
+    top: 0;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .show-word{
+    opacity: 1;
+    z-index: 3;
+  }
+  .p3-t2{
+    @include size(1.9rem,0.53rem);
+    margin: 0.3rem auto;
+  }
+  .btn-goreservation{
+    background: #000;
+    color: #fff;
+  }
+}
