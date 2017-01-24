@@ -61,7 +61,7 @@ gulp.task('scripts',['clean'], function() {
 gulp.task("tinypng", function(){
     gulp.src(['./src/assets/images/*.{png,jpg,jpeg}','./src/assets/images/*/*.{png,jpg,jpeg}','./src/assets/images/*/*/*.{png,jpg,jpeg}'])
         .pipe(tinypng({
-            key: 'gTeMTlJN2nqY3weeN-cLO83uI6cLaicE',
+            key: '-ID8TBnbSlRuMCc_mMagta65Q7IDyaQ-',
             sigFile: './src/.tinypng-sigs',
             log: true
         })).on('error', function(err) {

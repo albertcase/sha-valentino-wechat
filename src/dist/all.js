@@ -655,6 +655,16 @@ $(document).ready(function(){
                 src:'/src/dist/images/straps-2.png'
             },
         ];
+        //default selected value
+        //background has four: 1,2,3,4
+        //color has two: 1,2
+        //content:a-zA-Z
+        this.objSelect = {
+            background:'1',
+            color:'1',
+            content:'ab'
+            //background  color  content
+        };
 
     };
     //init
@@ -696,6 +706,7 @@ $(document).ready(function(){
     controller.prototype.goCustomLetter = function(){
         var self = this;
         $('.switch-menu .step-1').removeClass('current').siblings('.step').addClass('current');
+        $('#select-page .show-word').addClass('fadein');
     };
     //bind event
     controller.prototype.bindEvent = function(){
@@ -707,19 +718,51 @@ $(document).ready(function(){
             var curIndex = $(this).index();
             $(this).addClass('active').siblings('.item').removeClass('active');
             $('.show-img img').attr('src',self.stropsList[curIndex].src);
+            self.objSelect.background = curIndex;
         });
 
         //select the color
         $('.step-2 .lists .item').on('touchstart',function(){
             var curIndex = $(this).index();
+            self.objSelect.color = curIndex;
             $(this).addClass('active').siblings('.item').removeClass('active');
+            if(curIndex==1){
+                $('.show-word').addClass('whiteandblack');
+            }else{
+                $('.show-word').removeClass('whiteandblack');
+            }
         });
 
     //   go next step
+        var nextStep = true;
         $('.control').on('touchstart',function(){
+            if(!nextStep) return;
+            nextStep = false;
             self.goCustomLetter();
         });
 
+    //    input the alphabet
+        $('.input-custom').on('keyup',function(){
+            //console.log($(this).val());
+            var curVal = $(this).val();
+            var firstLetter = curVal.substring(0,1);
+            var secondLetter = curVal.substring(1,2);
+            if(self.validateAlphabet(firstLetter)){
+                $('#first-letter').attr('class','letter letter-'+firstLetter.toLowerCase());
+            };
+            if(self.validateAlphabet(secondLetter)){
+                $('#second-letter').attr('class','letter letter-'+secondLetter.toLowerCase());
+            };
+
+        });
+
+
+    };
+    //validate the input is a-z or A-Z
+    controller.prototype.validateAlphabet = function(val){
+        var self = this;
+        var regAlphabet=/^[A-Za-z]$/;
+        return regAlphabet.test(val);
 
     };
 

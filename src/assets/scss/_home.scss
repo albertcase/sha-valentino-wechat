@@ -279,6 +279,7 @@ html,body{
       float: left;
       width: 3rem;
       height: 0.7rem;
+      padding: 0 0.2rem;
       margin-right: 0.26rem;
       line-height: 0.7rem;
       box-sizing: border-box;
@@ -291,24 +292,31 @@ html,body{
   position: relative;
   z-index: 1;
   .show-img{
-    @include size(140%,100%);
+    @include size(120%,100%);
     //transform: translate(20%,-20%);
-    @include transform(translate(10%,-28%));
+    @include transform(translate(16%,-20%));
   }
 
 }
 .show-word{
+  opacity: 0;
   position: absolute;
-  top: 17%;
-  left: 40%;
-  @include size(2.4rem,1rem);
-  text-align: center;
+  top: 25%;
+  left: 44%;
+  @include size(2rem,1rem);
   //background: red;
   @include transform(rotate(4deg));
+  &.fadein{
+    opacity: 1;
+  }
   span{
     display: inline-block;
     @include size(1.1rem,0.97rem);
     //background: green;
+  }
+  #second-letter{
+    position: absolute;
+    left: 0.9rem;
   }
   .letter{
     background-image: url('../images/alphabet/alphabet-color.png');
@@ -395,7 +403,7 @@ html,body{
     }
 
   }
-  .whiteandblack{
+  &.whiteandblack{
     .letter{
       background-image: url('../images/alphabet/alphabet-black.png');
     }
