@@ -440,7 +440,7 @@ html,body{
 }
 
 //for doneshare-page
-#doneshare-page{
+.pin-result{
   .p3-t1{
     padding-top: 0.3rem;
     @include size(3.82rem,1.51rem);
@@ -482,4 +482,9 @@ html,body{
     background: #000;
     color: #fff;
   }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 7.12rem;
 }

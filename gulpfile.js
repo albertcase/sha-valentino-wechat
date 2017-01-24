@@ -14,7 +14,7 @@ var tinypng = require('gulp-tinypng-compress');
 var path = {
     all:['./template/*.html','./src/assets/css/*.css','./src/dist/css/*.css','./src/assets/js/*.js','./src/assets/js/lib/*.js'],
     template:['./template/*.html'],
-    css:['./src/assets/css/*.css'],
+    css:['./src/assets/css/style.css'],
     js:['./src/assets/js/lib/zepto.min.js','./src/assets/js/lib/pre-loader.js','./src/assets/js/lib/reqAnimate.js','./src/assets/js/rem.js','./src/assets/js/common.js','./src/assets/js/wxshare.js','./src/assets/js/home.js'],
     images:['./src/assets/images/*','./src/assets/images/*/*'],
 };
