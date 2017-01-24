@@ -74,6 +74,12 @@
             $('.show-img img').attr('src',self.stropsList[curIndex].src);
         });
 
+        //select the color
+        $('.step-2 .lists .item').on('touchstart',function(){
+            var curIndex = $(this).index();
+            $(this).addClass('active').siblings('.item').removeClass('active');
+        });
+
     //   go next step
         $('.control').on('touchstart',function(){
             self.goCustomLetter();

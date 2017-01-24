@@ -59,7 +59,7 @@ gulp.task('scripts',['clean'], function() {
 
 // Concatenate & Minify
 gulp.task("tinypng", function(){
-    gulp.src('./src/assets/images/*.{png,jpg,jpeg}')
+    gulp.src(['./src/assets/images/*.{png,jpg,jpeg}','./src/assets/images/*/*.{png,jpg,jpeg}','./src/assets/images/*/*/*.{png,jpg,jpeg}'])
         .pipe(tinypng({
             key: 'gTeMTlJN2nqY3weeN-cLO83uI6cLaicE',
             sigFile: './src/.tinypng-sigs',

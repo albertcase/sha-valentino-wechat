@@ -1345,6 +1345,14 @@ html, body {
 }
 .switch-menu .input-box .lists .item {
   margin: 0;
+  background: url("../images/list-color.png") no-repeat;
+  background-size: auto 100%;
+}
+.switch-menu .input-box .lists .item-1 {
+  background-position: 0% 0%;
+}
+.switch-menu .input-box .lists .item-2 {
+  background-position: 100% 0;
 }
 .switch-menu .input-box .btn-finish {
   display: inline-block;
@@ -1371,13 +1379,119 @@ html, body {
   z-index: 1;
 }
 .switch-content .show-img {
-  width: 100%;
+  width: 140%;
   height: 100%;
-  -webkit-transform: translate(20%, -20%);
-  -moz-transform: translate(20%, -20%);
-  -ms-transform: translate(20%, -20%);
-  -o-transform: translate(20%, -20%);
-  transform: translate(20%, -20%);
+  -webkit-transform: translate(10%, -28%);
+  -moz-transform: translate(10%, -28%);
+  -ms-transform: translate(10%, -28%);
+  -o-transform: translate(10%, -28%);
+  transform: translate(10%, -28%);
+}
+
+.show-word {
+  position: absolute;
+  top: 17%;
+  left: 40%;
+  width: 2.4rem;
+  height: 1rem;
+  text-align: center;
+  -webkit-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  -ms-transform: rotate(4deg);
+  -o-transform: rotate(4deg);
+  transform: rotate(4deg);
+}
+.show-word span {
+  display: inline-block;
+  width: 1.1rem;
+  height: 0.97rem;
+}
+.show-word .letter {
+  background-image: url("../images/alphabet/alphabet-color.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center 0;
+}
+.show-word .letter.letter-a {
+  background-position: 0 0%;
+}
+.show-word .letter.letter-b {
+  background-position: 0 4%;
+}
+.show-word .letter.letter-c {
+  background-position: 0 8%;
+}
+.show-word .letter.letter-d {
+  background-position: 0 12%;
+}
+.show-word .letter.letter-e {
+  background-position: 0 16%;
+}
+.show-word .letter.letter-f {
+  background-position: 0 20%;
+}
+.show-word .letter.letter-g {
+  background-position: 0 24%;
+}
+.show-word .letter.letter-h {
+  background-position: 0 28%;
+}
+.show-word .letter.letter-i {
+  background-position: 0 32%;
+}
+.show-word .letter.letter-j {
+  background-position: 0 36%;
+}
+.show-word .letter.letter-k {
+  background-position: 0 40%;
+}
+.show-word .letter.letter-l {
+  background-position: 0 44%;
+}
+.show-word .letter.letter-m {
+  background-position: 0 48%;
+}
+.show-word .letter.letter-n {
+  background-position: 0 52%;
+}
+.show-word .letter.letter-o {
+  background-position: 0 56%;
+}
+.show-word .letter.letter-p {
+  background-position: 0 60%;
+}
+.show-word .letter.letter-q {
+  background-position: 0 64%;
+}
+.show-word .letter.letter-r {
+  background-position: 0 68%;
+}
+.show-word .letter.letter-s {
+  background-position: 0 72%;
+}
+.show-word .letter.letter-t {
+  background-position: 0 76%;
+}
+.show-word .letter.letter-u {
+  background-position: 0 80%;
+}
+.show-word .letter.letter-v {
+  background-position: 0 84%;
+}
+.show-word .letter.letter-w {
+  background-position: 0 88%;
+}
+.show-word .letter.letter-x {
+  background-position: 0 92%;
+}
+.show-word .letter.letter-y {
+  background-position: 0 96%;
+}
+.show-word .letter.letter-z {
+  background-position: 0 100%;
+}
+.show-word .whiteandblack .letter {
+  background-image: url("../images/alphabet/alphabet-black.png");
 }
 
 .switch-text {

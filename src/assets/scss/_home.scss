@@ -255,6 +255,14 @@ html,body{
       margin-right: 0.26rem;
       .item{
         margin: 0;
+        background: url('../images/list-color.png') no-repeat;
+        background-size: auto 100%;
+      }
+      .item-1{
+        background-position: 0% 0%;
+      }
+      .item-2{
+        background-position: 100% 0;
       }
     }
     .btn-finish{
@@ -283,9 +291,114 @@ html,body{
   position: relative;
   z-index: 1;
   .show-img{
-    @include size(100%,100%);
+    @include size(140%,100%);
     //transform: translate(20%,-20%);
-    @include transform(translate(20%,-20%));
+    @include transform(translate(10%,-28%));
+  }
+
+}
+.show-word{
+  position: absolute;
+  top: 17%;
+  left: 40%;
+  @include size(2.4rem,1rem);
+  text-align: center;
+  //background: red;
+  @include transform(rotate(4deg));
+  span{
+    display: inline-block;
+    @include size(1.1rem,0.97rem);
+    //background: green;
+  }
+  .letter{
+    background-image: url('../images/alphabet/alphabet-color.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 0;
+    &.letter-a{
+      background-position: 0 0%;
+    }
+    &.letter-b{
+      background-position: 0 4%;
+    }
+    &.letter-c{
+      background-position: 0 8%;
+    }
+    &.letter-d{
+      background-position: 0 12%;
+    }
+    &.letter-e{
+      background-position: 0 16%;
+    }
+    &.letter-f{
+      background-position: 0 20%;
+    }
+    &.letter-g{
+      background-position: 0 24%;
+    }
+    &.letter-h{
+      background-position: 0 28%;
+    }
+    &.letter-i{
+      background-position: 0 32%;
+    }
+    &.letter-j{
+      background-position: 0 36%;
+    }
+    &.letter-k{
+      background-position: 0 40%;
+    }
+    &.letter-l{
+      background-position: 0 44%;
+    }
+    &.letter-m{
+      background-position: 0 48%;
+    }
+    &.letter-n{
+      background-position: 0 52%;
+    }
+    &.letter-o{
+      background-position: 0 56%;
+    }
+    &.letter-p{
+      background-position: 0 60%;
+    }
+    &.letter-q{
+      background-position: 0 64%;
+    }
+    &.letter-r{
+      background-position: 0 68%;
+    }
+    &.letter-s{
+      background-position: 0 72%;
+    }
+    &.letter-t{
+      background-position: 0 76%;
+    }
+    &.letter-u{
+      background-position: 0 80%;
+    }
+    &.letter-v{
+      background-position: 0 84%;
+    }
+    &.letter-w{
+      background-position: 0 88%;
+    }
+    &.letter-x{
+      background-position: 0 92%;
+    }
+    &.letter-y{
+      background-position: 0 96%;
+    }
+    &.letter-z{
+      background-position: 0 100%;
+    }
+
+  }
+  .whiteandblack{
+    .letter{
+      background-image: url('../images/alphabet/alphabet-black.png');
+    }
   }
 }
 
