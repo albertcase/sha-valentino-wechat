@@ -1539,6 +1539,12 @@ html, body {
   height: 1.51rem;
   margin: 0 auto 0.3rem;
 }
+#doneshare-page .guide-share {
+  position: absolute;
+  top: calc(2rem - 4.46rem);
+  right: 0.1rem;
+  width: 0.89rem;
+}
 #doneshare-page .generate-show {
   position: relative;
   margin: 0 auto;
