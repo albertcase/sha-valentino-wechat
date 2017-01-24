@@ -13,9 +13,8 @@ class WechatController extends Controller {
 		);
 		$request->validation($fields);
 		$redirect_uri = $request->query->get('redirect_uri');
-		echo $code = $request->query->get('code');
-		echo $url = urldecode($redirect_uri);
-		exit;
+		$code = $request->query->get('code');
+		$url = urldecode($redirect_uri);
 		$wechatUserAPI = new \Lib\WechatAPI();
 
 		$access_token = $wechatUserAPI->getSnsAccessToken($code, APPID, APPSECRET);

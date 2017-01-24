@@ -23,7 +23,7 @@ class WebServiceController extends Controller {
 		$wechatUserAPI = new \Lib\UserAPI();
 		$param['redirect_uri'] = $redirect_uri;
 		$param['scope'] = $scope;
-		echo $callback = BASE_URL . CALLBACK . '?' . http_build_query($param);exit;
+		$callback = BASE_URL . CALLBACK . '?' . http_build_query($param);
 		$url = $wechatUserAPI->getAuthorizeUrl(APPID, $callback, $scope);
 		$this->redirect($url);	
 	}
