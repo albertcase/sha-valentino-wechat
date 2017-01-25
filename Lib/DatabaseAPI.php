@@ -175,14 +175,15 @@ class DatabaseAPI {
 	}
 
 	public function loadMakeById($id){
-		$sql = "SELECT `id`, `nickname`, `background`, `color`, `content` FROM `product` WHERE `id` = ?"; 
+		$sql = "SELECT `id`, `uid`, `nickname`, `background`, `color`, `content` FROM `product` WHERE `id` = ?"; 
 		$res = $this->connect()->prepare($sql);
 		$res->bind_param("s", $id);
 		$res->execute();
-		$res->bind_result($id, $nickname, $background, $color, $content);
+		$res->bind_result($id, $uid, $nickname, $background, $color, $content);
 		if($res->fetch()) {
 			$info = new \stdClass();
 			$info->id = $id;
+			$info->uid = $uid;
 			$info->nickname = $nickname;
 			$info->background = $background;
 			$info->color = $color;

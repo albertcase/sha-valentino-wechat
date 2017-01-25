@@ -10,6 +10,8 @@ class PageController extends Controller {
 	}
 
 	public function matchAction() {	
+		global $user;
+
 		$request = $this->request;
 		$fields = array(
 			'id' => array('notnull', '120'),
@@ -17,9 +19,12 @@ class PageController extends Controller {
 		$request->validation($fields);
 		$id = $request->query->get('id');
 		$databaseAPI = new \Lib\DatabaseAPI();
-		$rs = $databaseAPI->loadMakeById($id);
-		var_dump($rs);exit;
-		$this->render('index');
+		$product = $databaseAPI->loadMakeById($id);
+
+		//绑定
+		$databaseAPI->bandShare($user->uid, $product->uid);
+		$databaseAPI->bandShare($product->uid, $user->uid);
+		$this->render('index', array('product' => $product));
 	}
 
 	public function clearCookieAction() {
