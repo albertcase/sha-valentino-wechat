@@ -1,12 +1,13 @@
 /*All the api collection*/
 Api = {
     //是否还有库存
-    quota:function(callback){
+    make:function(obj,callback){
         Common.msgBox('loading...');
         $.ajax({
-            url:'/api/quota',
+            url:'/api/make',
             type:'POST',
             dataType:'json',
+            data:obj,
             success:function(data){
                 $('.ajaxpop').remove();
                 return callback(data);
