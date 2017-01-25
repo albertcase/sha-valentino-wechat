@@ -77,6 +77,9 @@
     controller.prototype.bindEvent = function(){
 
         var self  = this;
+        $('.btn-start-custom').on('touchstart',function(){
+            Common.gotoPin(1);
+        });
 
     //    select the style
         $('.step-1 .lists .item').on('touchstart',function(){
@@ -101,9 +104,15 @@
     //   go next step
         var nextStep = true;
         $('.control').on('touchstart',function(){
-            if(!nextStep) return;
-            nextStep = false;
-            self.goCustomLetter();
+            if(nextStep){
+                nextStep = false;
+                self.goCustomLetter();
+            }else{
+                var customAlphabet = $('.input-custom').val()?$('.input-custom').val():'ab';
+                self.objSelect.content = customAlphabet;
+                self.generate();
+            }
+
         });
 
     //    input the alphabet
@@ -128,6 +137,19 @@
         var self = this;
         var regAlphabet=/^[A-Za-z]$/;
         return regAlphabet.test(val);
+
+    };
+    //generate product,go share page
+    controller.prototype.generate = function(){
+        var self = this;
+        //    api
+        Api.make(self.objSelect,function(data){
+            if(data.status==1){
+                Common.gotoPin(2);
+            }
+        });
+
+
 
     };
 
