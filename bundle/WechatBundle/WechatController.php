@@ -17,8 +17,8 @@ class WechatController extends Controller {
 		$url = urldecode($redirect_uri);
 		$wechatUserAPI = new \Lib\WechatAPI();
 
-		$access_token = $wechatUserAPI->getSnsAccessToken($code, APPID, APPSECRET);
-
+		echo $access_token = $wechatUserAPI->getSnsAccessToken($code, APPID, APPSECRET);
+		exit;
 		if(isset($access_token->openid)) {
 			$param = array();
 			if($access_token->scope == 'snsapi_base') {
