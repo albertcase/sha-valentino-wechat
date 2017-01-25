@@ -6,6 +6,7 @@ use Core\Controller;
 class PageController extends Controller {
 
 	public function indexAction() {	
+		var_dump(json_decode($_COOKIE['_user']));exit;
 		$this->render('index');
 	}
 
