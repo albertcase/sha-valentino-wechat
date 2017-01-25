@@ -6,6 +6,9 @@ use Core\Controller;
 class PageController extends Controller {
 
 	public function indexAction() {	
+		global $user;
+		header("Content-type:text/html;charset=utf-8");
+		echo $user->nickname;exit;
 		$this->render('index');
 	}
 
