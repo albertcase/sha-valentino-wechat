@@ -18,9 +18,7 @@ class WechatController extends Controller {
 		$wechatUserAPI = new \Lib\WechatAPI();
 
 		$access_token = $wechatUserAPI->getSnsAccessToken($code, APPID, APPSECRET);
-		var_dump($access_token);exit;
 		if(isset($access_token->openid)) {
-			$param = array();
 			if($access_token->scope == 'snsapi_base') {
 				$userAPI = new \Lib\UserAPI();
 				$user = $userAPI->userLogin($access_token->openid);
@@ -29,8 +27,8 @@ class WechatController extends Controller {
 				}
 			} 
 			if($access_token->scope == 'snsapi_userinfo') {
-				$param['openid'] = $access_token->openid;
-				$param['access_token'] = $access_token->access_token;
+				$info = $wechatUserAPI->getSnsUserInfo($access_token->openid, $access_token->access_token);
+				var_dump($info);exit;
 			}
 			$this->redirect($url);
 		}
