@@ -184,9 +184,9 @@ class DatabaseAPI {
 			$info = new \stdClass();
 			$info->id = $id;
 			$info->nickname = $nickname;
-			$info->name = $name;
-			$info->cellphone = $cellphone;
-			$info->$address = $address;
+			$info->background = $background;
+			$info->color = $color;
+			$info->$content = $content;
 			return $info;
 		}
 		return NULL;
