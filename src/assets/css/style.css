@@ -1747,6 +1747,17 @@ html, body {
   font-size: 0.24rem;
   margin-top: 0.34rem;
 }
+#pin-reservation .btn {
+  width: 2.6rem;
+  background: #9e7a59;
+  padding: 0.1rem;
+  font-size: 0.32rem;
+  color: #fff;
+  margin: 0.35rem auto 0;
+}
+#pin-reservation .input-checkbox {
+  margin: 0.35rem auto;
+}
 
 #show-qrcode .qr {
   width: 3.7rem;

@@ -20,7 +20,7 @@
         //    self.validateForm();
         //});
         //submit the reservation
-        $('#form-contact .btn-submit span').on('touchstart', function(){
+        $('#form-contact .btn-submit').on('touchstart', function(){
 
             if(self.validateForm()){
                 if(!$('#input-receive').is(':checked')){
@@ -106,12 +106,12 @@
             }
         }
 
-        if(!inputShop.value || (inputShop.value=="精品店")){
-            Common.errorMsg.add(inputShop.parentElement,'请选择合适的称谓');
-            validate = false;
-        }else{
-            Common.errorMsg.remove(inputShop.parentElement);
-        };
+        //if(!inputShop.value || (inputShop.value=="精品店")){
+        //    Common.errorMsg.add(inputShop.parentElement,'请选择合适的称谓');
+        //    validate = false;
+        //}else{
+        //    Common.errorMsg.remove(inputShop.parentElement);
+        //};
 
 
         //if(!inputCheck.is(':checked')){
