@@ -778,11 +778,12 @@ $(document).ready(function(){
     controller.prototype.generate = function(){
         var self = this;
         //    api
-        Api.make(self.objSelect,function(data){
-            if(data.status==1){
-                Common.gotoPin(2);
-            }
-        });
+        //Api.make(self.objSelect,function(data){
+        //    if(data.status==1){
+        //        Common.gotoPin(2);
+        //    }
+        //});
+        Common.gotoPin(2);
 
 
 
