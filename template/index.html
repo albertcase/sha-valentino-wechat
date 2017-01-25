@@ -67,14 +67,15 @@
             </div>
         </div>
         <!-- select straps style, then custom the words with two-->
-        <div class="pin pin-2 current" id="select-page">
+        <div class="pin pin-2" id="select-page">
             <div class="switch-content">
                 <div class="show-img">
                     <img src="/src/dist/images/straps-1.png" alt="valentino"/>
                 </div>
-                <div class="show-word whiteandblack">
-                    <span class="letter first-letter"></span>
-                    <span class="letter second-letter"></span>
+                <!--whiteandblack-->
+                <div class="show-word">
+                    <span class="letter letter-a" id="first-letter"></span>
+                    <span class="letter letter-b" id="second-letter"></span>
                 </div>
             </div>
             <div class="switch-text">
@@ -87,7 +88,7 @@
                 </div>
             </div>
             <div class="switch-menu">
-                <div class="step step-1">
+                <div class="step step-1 current">
                     <h3 class="tips">风格</h3>
                     <ul class="lists">
                         <li class="item item-1 active"></li>
@@ -96,20 +97,43 @@
                         <li class="item item-4"></li>
                     </ul>
                 </div>
-                <div class="step step-2 current">
+                <div class="step step-2">
                     <h3 class="tips">专属字母</h3>
                     <div class="input-box">
                         <ul class="lists">
-                            <li class="item item-1"></li>
+                            <li class="item item-1 active"></li>
                             <li class="item item-2"></li>
                         </ul>
-                        <input type="text" class="input-custom" placeholder="请在此输入两个字母"/>
+                        <input type="text" class="input-custom" maxlength="2" placeholder="请在此输入两个字母"/>
                         <div class="btn btn-finish">完成</div>
                     </div>
-
-
                 </div>
             </div>
+        </div>
+        <div class="pin pin-3 current pin-result" id="doneshare-page">
+            <div class="guide-share">
+                <img src="/src/dist/images/guide-share.png" alt=""/>
+            </div>
+            <div class="p3-t1">
+                <img src="/src/dist/images/p3-t1.png" alt=""/>
+            </div>
+            <div class="generate-show">
+                <div class="show-bg">
+                    <img src="/src/dist/images/done-bg-1.jpg" alt=""/>
+                </div>
+                <div class="show-pipe">
+                    <img src="/src/dist/images/single-pipe-1.png" alt=""/>
+                </div>
+                <!--whiteandblack-->
+                <div class="show-word">
+                    <span class="letter letter-a" id="first-letter-1"></span>
+                    <span class="letter letter-b" id="second-letter-2"></span>
+                </div>
+            </div>
+            <div class="p3-t2">
+                <img src="/src/dist/images/p3-t2.png" alt=""/>
+            </div>
+            <div class="btn btn-goreservation">开始预约</div>
         </div>
 
     </div>

@@ -78,7 +78,7 @@
 
         var self  = this;
 
-    //    select the style
+        //    select the style
         $('.step-1 .lists .item').on('touchstart',function(){
             var curIndex = $(this).index();
             $(this).addClass('active').siblings('.item').removeClass('active');
@@ -98,7 +98,7 @@
             }
         });
 
-    //   go next step
+        //   go next step
         var nextStep = true;
         $('.control').on('touchstart',function(){
             if(!nextStep) return;
@@ -106,7 +106,7 @@
             self.goCustomLetter();
         });
 
-    //    input the alphabet
+        //    input the alphabet
         $('.input-custom').on('keyup',function(){
             //console.log($(this).val());
             var curVal = $(this).val();
@@ -120,6 +120,22 @@
             };
 
         });
+
+        var mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            //direction: 'horizen',
+            loop: true,
+
+            // If we need pagination
+            //pagination: '.swiper-pagination',
+
+            // Navigation arrows
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+
+            // And if we need scrollbar
+            //scrollbar: '.swiper-scrollbar',
+        })
 
 
     };

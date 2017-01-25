@@ -14,7 +14,7 @@ var tinypng = require('gulp-tinypng-compress');
 var path = {
     all:['./template/*.html','./src/assets/css/*.css','./src/dist/css/*.css','./src/assets/js/*.js','./src/assets/js/lib/*.js'],
     template:['./template/*.html'],
-    css:['./src/assets/css/*.css'],
+    css:['./src/assets/css/style.css'],
     js:['./src/assets/js/lib/zepto.min.js','./src/assets/js/lib/pre-loader.js','./src/assets/js/lib/reqAnimate.js','./src/assets/js/rem.js','./src/assets/js/common.js','./src/assets/js/wxshare.js','./src/assets/js/home.js'],
     images:['./src/assets/images/*','./src/assets/images/*/*'],
 };
@@ -61,7 +61,7 @@ gulp.task('scripts',['clean'], function() {
 gulp.task("tinypng", function(){
     gulp.src(['./src/assets/images/*.{png,jpg,jpeg}','./src/assets/images/*/*.{png,jpg,jpeg}','./src/assets/images/*/*/*.{png,jpg,jpeg}'])
         .pipe(tinypng({
-            key: 'gTeMTlJN2nqY3weeN-cLO83uI6cLaicE',
+            key: '-ID8TBnbSlRuMCc_mMagta65Q7IDyaQ-',
             sigFile: './src/.tinypng-sigs',
             log: true
         })).on('error', function(err) {
