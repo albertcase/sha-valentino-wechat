@@ -60,6 +60,7 @@
         var self = this;
         var validate = true,
             inputTitle = document.getElementById('input-title'),
+            inputShop = document.getElementById('select-shop'),
             inputName = document.getElementById('input-name'),
             inputMobile = document.getElementById('input-mobile'),
             inputMail = document.getElementById('input-mail'),
@@ -104,6 +105,13 @@
                 Common.errorMsg.remove(inputMail.parentElement);
             }
         }
+
+        if(!inputShop.value || (inputShop.value=="精品店")){
+            Common.errorMsg.add(inputShop.parentElement,'请选择合适的称谓');
+            validate = false;
+        }else{
+            Common.errorMsg.remove(inputShop.parentElement);
+        };
 
 
         //if(!inputCheck.is(':checked')){

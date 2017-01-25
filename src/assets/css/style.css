@@ -211,23 +211,24 @@ img {
 .popup .btn-close {
   position: relative;
   z-index: 20;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-left: -0.3rem;
   text-indent: -999em;
-  background: #fff;
   border-radius: 100%;
-  margin: 0 auto;
+  border: #fff 0.04rem solid;
 }
 .popup .btn-close:after, .popup .btn-close:before {
   content: '';
   display: block;
-  width: 0.6rem;
+  width: 0.4rem;
   height: 0.04rem;
   top: 50%;
   left: 50%;
-  margin-left: -0.3rem;
+  margin-left: -0.2rem;
+  margin-top: -0.02rem;
   position: absolute;
-  background: #a38334;
+  background: #fff;
 }
 .popup .btn-close:after {
   -webkit-transform: rotate(45deg);
@@ -1049,6 +1050,17 @@ html, body {
   margin: 0 auto 0.4rem;
 }
 
+.btn {
+  text-align: center;
+}
+.btn span {
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.32rem;
+}
+
 .v-content {
   position: absolute;
   left: 50%;
@@ -1572,16 +1584,15 @@ html, body {
   height: 0.53rem;
   margin: 0.3rem auto;
 }
-.pin-result .btn-goreservation {
-  background: #000;
-  color: #fff;
-}
 
 .swiper-container {
   width: 100%;
   height: 7.12rem;
 }
 
+#form-contact {
+  width: 6.4rem;
+}
 #form-contact .input-box {
   position: relative;
   margin-bottom: 0.3rem;
@@ -1595,7 +1606,7 @@ html, body {
   text-indent: -999em;
   width: 0.4rem;
   height: 0.4rem;
-  background: url("../../images/icon-forbidden.png") no-repeat;
+  background: url("../images/icon-forbidden.png") no-repeat;
   background-size: 100%;
   right: 0.2rem;
   bottom: 0.2rem;
@@ -1616,7 +1627,7 @@ html, body {
 #form-contact select {
   width: 100%;
   box-sizing: border-box;
-  background: #fff url("../../images/polygon-down.png") calc(100% - 10px) center no-repeat;
+  background: #fff url("../images/polygon-down.png") calc(100% - 10px) center no-repeat;
   background-size: 0.13rem;
 }
 #form-contact .input-box-content-title {
@@ -1642,10 +1653,10 @@ html, body {
   text-align: center;
 }
 #form-contact .input-checkbox label {
-  color: #ffafb0;
+  color: #000;
 }
 #form-contact .input-checkbox a {
-  color: #ffafb0;
+  color: #000;
 }
 
 .order-block {
@@ -1695,12 +1706,6 @@ html, body {
 
 #pin-pay-success {
   text-align: center;
-  color: #ffafb0;
-  background: url("../../images/bg-3.jpg") bottom no-repeat;
-  background-size: 100%;
-}
-.page-reservation #pin-pay-success {
-  background: transparent;
 }
 #pin-pay-success .v-content {
   top: 45%;
@@ -1713,35 +1718,15 @@ html, body {
   font-size: 0.36rem;
   letter-spacing: 0px;
 }
-#pin-pay-success .des {
-  font-size: 0.28rem;
-  margin-bottom: 1.3rem;
-}
 #pin-pay-success .des2 {
-  width: 4.83rem;
-  height: 0.63rem;
+  width: 2.5rem;
+  height: 0.65rem;
   margin: 0 auto 1.3rem;
 }
-#pin-pay-success .bags {
-  position: absolute;
-  bottom: 1.3rem;
-  left: 0;
-}
-
-.btn-go span {
-  letter-spacing: 0;
-  padding: 0;
-}
-.btn-go span a {
-  display: block;
-  color: #f95f60;
-  background: #6c0000;
-  padding: 0.2rem 0.5rem;
-  text-decoration: none;
-}
-.btn-go span a:active {
-  background: #350000;
-  color: #efc8c8;
+#pin-pay-success .qrcode-3 {
+  width: 3.69rem;
+  height: 3.61rem;
+  margin: 0 auto;
 }
 
 #pin-reservation {
@@ -1752,6 +1737,24 @@ html, body {
   font-size: 0.28rem;
   margin-bottom: 0.6rem;
   letter-spacing: 0px;
-  width: 5.75rem;
+  width: 4.73rem;
   height: auto;
+}
+#pin-reservation .follow {
+  color: #000;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 0.24rem;
+  margin-top: 0.34rem;
+}
+
+#show-qrcode .qr {
+  width: 3.7rem;
+  height: 7.96rem;
+  margin: 0 auto;
+}
+#show-qrcode .btn-close {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
 }

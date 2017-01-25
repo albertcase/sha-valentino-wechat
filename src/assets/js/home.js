@@ -133,6 +133,10 @@
 
         });
 
+        //$('.btn-goreservation').on('touchstart',function(){
+        //
+        //});
+
 
     };
     //validate the input is a-z or A-Z
@@ -166,7 +170,7 @@
         var doAni = new reqAnimate($('.show-animate img'),{
             fps: 6,
             totalFrames: 25,
-            //time: 0,
+            time: 2,
             processAnimation: function(){
                 //num is 1,2,3,in fact num is selected background
                 switch(num){
@@ -201,7 +205,7 @@
                 //show box and letter
             }
         });
-        //doAni.start();
+        doAni.start();
 
 
     };
