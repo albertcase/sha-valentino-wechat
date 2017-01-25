@@ -165,13 +165,31 @@ class DatabaseAPI {
 	 * 
 	 */
 	public function insertMake($data){
-		$sql = "INSERT INTO `product` SET `uid` = ?, `background` = ?, `color` = ?, `content` = ?"; 
+		$sql = "INSERT INTO `product` SET `uid` = ?, `nickanme` = ? `background` = ?, `color` = ?, `content` = ?"; 
 		$res = $this->connect()->prepare($sql); 
-		$res->bind_param("ssss", $data->uid, $data->background, $data->color, $data->content);
+		$res->bind_param("sssss", $data->uid, $data->nickname, $data->background, $data->color, $data->content);
 		if($res->execute()) 
 			return $res->insert_id;
 		else 
 			return FALSE;
+	}
+
+	public function loadMakeById($id){
+		$sql = "SELECT `id`, `nickname`, `background`, `color`, `content` FROM `product` WHERE `id` = ?"; 
+		$res = $this->connect()->prepare($sql);
+		$res->bind_param("s", $id);
+		$res->execute();
+		$res->bind_result($id, $nickname, $background, $color, $content);
+		if($res->fetch()) {
+			$info = new \stdClass();
+			$info->id = $id;
+			$info->nickname = $nickname;
+			$info->name = $name;
+			$info->cellphone = $cellphone;
+			$info->$address = $address;
+			return $info;
+		}
+		return NULL;
 	}
 
 	/**
