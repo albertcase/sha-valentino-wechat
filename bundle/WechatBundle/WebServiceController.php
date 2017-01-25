@@ -41,7 +41,7 @@ class WebServiceController extends Controller {
 		//valid
 		$this->hostValid($url);
 		$wechatUserAPI = new \Lib\UserAPI();
-  		echo $access_token = $wechatUserAPI->getSnsAccessToken($code, APPID, APPSECRET);exit;
+  		$access_token = $wechatUserAPI->getSnsAccessToken($code, APPID, APPSECRET);
 		if(isset($access_token->openid)) {
 			$param = array();
 			if($access_token->scope == 'snsapi_base') {
