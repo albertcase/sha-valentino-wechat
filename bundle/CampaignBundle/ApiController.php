@@ -61,12 +61,43 @@ class ApiController extends Controller {
 		$data->color = $request->request->get('color');
 		$data->content = $request->request->get('content');
 
-		if($DatabaseAPI->insertMake($data)) {
-			$data = array('status' => 1);
+		if($rs = $DatabaseAPI->insertMake($data)) {
+			$data = array('status' => 1, 'msg' => $rs);
 			$this->dataPrint($data);
 		} else {
 			$this->statusPrint('0', 'failed');
 		}
+    }
+
+    public function loadAction() {
+
+    	global $user;
+
+    	$request = $this->request;
+    	$fields = array(
+			'id' => array('notnull', '120'),
+		);
+		$request->validation($fields);
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$id = $request->request->get('id');
+		if($rs = $DatabaseAPI->loadMakeById($id)) {
+			$data = array('status' => 1, 'msg' => $rs);
+			$this->dataPrint($data);
+		} else {
+			$this->statusPrint('0', 'failed');
+		}
+    }
+
+    public function listAction() {
+
+    	global $user;
+
+		$DatabaseAPI = new \Lib\DatabaseAPI();
+		$rs = $DatabaseAPI->loadMakeByUid($user->id)
+		$list = $DatabaseAPI->loadListByUid($user->uid);
+		$data = array('status' => 1, 'msg' => $rs, 'list'=>$list);
+		$this->dataPrint($data);
+		
     }
 
     public function bandAction() {

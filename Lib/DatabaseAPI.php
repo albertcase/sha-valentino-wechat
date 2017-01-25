@@ -165,13 +165,62 @@ class DatabaseAPI {
 	 * 
 	 */
 	public function insertMake($data){
-		$sql = "INSERT INTO `product` SET `uid` = ?, `background` = ?, `color` = ?, `content` = ?"; 
+		$sql = "INSERT INTO `product` SET `uid` = ?, `nickanme` = ? `background` = ?, `color` = ?, `content` = ?"; 
 		$res = $this->connect()->prepare($sql); 
-		$res->bind_param("ssss", $data->uid, $data->background, $data->color, $data->content);
+		$res->bind_param("sssss", $data->uid, $data->nickname, $data->background, $data->color, $data->content);
 		if($res->execute()) 
 			return $res->insert_id;
 		else 
 			return FALSE;
+	}
+
+	public function loadMakeById($id){
+		$sql = "SELECT `id`, `uid`, `nickname`, `background`, `color`, `content` FROM `product` WHERE `id` = ?"; 
+		$res = $this->connect()->prepare($sql);
+		$res->bind_param("s", $id);
+		$res->execute();
+		$res->bind_result($id, $uid, $nickname, $background, $color, $content);
+		if($res->fetch()) {
+			$info = new \stdClass();
+			$info->id = $id;
+			$info->uid = $uid;
+			$info->nickname = $nickname;
+			$info->background = $background;
+			$info->color = $color;
+			$info->$content = $content;
+			return $info;
+		}
+		return NULL;
+	}
+
+	public function loadMakeByUid($uid){
+		$sql = "SELECT `id`, `uid`, `nickname`, `background`, `color`, `content` FROM `product` WHERE `uid` = ?"; 
+		$res = $this->connect()->prepare($sql);
+		$res->bind_param("s", $uid);
+		$res->execute();
+		$res->bind_result($id, $uid, $nickname, $background, $color, $content);
+		if($res->fetch()) {
+			$info = new \stdClass();
+			$info->id = $id;
+			$info->uid = $uid;
+			$info->nickname = $nickname;
+			$info->background = $background;
+			$info->color = $color;
+			$info->$content = $content;
+			return $info;
+		}
+		return NULL;
+	}
+
+	public function loadListByUid($uid) {
+		$sql = "SELECT * FROM `product` WHERE uid in (select fuid from band where uid = '".intval($uid)."')"; 
+		$res = $this->db->query($sql);
+		$data = array();
+		while($rows = $res->fetch_array(MYSQLI_ASSOC))
+		{
+			$data[] = $rows;
+		}	
+		return $data;
 	}
 
 	/**
