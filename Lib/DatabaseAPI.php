@@ -16,11 +16,22 @@ class DatabaseAPI {
 	/**
 	 * Create user in database
 	 */
+	// public function insertUser($userinfo){
+	// 	$nowtime = NOWTIME;
+	// 	$sql = "INSERT INTO `user` SET `openid` = ?, `created` = ?, `updated` = ?"; 
+	// 	$res = $this->connect()->prepare($sql); 
+	// 	$res->bind_param("sss", $userinfo->openid, $nowtime, $nowtime);
+	// 	if($res->execute()) 
+	// 		return $this->findUserByOpenid($userinfo->openid);
+	// 	else 
+	// 		return FALSE;
+	// }
+
 	public function insertUser($userinfo){
 		$nowtime = NOWTIME;
-		$sql = "INSERT INTO `user` SET `openid` = ?, `created` = ?, `updated` = ?"; 
+		$sql = "INSERT INTO `user` SET `openid` = ?, `nickname` = ?, `headimgurl` = ?, `created` = ?, `updated` = ?"; 
 		$res = $this->connect()->prepare($sql); 
-		$res->bind_param("sss", $userinfo->openid, $nowtime, $nowtime);
+		$res->bind_param("sssss", $userinfo->openid, $userinfo->nickname, $userinfo->headimgurl, $nowtime, $nowtime);
 		if($res->execute()) 
 			return $this->findUserByOpenid($userinfo->openid);
 		else 
@@ -54,18 +65,38 @@ class DatabaseAPI {
 	}
 
 	/**
+	 * Create user in database  
+	 */
+	// public function findUserByOpenid($openid){
+	// 	$sql = "SELECT `uid`, `openid` FROM `user` WHERE `openid` = ?"; 
+	// 	$res = $this->connect()->prepare($sql);
+	// 	$res->bind_param("s", $openid);
+	// 	$res->execute();
+	// 	$res->bind_result($uid, $openid);
+	// 	if($res->fetch()) {
+	// 		$user = new \stdClass();
+	// 		$user->uid = $uid;
+	// 		$user->openid = $openid;
+	// 		return $user;
+	// 	}
+	// 	return NULL;
+	// }
+
+	/**
 	 * Create user in database
 	 */
 	public function findUserByOpenid($openid){
-		$sql = "SELECT `uid`, `openid` FROM `user` WHERE `openid` = ?"; 
+		$sql = "SELECT `uid`, `openid`, `nickname`, `headimgurl` FROM `user` WHERE `openid` = ?"; 
 		$res = $this->connect()->prepare($sql);
 		$res->bind_param("s", $openid);
 		$res->execute();
-		$res->bind_result($uid, $openid);
+		$res->bind_result($uid, $openid, $nickname, $headimgurl);
 		if($res->fetch()) {
 			$user = new \stdClass();
 			$user->uid = $uid;
 			$user->openid = $openid;
+			$user->nickname = $nickname;
+			$user->headimgurl = $headimgurl;
 			return $user;
 		}
 		return NULL;

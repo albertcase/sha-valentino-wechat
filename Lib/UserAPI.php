@@ -74,6 +74,11 @@ class UserAPI extends Base {
     return $this->userLoginFinalize($user);
   }
 
+  public function userRegisterOauth($info){
+    $user = $this->_db->insertUser($info);
+    return $this->userLoginFinalize($user);
+  }
+
   public function oauthAction($scope, $redirect_uri) {
     $wechatUserAPI = new \Lib\WechatAPI();
     $param['redirect_uri'] = $redirect_uri;
