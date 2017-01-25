@@ -193,8 +193,27 @@ class DatabaseAPI {
 		return NULL;
 	}
 
+	public function loadMakeByUid($uid){
+		$sql = "SELECT `id`, `uid`, `nickname`, `background`, `color`, `content` FROM `product` WHERE `uid` = ?"; 
+		$res = $this->connect()->prepare($sql);
+		$res->bind_param("s", $uid);
+		$res->execute();
+		$res->bind_result($id, $uid, $nickname, $background, $color, $content);
+		if($res->fetch()) {
+			$info = new \stdClass();
+			$info->id = $id;
+			$info->uid = $uid;
+			$info->nickname = $nickname;
+			$info->background = $background;
+			$info->color = $color;
+			$info->$content = $content;
+			return $info;
+		}
+		return NULL;
+	}
+
 	public function loadListByUid($uid) {
-		$sql = "SELECT * FROM `band` a, `product` b WHERE uid = '".intval($uid)."' and "; 
+		$sql = "SELECT * FROM `product` WHERE uid in (select fuid from band where uid = '".intval($uid)."')"; 
 		$res = $this->db->query($sql);
 		$data = array();
 		while($rows = $res->fetch_array(MYSQLI_ASSOC))

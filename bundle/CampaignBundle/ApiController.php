@@ -92,27 +92,12 @@ class ApiController extends Controller {
 
     	global $user;
 
-    	$request = $this->request;
-    	$fields = array(
-			'background' => array('notnull', '120'),
-			'color' => array('notnull', '121'),
-			'content' => array('notnull', '122'),
-		);
-		$request->validation($fields);
 		$DatabaseAPI = new \Lib\DatabaseAPI();
-		$data = new \stdClass();
-		$data->uid = $user->uid;
-		$data->nickname = $user->nickname;
-		$data->background = $request->request->get('background');
-		$data->color = $request->request->get('color');
-		$data->content = $request->request->get('content');
-
-		if($DatabaseAPI->insertMake($data)) {
-			$data = array('status' => 1);
-			$this->dataPrint($data);
-		} else {
-			$this->statusPrint('0', 'failed');
-		}
+		$rs = $DatabaseAPI->loadMakeByUid($user->id)
+		$list = $DatabaseAPI->loadListByUid($user->uid);
+		$data = array('status' => 1, 'msg' => $rs, 'list'=>$list);
+		$this->dataPrint($data);
+		
     }
 
     public function bandAction() {
