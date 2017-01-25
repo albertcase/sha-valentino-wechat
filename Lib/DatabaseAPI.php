@@ -193,6 +193,17 @@ class DatabaseAPI {
 		return NULL;
 	}
 
+	public function loadListByUid($uid) {
+		$sql = "SELECT * FROM `band` a, `product` b WHERE uid = '".intval($uid)."' and "; 
+		$res = $this->db->query($sql);
+		$data = array();
+		while($rows = $res->fetch_array(MYSQLI_ASSOC))
+		{
+			$data[] = $rows;
+		}	
+		return $data;
+	}
+
 	/**
 	 * 
 	 */
