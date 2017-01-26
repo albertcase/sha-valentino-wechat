@@ -236,4 +236,14 @@ class DatabaseAPI {
 			return FALSE;
 	}
 
+	public function insertSubmit($data){
+		$sql = "INSERT INTO `submit` SET `uid` = ?, `sex` = ?, `name` = ?, `mobile` = ?, `email` = ?, `store` = ?"; 
+		$res = $this->connect()->prepare($sql); 
+		$res->bind_param("ssssss", $data->uid, $data->sex, $data->name, $data->mobile, $data->email, $data->store);
+		if($res->execute()) 
+			return $res->insert_id;
+		else 
+			return FALSE;
+	}
+
 }

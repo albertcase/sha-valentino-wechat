@@ -102,22 +102,47 @@ class ApiController extends Controller {
 
     public function bandAction() {
 
-    	global $user;
-
-    	$request = $this->request;
-    	$fields = array(
+		$request = $this->request;
+		$fields = array(
 			'id' => array('notnull', '120'),
 		);
 		$request->validation($fields);
+		$id = $request->query->get('id');
+		$databaseAPI = new \Lib\DatabaseAPI();
+		$product = $databaseAPI->loadMakeById($id);
+
+		//绑定
+		$databaseAPI->bandShare(10, $product->uid);
+		$databaseAPI->bandShare($product->uid, 10);
+		var_dump($product);exit;
+		$this->render('index', array('product' => $product));
+    }
+
+    public function submitAction() {
+
+    	global $user;
+    	if(!$user->uid) {
+	        $this->statusPrint('100', 'access deny!');
+        } 
+    	$request = $this->request;
+    	$fields = array(
+			'sex' => array('notnull', '120'),
+			'name' => array('notnull', '121'),
+			'mobile' => array('cellphone', '122'),
+			'email' => array('notnull', '123'),
+			'store' => array('notnull', '124')
+		);
+		$request->validation($fields);
 		$DatabaseAPI = new \Lib\DatabaseAPI();
-		$product 
 		$data = new \stdClass();
 		$data->uid = $user->uid;
-		$data->background = $request->request->get('background');
-		$data->color = $request->request->get('color');
-		$data->content = $request->request->get('content');
+		$data->sex = $request->request->get('sex');
+		$data->name = $request->request->get('name');
+		$data->mobile = $request->request->get('mobile');
+		$data->email = $request->request->get('email');
+		$data->store = $request->request->get('store');
 
-		if($DatabaseAPI->insertMake($data)) {
+		if($DatabaseAPI->insertSubmit($data)) {
 			$data = array('status' => 1);
 			$this->dataPrint($data);
 		} else {
