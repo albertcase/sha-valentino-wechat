@@ -31,7 +31,6 @@ class ApiController extends Controller {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$data = new \stdClass();
 		$data->uid = $user->uid;
-		$data->nickname = $user->nickname;
 		$data->name = $request->request->get('name');
 		$data->cellphone = $request->request->get('cellphone');
 		$data->address = $request->request->get('address');
@@ -58,6 +57,7 @@ class ApiController extends Controller {
 		$DatabaseAPI = new \Lib\DatabaseAPI();
 		$data = new \stdClass();
 		$data->uid = $user->uid;
+		$data->nickname = $user->nickname;
 		$data->background = $request->request->get('background');
 		$data->color = $request->request->get('color');
 		$data->content = $request->request->get('content');
