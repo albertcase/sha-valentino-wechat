@@ -13,3 +13,5 @@ $routers['/clear'] = array('CampaignBundle\Page', 'clearCookie');
 $routers['/match'] = array('CampaignBundle\Page', 'match');
 $routers['/api/make'] = array('CampaignBundle\Api', 'make');
 $routers['/api/list'] = array('CampaignBundle\Api', 'list');
+$routers['/api/submit'] = array('CampaignBundle\Api', 'submit');
+$routers['/api/band'] = array('CampaignBundle\Page', 'band');

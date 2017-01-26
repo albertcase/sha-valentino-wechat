@@ -22,8 +22,11 @@ class PageController extends Controller {
 		$product = $databaseAPI->loadMakeById($id);
 
 		//绑定
-		$databaseAPI->bandShare($user->uid, $product->uid);
-		$databaseAPI->bandShare($product->uid, $user->uid);
+		if ($user->uid != $product->uid) {
+			$databaseAPI->bandShare($user->uid, $product->uid);
+			$databaseAPI->bandShare($product->uid, $user->uid);
+		}
+		
 		$this->render('index', array('product' => $product));
 	}
 
@@ -40,4 +43,21 @@ class PageController extends Controller {
 		$request->validation($fields);
 		$id = $request->query->get('id');
 	}
+
+	public function bandAction() {
+		ini_set('display_errors', '1');
+		$request = $this->request;
+		$fields = array(
+			'id' => array('notnull', '120'),
+		);
+		$request->validation($fields);
+		$id = $request->query->get('id');
+		$databaseAPI = new \Lib\DatabaseAPI();
+		$product = $databaseAPI->loadMakeById($id);
+		//绑定
+		$databaseAPI->bandShare(10, $product->uid);
+		$databaseAPI->bandShare($product->uid, 10);
+		
+		$this->render('index', array('product' => $product));
+    }
 }
