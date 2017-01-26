@@ -52,6 +52,7 @@
     position: absolute;
     top: 0;
     width: 2.25rem;
+    height: 100%;
   }
   .item-match-me{
     left: 0;
@@ -95,5 +96,10 @@
       text-align: center;
       font-size: 0.32rem;
     }
+  }
+  .show-word{
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%,-50%));
   }
 }

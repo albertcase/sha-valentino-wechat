@@ -1406,31 +1406,69 @@ html, body {
   position: absolute;
   top: 25%;
   left: 44%;
-  width: 2rem;
+  width: 3rem;
   height: 1rem;
-  -webkit-transform: rotate(4deg);
-  -moz-transform: rotate(4deg);
-  -ms-transform: rotate(4deg);
-  -o-transform: rotate(4deg);
-  transform: rotate(4deg);
+  text-align: center;
 }
 .show-word.fadein {
   opacity: 1;
 }
+.show-word.fadein span {
+  opacity: 1;
+}
 .show-word span {
+  opacity: 0;
   display: inline-block;
-  width: 1.1rem;
   height: 0.97rem;
+}
+.show-word .sw-1 {
+  -moz-transition: opacity 1s 1s;
+  -o-transition: opacity 1s 1s;
+  -webkit-transition: opacity 1s;
+  -webkit-transition-delay: 1s;
+  transition: opacity 1s 1s;
+}
+.show-word .sw-2 {
+  -moz-transition: opacity 1s 1.5s;
+  -o-transition: opacity 1s 1.5s;
+  -webkit-transition: opacity 1s;
+  -webkit-transition-delay: 1.5s;
+  transition: opacity 1s 1.5s;
+}
+.show-word .sw-3 {
+  -moz-transition: opacity 1s 2s;
+  -o-transition: opacity 1s 2s;
+  -webkit-transition: opacity 1s;
+  -webkit-transition-delay: 2s;
+  transition: opacity 1s 2s;
+}
+.show-word .sw-4 {
+  -moz-transition: opacity 1s 2.5s;
+  -o-transition: opacity 1s 2.5s;
+  -webkit-transition: opacity 1s;
+  -webkit-transition-delay: 2.5s;
+  transition: opacity 1s 2.5s;
 }
 .show-word #second-letter {
   position: absolute;
   left: 0.9rem;
 }
+.show-word .dot {
+  width: 0.29rem;
+  margin-left: -0.2rem;
+  background-image: url("../images/alphabet/dot.png");
+  background-repeat: no-repeat;
+  background-size: 0.29rem;
+}
 .show-word .letter {
+  width: 0.8rem;
   background-image: url("../images/alphabet/alphabet-color.png");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 1.1rem;
   background-position: center 0;
+}
+.show-word .letter.sw-3 {
+  margin-left: -0.2rem;
 }
 .show-word .letter.letter-a {
   background-position: 0 0%;
@@ -1827,6 +1865,7 @@ html, body {
   position: absolute;
   top: 0;
   width: 2.25rem;
+  height: 100%;
 }
 .generate-show .item-match-me {
   left: 0;
@@ -1867,4 +1906,13 @@ html, body {
 .generate-show .fromto .name-me, .generate-show .fromto .name-you {
   text-align: center;
   font-size: 0.32rem;
+}
+.generate-show .show-word {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
