@@ -696,14 +696,14 @@ Api = {
     this.weixinshare = weixinshare;
 }).call(this);
 
-weixinshare({
-    title1: 'tt',
-    des: 'des',
-    link: 'http://guitarstrapvalentino.samesamechina.com',
-    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
-},function(){
-
-});
+//weixinshare({
+//    title1: 'tt',
+//    des: 'des',
+//    link: 'http://guitarstrapvalentino.samesamechina.com',
+//    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
+//},function(){
+//
+//});
 ;(function(){
 
     var controller = function(){
@@ -759,7 +759,7 @@ weixinshare({
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(0);
+                Common.gotoPin(1);
                 self.bindEvent();
                 //self.doGenerateAni(1);
             }

@@ -208,10 +208,18 @@ html,body{
   @include size(100%,2.1rem);
   .tips{
     text-align: center;
+    width: 1.55rem;
+    height: 0.3rem;
+    margin: 0 auto 0.2rem;
+    background: url('../images/text-step-tip.png') no-repeat;
+    background-size: 1.55rem;
+    background-position: 0 100%;
+    text-indent: -999em;
   }
   .step{
     display: none;
     position: absolute;
+    padding-top: 0.4rem;
     top: 50%;
     @include size(100%,auto);
     @include transform(translateY(-50%));
@@ -219,16 +227,20 @@ html,body{
       display: block;
     }
   }
-  .step-1{
-    padding-top: 0.4rem;
-    .control{
-      position: absolute;
-      top: 0.96rem;
-      right: 0.4rem;
-      background: #9e7a59;
-      color: #fff;
-      padding: 0.1rem 0.2rem;
-    }
+  .control{
+    position: absolute;
+    top: 0.9rem;
+    right: 0.5rem;
+    width: 1rem;
+    height: .6rem;
+    background-color: #9e7a59;
+    color: #fff;
+    padding: 0 .2rem;
+    text-indent: -999em;
+    background-image: url(../images/text-btn.png);
+    background-size: 1.58rem;
+    background-repeat: no-repeat;
+    background-position: 0.4rem 111%;
   }
   .lists{
     text-align: center;
@@ -239,7 +251,7 @@ html,body{
       background: url('../images/list-straps.png') no-repeat;
       background-size: auto 100%;
       border-radius: 100%;
-      margin: 0.2rem;
+      margin: 0 0.2rem;
       box-sizing: border-box;
       border: #d0c4b8 1px solid;
       &.active{
@@ -298,15 +310,6 @@ html,body{
         background-position: 100% 0;
       }
     }
-    .btn-finish{
-      display: inline-block;
-      background: #000;
-      color: #fff;
-      height: 0.7rem;
-      line-height: 0.7rem;
-      box-sizing: border-box;
-      padding: 0 0.3rem;
-    }
     .input-custom{
       font-size: 0.28rem;
       float: left;
@@ -326,8 +329,7 @@ html,body{
   z-index: 1;
   .show-img{
     @include size(120%,100%);
-    //transform: translate(20%,-20%);
-    @include transform(translate(16%,-20%));
+    @include transform(translate(16%,-45%));
   }
 
 }
@@ -478,25 +480,22 @@ html,body{
   z-index: 2;
   @include size(100%,100%);
   .p2-t1{
-    @include size(2.31rem,1.23rem);
+    @include size(1.9rem,1.23rem);
     margin-top: 0.75rem;
-    margin-left: 0.25rem;
+    margin-left: 0.3rem;
   }
   .steps{
-    position: absolute;
-    top: 40%;
-    width: 100%;
-  }
-  .control{
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-  }
-  .num{
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: relative;
+    margin-left: 0.3rem;
+    margin-top: 0.5rem;
+    text-indent: -999em;
+    width: 1.48rem;
+    height: 1.7rem;
+    background: url('../images/text-step.png') no-repeat;
+    background-size: 100%;
+    &.next{
+      background-position: 0 124%;
+    }
   }
 }
 

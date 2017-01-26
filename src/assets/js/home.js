@@ -53,7 +53,7 @@
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(0);
+                Common.gotoPin(1);
                 self.bindEvent();
                 //self.doGenerateAni(1);
             }

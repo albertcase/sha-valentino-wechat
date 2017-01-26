@@ -68,10 +68,6 @@
                     <img src="/src/dist/images/straps-1.png" alt="valentino"/>
                 </div>
                 <!--whiteandblack-->
-                <!--<div class="show-word">-->
-                    <!--<span class="letter letter-a" id="first-letter"></span>-->
-                    <!--<span class="letter letter-b" id="second-letter"></span>-->
-                <!--</div>-->
                 <div class="show-word">
                     <span class="sw-1 letter letter-a"></span>
                     <span class="sw-2 dot"></span>
@@ -83,10 +79,7 @@
                 <div class="p2-t1">
                     <img src="/src/dist/images/p2-text-1.png" alt=""/>
                 </div>
-                <div class="steps">
-                    <div class="num">1/2</div>
-                    <!--<div class="control">next</div>-->
-                </div>
+                <div class="steps"></div>
             </div>
             <div class="switch-menu">
                 <div class="step step-1 current">

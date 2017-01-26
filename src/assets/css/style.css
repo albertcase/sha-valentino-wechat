@@ -1298,10 +1298,18 @@ html, body {
 }
 .switch-menu .tips {
   text-align: center;
+  width: 1.55rem;
+  height: 0.3rem;
+  margin: 0 auto 0.2rem;
+  background: url("../images/text-step-tip.png") no-repeat;
+  background-size: 1.55rem;
+  background-position: 0 100%;
+  text-indent: -999em;
 }
 .switch-menu .step {
   display: none;
   position: absolute;
+  padding-top: 0.4rem;
   top: 50%;
   width: 100%;
   height: auto;
@@ -1314,16 +1322,20 @@ html, body {
 .switch-menu .step.current {
   display: block;
 }
-.switch-menu .step-1 {
-  padding-top: 0.4rem;
-}
-.switch-menu .step-1 .control {
+.switch-menu .control {
   position: absolute;
-  top: 0.96rem;
-  right: 0.4rem;
-  background: #9e7a59;
+  top: 0.9rem;
+  right: 0.5rem;
+  width: 1rem;
+  height: .6rem;
+  background-color: #9e7a59;
   color: #fff;
-  padding: 0.1rem 0.2rem;
+  padding: 0 .2rem;
+  text-indent: -999em;
+  background-image: url(../images/text-btn.png);
+  background-size: 1.58rem;
+  background-repeat: no-repeat;
+  background-position: 0.4rem 111%;
 }
 .switch-menu .lists {
   text-align: center;
@@ -1336,7 +1348,7 @@ html, body {
   background: url("../images/list-straps.png") no-repeat;
   background-size: auto 100%;
   border-radius: 100%;
-  margin: 0.2rem;
+  margin: 0 0.2rem;
   box-sizing: border-box;
   border: #d0c4b8 1px solid;
 }
@@ -1401,15 +1413,6 @@ html, body {
 .switch-menu .input-box .lists .item-2 {
   background-position: 100% 0;
 }
-.switch-menu .input-box .btn-finish {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  height: 0.7rem;
-  line-height: 0.7rem;
-  box-sizing: border-box;
-  padding: 0 0.3rem;
-}
 .switch-menu .input-box .input-custom {
   font-size: 0.28rem;
   float: left;
@@ -1429,11 +1432,11 @@ html, body {
 .switch-content .show-img {
   width: 120%;
   height: 100%;
-  -webkit-transform: translate(16%, -20%);
-  -moz-transform: translate(16%, -20%);
-  -ms-transform: translate(16%, -20%);
-  -o-transform: translate(16%, -20%);
-  transform: translate(16%, -20%);
+  -webkit-transform: translate(16%, -45%);
+  -moz-transform: translate(16%, -45%);
+  -ms-transform: translate(16%, -45%);
+  -o-transform: translate(16%, -45%);
+  transform: translate(16%, -45%);
 }
 
 .show-word {
@@ -1596,26 +1599,23 @@ html, body {
   height: 100%;
 }
 .switch-text .p2-t1 {
-  width: 2.31rem;
+  width: 1.9rem;
   height: 1.23rem;
   margin-top: 0.75rem;
-  margin-left: 0.25rem;
+  margin-left: 0.3rem;
 }
 .switch-text .steps {
-  position: absolute;
-  top: 40%;
-  width: 100%;
+  position: relative;
+  margin-left: 0.3rem;
+  margin-top: 0.5rem;
+  text-indent: -999em;
+  width: 1.48rem;
+  height: 1.7rem;
+  background: url("../images/text-step.png") no-repeat;
+  background-size: 100%;
 }
-.switch-text .control {
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-}
-.switch-text .num {
-  position: absolute;
-  left: 0;
-  top: 0;
+.switch-text .steps.next {
+  background-position: 0 124%;
 }
 
 .pin-result .p3-t1 {
