@@ -585,40 +585,52 @@ $(document).ready(function(){
 
 
 ;(function(){
-    wx.ready(function(){
-        //wx.hideOptionMenu({
-        //    menuList: ["menuItem:share:appMessage","menuItem:share:timeline","menuItem:share:qq","menuItem:share:weiboApp","menuItem:share:facebook","menuItem:share:QZone","menuItem:copyUrl","menuItem:openWithQQBrowser","menuItem:openWithSafari","menuItem:share:email"] // 要显示的菜单项，所有menu项见附录3
-        //});
-        wx.onMenuShareAppMessage({
-            title: '与刘嘉玲、娜扎一起领略ROSSO VALENTINO梦幻之作',
-            desc: '红色SPIKE铆钉链条包，Valentino微信独家限量发售。',
-            link: 'http://rossovalentino.samesamechina.com/event/',
-            imgUrl: window.location.origin+'/src/images/share.jpg',
-            type: '',
-            dataUrl: '',
-            success: function () {
-                //    success
-                //_hmt.push(['_trackEvent', 'btn-weixin', 'share', 'success']);
+    function weixinshare(obj,callback){
+        wx.ready(function(){
+            wx.onMenuShareAppMessage({
+                title: obj.title1,
+                desc: obj.des,
+                link: obj.link,
+                imgUrl: obj.img,
+                type: '',
+                dataUrl: '',
+                success: function () {
+                    callback();
+                    //_hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareAppMessage']);
 
-            },
-            cancel: function () {
-            }
-        });
-        wx.onMenuShareTimeline({
-            title: '与刘嘉玲、娜扎一起领略ROSSO VALENTINO梦幻之作',
-            link: 'http://rossovalentino.samesamechina.com/event/',
-            imgUrl: window.location.origin+'/src/images/share.jpg',
-            success: function () {
-                //_hmt.push(['_trackEvent', 'btn-weixin', 'share', 'success']);
-            },
-            cancel: function () {
+                },
+                cancel: function () {
 
-            }
-        });
+                }
+            });
+            wx.onMenuShareTimeline({
+                title: obj.title1,
+                link: obj.link,
+                imgUrl: obj.img,
+                success: function () {
+                    callback();
+                    //_hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareTimeline']);
+                },
+                cancel: function () {
 
-    })
-})();
+                }
+            });
 
+
+        })
+    }
+
+    this.weixinshare = weixinshare;
+}).call(this);
+
+weixinshare({
+    title1: 'tt',
+    des: 'des',
+    link: 'http://guitarstrapvalentino.samesamechina.com',
+    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
+},function(){
+
+});
 ;(function(){
 
     var controller = function(){
@@ -826,13 +838,22 @@ $(document).ready(function(){
     controller.prototype.generate = function(){
         var self = this;
         //    api
-        //Api.make(self.objSelect,function(data){
-        //    if(data.status==1){
-        //        Common.gotoPin(2);
-        //    }
-        //});
-        self.doGenerateAni(self.objSelect.background);
-        Common.gotoPin(2);
+        Api.make(self.objSelect,function(data){
+            if(data.status==1){
+                var curid = data.id;
+                Common.gotoPin(2);
+                self.doGenerateAni(self.objSelect.background);
+                weixinshare({
+                    title1: 'tt',
+                    des: 'des',
+                    link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+curid,
+                    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
+                },function(){
+
+                });
+            }
+        });
+
 
 
 
