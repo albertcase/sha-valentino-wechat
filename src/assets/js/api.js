@@ -46,7 +46,8 @@ Api = {
         return callback({
             status:'1',
             msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
-            list : [{'nickname': 'bbb','background':1, 'color':1,'content':'AB'}, {'nickname': 'ccc','background':2, 'color':3,'content':'BC'}]
+            list:[]
+            //list : [{'nickname': 'bbb','background':1, 'color':1,'content':'AB'}, {'nickname': 'ccc','background':2, 'color':3,'content':'BC'}]
         })
 
 

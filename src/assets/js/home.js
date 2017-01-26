@@ -210,7 +210,6 @@
         //        Common.gotoPin(2);
         //    }
         //});
-        console.log(self.objSelect.background);
         self.doGenerateAni(self.objSelect.background);
         Common.gotoPin(2);
 

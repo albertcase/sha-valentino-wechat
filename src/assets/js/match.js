@@ -97,13 +97,16 @@
         //nobody match, show yourself pipe
         if(obj.list.length<1){
 
-            slideHtml = '<div class="show-animate">'+
-                '<img src="/src/dist/images/straps1/straps1_00000.jpg" alt=""/>'+
-                '</div>'+
-                '<div class="show-word">'+
-                '<span class="letter letter-a" id="first-letter-1"></span>'+
-                '<span class="letter letter-b" id="second-letter-2"></span>'+
-                '</div>';
+            //slideHtml = '<div class="show-animate">'+
+            //    '<img src="/src/dist/images/straps1/straps1_00000.jpg" alt=""/>'+
+            //    '</div>'+
+            //    '<div class="show-word">'+
+            //    '<span class="letter letter-a" id="first-letter-1"></span>'+
+            //    '<span class="letter letter-b" id="second-letter-2"></span>'+
+            //    '</div>';
+
+            Common.gotoPin(1);
+            self.doGenerateAni(obj.msg.background);
 
             return;
         };
@@ -179,6 +182,7 @@
         }
 
         $('.swiper-wrapper').append(slideHtml);
+        Common.gotoPin(0);
 
         var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
@@ -197,7 +201,64 @@
         })
 
     };
+    controller.prototype.appendLeft = function(str){
+        var self = this;
+        if (str.length == 5){
+            return str;
+        }else{
+            return self.appendLeft("0" + str);
+        }
 
+    };
+    controller.prototype.doGenerateAni = function (num) {
+        var self = this;
+        var i= 0;
+        //background-size
+        var doGenerateAni;
+        var increase = true;
+        var imgSrc='';
+        var doAni = new reqAnimate($('.show-animate img'),{
+            fps: 6,
+            totalFrames: 25,
+            time: 2,
+            processAnimation: function(){
+                //num is 1,2,3,in fact num is selected background
+                switch(num){
+                    case 1:
+                        imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
+                        break;
+                    case 2:
+                        imgSrc = '/src/dist/images/straps2/straps2__'+self.appendLeft(i)+'.jpg';
+                        break;
+                    case 3:
+                        imgSrc = '/src/dist/images/straps3/straps3__'+self.appendLeft(i)+'.jpg';
+                        break;
+                    default:
+                        imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
+                }
+                $('.show-animate img').attr('src',imgSrc);
+                if(increase){
+                    i = i+4;
+                    if(i>99){
+                        increase = false;
+                    }
+                }else{
+                    i=i-4;
+                    if(i<4){
+                        increase = true;
+                    }
+                };
+
+            },
+            doneAnimation: function(){
+
+                //show box and letter
+            }
+        });
+        doAni.start();
+
+
+    };
     //匹配度
     controller.prototype.matchFilter = function(a1,a2,b1,b2){
     //    包带相同，字体颜色相同，95-100随机
