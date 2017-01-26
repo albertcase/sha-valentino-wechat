@@ -146,25 +146,25 @@ img{
   }
   .btn-close{
     position: relative;
-    //top: 0;
-    //right: 0.1rem;
     z-index: 20;
-    @include size(0.8rem,0.8rem);
+    @include size(0.6rem,0.6rem);
+    margin-left: -0.3rem;
     text-indent: -999em;
-    background: #fff;
     border-radius: 100%;
-    margin: 0 auto;
+    //margin: 0 auto;
+    border: #fff 0.04rem solid;
     &:after,
     &:before {
       content: '';
       display: block;
-      width: 0.6rem;
+      width: 0.4rem;
       height: 0.04rem;
       top: 50%;
       left: 50%;
-      margin-left: -0.3rem;
+      margin-left: -0.2rem;
+      margin-top: -0.02rem;
       position: absolute;
-      background: #a38334;
+      background: #fff;
     }
     &:after {
       @include transform(rotate(45deg));

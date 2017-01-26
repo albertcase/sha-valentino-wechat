@@ -40,6 +40,20 @@ html,body{
   padding-top: 0.4rem;
   margin: 0 auto 0.4rem;
 }
+.btn{
+  text-align: center;
+  span{
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    background: #000;
+    color: #fff;
+    font-size: 0.32rem;
+    //&:active{
+    //  background: #350000;
+    //  color: #efc8c8;
+    //}
+  }
+}
 
 //verticle align
 .v-content{
@@ -455,7 +469,7 @@ html,body{
   .generate-show{
     position: relative;
     margin: 0 auto;
-    @include size(6.1rem,7.12rem);
+    @include size(6.4rem,7.36rem);
     overflow: hidden;
   }
   .show-bg{
@@ -478,10 +492,6 @@ html,body{
     @include size(1.9rem,0.53rem);
     margin: 0.3rem auto;
   }
-  .btn-goreservation{
-    background: #000;
-    color: #fff;
-  }
 }
 
 .swiper-container {
@@ -491,6 +501,7 @@ html,body{
 
 //for reservation page
 #form-contact{
+  width: 6.4rem;
   .input-box{
     position: relative;
     margin-bottom: 0.3rem;
@@ -503,7 +514,7 @@ html,body{
     font-size: 0.22rem;
     text-indent: -999em;
     @include size(0.4rem,0.4rem);
-    background: url('../../images/icon-forbidden.png') no-repeat;
+    background: url('../images/icon-forbidden.png') no-repeat;
     background-size: 100%;
     right: 0.2rem;
     bottom: 0.2rem;
@@ -526,7 +537,7 @@ html,body{
     //height: 1rem;
     width: 100%;
     box-sizing: border-box;
-    background: #fff url('../../images/polygon-down.png')  calc(100% - 10px) center no-repeat;
+    background: #fff url('../images/polygon-down.png')  calc(100% - 10px) center no-repeat;
     background-size: 0.13rem;
   }
   //.input-box-mobile input[type="tel"],
@@ -557,10 +568,10 @@ html,body{
   .input-checkbox{
     text-align: center;
     label{
-      color: #ffafb0;
+      color: #000;
     }
     a{
-      color: #ffafb0;
+      color: #000;
     }
   }
 }
@@ -616,12 +627,6 @@ html,body{
 
 #pin-pay-success{
   text-align: center;
-  color: #ffafb0;
-  background: url('../../images/bg-3.jpg') bottom no-repeat;
-  background-size: 100%;
-  .page-reservation &{
-    background: transparent;
-  }
   .v-content{
     top: 45%;
   }
@@ -633,33 +638,13 @@ html,body{
       letter-spacing: 0px;
     }
   }
-  .des{
-    font-size: 0.28rem;
-    margin-bottom: 1.3rem;
-  }
   .des2{
-    @include size(4.83rem,0.63rem);
+    @include size(2.5rem,0.65rem);
     margin:0 auto 1.3rem;
   }
-  .bags{
-    position: absolute;
-    bottom: 1.3rem;
-    left: 0;
-  }
-}
-.btn-go span{
-  letter-spacing: 0;
-  padding: 0;
-  a{
-    display: block;
-    color: #f95f60;
-    background: #6c0000;
-    padding: 0.2rem 0.5rem;
-    text-decoration: none;
-    &:active{
-      background: #350000;
-      color: #efc8c8;
-    }
+  .qrcode-3{
+    @include size(3.69rem,3.61rem);
+    margin:0 auto;
   }
 }
 
@@ -671,6 +656,37 @@ html,body{
     font-size: 0.28rem;
     margin-bottom: 0.6rem;
     letter-spacing: 0px;
-    @include size(5.75rem,auto);
+    @include size(4.73rem,auto);
+  }
+  .follow{
+    color: #000;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 0.24rem;
+    margin-top: 0.34rem;
+  }
+  .btn{
+    width: 2.6rem;
+    background: #9e7a59;
+    padding: 0.1rem;
+    font-size: 0.32rem;
+    color: #fff;
+    margin: 0.35rem auto 0;
+  }
+  .input-checkbox{
+    margin: 0.35rem auto;
+  }
+}
+
+//for show-qrcode
+#show-qrcode{
+  .qr{
+    @include size(3.7rem,7.96rem);
+    margin: 0 auto;
+  }
+  .btn-close{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
   }
 }

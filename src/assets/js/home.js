@@ -52,8 +52,11 @@
                 //
                 $('.preload').remove();
                 $('.container').addClass('fade');
+
+                Common.gotoPin(2);
                 //self.welcomePage();
                 self.bindEvent();
+                self.doGenerateAni(1);
             }
         });
 
@@ -130,6 +133,10 @@
 
         });
 
+        //$('.btn-goreservation').on('touchstart',function(){
+        //
+        //});
+
 
     };
     //validate the input is a-z or A-Z
@@ -137,6 +144,69 @@
         var self = this;
         var regAlphabet=/^[A-Za-z]$/;
         return regAlphabet.test(val);
+
+    };
+    //go generate part and do animation
+    //controller.prototype.doGenerateAni = function(){
+    //
+    //};
+    //位数不足 补0
+    controller.prototype.appendLeft = function(str){
+        var self = this;
+        if (str.length == 5){
+            return str;
+        }else{
+            return self.appendLeft("0" + str);
+        }
+
+    };
+    controller.prototype.doGenerateAni = function (num) {
+        var self = this;
+        var i= 0;
+        //background-size
+        var doGenerateAni;
+        var increase = true;
+        var imgSrc='';
+        var doAni = new reqAnimate($('.show-animate img'),{
+            fps: 6,
+            totalFrames: 25,
+            time: 2,
+            processAnimation: function(){
+                //num is 1,2,3,in fact num is selected background
+                switch(num){
+                    case 1:
+                        imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
+                        break;
+                    case 2:
+                        imgSrc = '/src/dist/images/straps1/straps2_'+self.appendLeft(i)+'.jpg';
+                        break;
+                    case 3:
+                        imgSrc = '/src/dist/images/straps1/straps3_'+self.appendLeft(i)+'.jpg';
+                        break;
+                    default:
+                        imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
+                }
+                $('.show-animate img').attr('src',imgSrc);
+                if(increase){
+                    i = i+4;
+                    if(i>99){
+                        increase = false;
+                    }
+                }else{
+                    i=i-4;
+                    if(i<4){
+                        increase = true;
+                    }
+                };
+
+            },
+            doneAnimation: function(){
+
+                //show box and letter
+            }
+        });
+        doAni.start();
+
 
     };
     //generate product,go share page
