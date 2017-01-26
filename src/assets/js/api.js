@@ -23,20 +23,31 @@ Api = {
 
     },
 
-    //保存用户订单信息
-    //sex  name  mobile email province city address
-    order:function(obj,callback){
-        Common.msgBox('loading...');
-        $.ajax({
-            url:'/api/order',
-            type:'POST',
-            dataType:'json',
-            data:obj,
-            success:function(data){
-                $('.ajaxpop').remove();
-                return callback(data);
-            }
-        });
+    //获取匹配列表
+    //id
+    matchlist:function(obj,callback){
+        //Common.msgBox('loading...');
+        //$.ajax({
+        //    url:'/api/order',
+        //    type:'POST',
+        //    dataType:'json',
+        //    data:obj,
+        //    success:function(data){
+        //        //data.msg : {'nickname': aaa,'background':1, 'color':1,'content':'AB'},
+        //        //data.list : [{'nickname': bbb,'background':1, 'color':1,'content':'AB'},
+        //        //    {'nickname': ccc,'background':2, 'color':3,'content':'BC'}]
+        //        $('.ajaxpop').remove();
+        //        return callback(data);
+        //    }
+        //});
+
+
+
+        return callback({
+            status:'1',
+            msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
+            list : [{'nickname': 'bbb','background':1, 'color':1,'content':'AB'}, {'nickname': 'ccc','background':2, 'color':3,'content':'BC'}]
+        })
 
 
     },
