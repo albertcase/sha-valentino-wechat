@@ -80,6 +80,9 @@
                     <img src="/src/dist/images/p2-text-1.png" alt=""/>
                 </div>
                 <div class="steps"></div>
+                <div class="go-prev">
+                	<img src="/src/dist/images/prev-step.png" alt=""/>
+                </div>
             </div>
             <div class="switch-menu">
                 <div class="step step-1 current">

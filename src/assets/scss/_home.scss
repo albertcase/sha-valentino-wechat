@@ -196,7 +196,7 @@ html,body{
   .show-word{
     @include transform(rotate(6deg));
     left: 38%;
-    top: 25%;
+    top: 32%;
   }
 }
 .switch-menu{
@@ -496,6 +496,14 @@ html,body{
     &.next{
       background-position: 0 124%;
     }
+  }
+  .go-prev{
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 0.2rem;
+    width: 1.06rem;
+    height: 0.26rem;
   }
 }
 

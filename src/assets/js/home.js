@@ -67,6 +67,16 @@
         var self = this;
         $('.switch-menu .step-1').removeClass('current').siblings('.step').addClass('current');
         $('#select-page .show-word').addClass('fadein');
+        $('#select-page .steps').addClass('next');
+        $('.go-prev').addClass('show');
+    };
+    //go prev step:custom style
+    controller.prototype.goCustomStyle = function(){
+        var self = this;
+        $('.switch-menu .step-1').addClass('current').siblings('.step').removeClass('current');
+        $('#select-page .show-word').removeClass('fadein');
+        $('#select-page .steps').removeClass('next');
+        $('.go-prev').removeClass('show');
     };
     //bind event
     controller.prototype.bindEvent = function(){
@@ -102,12 +112,24 @@
             if(nextStep){
                 nextStep = false;
                 self.goCustomLetter();
-            }else{
-                var customAlphabet = $('.input-custom').val()?$('.input-custom').val():'ab';
-                self.objSelect.content = customAlphabet;
-                self.generate();
+                return;
+            };
+
+            if(!($('.input-custom').val().length==2 && self.validateAlphabet($('.input-custom').val().substring(0,1)) && self.validateAlphabet($('.input-custom').val().substring(1,2)))){
+                Common.alertBox.add('请输入两个字母');
+                return;
             }
 
+            var customAlphabet = $('.input-custom').val()?$('.input-custom').val():'ab';
+            self.objSelect.content = customAlphabet;
+            self.generate();
+
+        });
+
+    //    go prev step
+        $('.go-prev').on('touchstart',function(){
+            nextStep = true;
+            self.goCustomStyle();
         });
 
     //    input the alphabet
@@ -118,10 +140,10 @@
             var secondLetter = curVal.substring(1,2);
             if(self.validateAlphabet(firstLetter)){
                 $('#select-page .sw-1').attr('class','sw-1 letter letter-'+firstLetter.toLowerCase());
-            };
+            }
             if(self.validateAlphabet(secondLetter)){
                 $('#select-page .sw-3').attr('class','sw-3 letter letter-'+secondLetter.toLowerCase());
-            };
+            }
 
         });
 
