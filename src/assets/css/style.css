@@ -1628,8 +1628,8 @@ html, body {
 
 .pin-result .p3-t1 {
   padding-top: 0.3rem;
-  width: 3.82rem;
-  height: 1.51rem;
+  width: 5.02rem;
+  height: 1.21rem;
   margin: 0 auto 0.3rem;
 }
 .pin-result .guide-share {
@@ -1661,9 +1661,25 @@ html, body {
   z-index: 3;
 }
 .pin-result .p3-t2 {
-  width: 1.9rem;
-  height: 0.53rem;
+  width: 3.61rem;
+  height: 0.59rem;
   margin: 0.3rem auto;
+}
+.pin-result .btn {
+  width: 2.6rem;
+  background: #9e7a59;
+  padding: 0.1rem;
+  font-size: 0.32rem;
+  color: #fff;
+  margin: 0.35rem auto 0;
+}
+.pin-result .btn a {
+  color: #fff;
+  display: block;
+  text-indent: -999em;
+  background: url("../images/text-btn.png") no-repeat;
+  background-size: 1.58rem;
+  background-position: 0.6rem 0.08rem;
 }
 
 #form-contact {

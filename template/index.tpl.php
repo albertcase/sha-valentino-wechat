@@ -108,11 +108,8 @@
             </div>
         </div>
         <div class="pin pin-3 pin-result" id="doneshare-page">
-            <!--<div class="guide-share">-->
-                <!--<img src="/src/dist/images/guide-share.png" alt=""/>-->
-            <!--</div>-->
             <div class="p3-t1">
-                <img src="/src/dist/images/p3-t1.png" alt=""/>
+                <img src="/src/dist/images/text-custom-finish.png" alt=""/>
             </div>
             <div class="generate-show">
                 <div class="show-animate">
@@ -125,7 +122,7 @@
                 </div>
             </div>
             <div class="p3-t2">
-                <img src="/src/dist/images/p3-t2.png" alt=""/>
+                <img src="/src/dist/images/text-p3-t1.png" alt=""/>
             </div>
             <div class="btn btn-goreservation">
                 <a href="reservation.html">开始预约</a>
