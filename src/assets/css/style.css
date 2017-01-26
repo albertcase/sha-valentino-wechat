@@ -1283,8 +1283,8 @@ html, body {
   -ms-transform: rotate(6deg);
   -o-transform: rotate(6deg);
   transform: rotate(6deg);
-  left: 38%;
-  top: 32%;
+  left: 36%;
+  top: 20%;
 }
 
 .switch-menu {
@@ -1432,11 +1432,11 @@ html, body {
 .switch-content .show-img {
   width: 120%;
   height: 100%;
-  -webkit-transform: translate(16%, -45%);
-  -moz-transform: translate(16%, -45%);
-  -ms-transform: translate(16%, -45%);
-  -o-transform: translate(16%, -45%);
-  transform: translate(16%, -45%);
+  -webkit-transform: translate(16%, -25%);
+  -moz-transform: translate(16%, -25%);
+  -ms-transform: translate(16%, -25%);
+  -o-transform: translate(16%, -25%);
+  transform: translate(16%, -25%);
 }
 
 .show-word {
