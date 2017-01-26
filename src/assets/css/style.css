@@ -1259,6 +1259,15 @@ html, body {
 #select-page {
   background: #e5dacf;
 }
+#select-page .show-word {
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  -ms-transform: rotate(6deg);
+  -o-transform: rotate(6deg);
+  transform: rotate(6deg);
+  left: 38%;
+  top: 25%;
+}
 
 .switch-menu {
   position: absolute;
@@ -1289,6 +1298,14 @@ html, body {
 }
 .switch-menu .step-1 {
   padding-top: 0.4rem;
+}
+.switch-menu .step-1 .control {
+  position: absolute;
+  top: 0.96rem;
+  right: 0.4rem;
+  background: #9e7a59;
+  color: #fff;
+  padding: 0.1rem 0.2rem;
 }
 .switch-menu .lists {
   text-align: center;
@@ -1810,6 +1827,10 @@ html, body {
   font-size: 0.32rem;
   color: #fff;
   margin: 0.35rem auto 0;
+}
+#match-page .btn a {
+  text-decoration: none;
+  color: #fff;
 }
 #match-page .p3-t2 {
   width: 3.11rem;

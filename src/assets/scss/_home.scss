@@ -187,6 +187,11 @@ html,body{
 //for select page
 #select-page{
   background: #e5dacf;
+  .show-word{
+    @include transform(rotate(6deg));
+    left: 38%;
+    top: 25%;
+  }
 }
 .switch-menu{
   position: absolute;
@@ -210,6 +215,14 @@ html,body{
   }
   .step-1{
     padding-top: 0.4rem;
+    .control{
+      position: absolute;
+      top: 0.96rem;
+      right: 0.4rem;
+      background: #9e7a59;
+      color: #fff;
+      padding: 0.1rem 0.2rem;
+    }
   }
   .lists{
     text-align: center;

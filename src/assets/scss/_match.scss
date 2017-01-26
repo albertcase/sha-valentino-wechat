@@ -7,6 +7,10 @@
     font-size: 0.32rem;
     color: #fff;
     margin: 0.35rem auto 0;
+    a{
+      text-decoration: none;
+      color: #fff;
+    }
   }
   .p3-t2{
     @include size(3.11rem,0.59rem);
