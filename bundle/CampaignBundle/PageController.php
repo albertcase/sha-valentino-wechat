@@ -20,14 +20,15 @@ class PageController extends Controller {
 		$id = $request->query->get('id');
 		$databaseAPI = new \Lib\DatabaseAPI();
 		$product = $databaseAPI->loadMakeById($id);
-
+		$ismy = 1;
 		//绑定
 		if ($user->uid != $product->uid) {
+			$ismy = 0;
 			$databaseAPI->bandShare($user->uid, $product->uid);
 			$databaseAPI->bandShare($product->uid, $user->uid);
 		}
 		
-		$this->render('index', array('product' => $product));
+		$this->render('match', array('ismy' => $ismy));
 	}
 
 	public function clearCookieAction() {
