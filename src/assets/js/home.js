@@ -53,7 +53,7 @@
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(1);
+                Common.gotoPin(0);
                 self.bindEvent();
                 //self.doGenerateAni(1);
             }
@@ -242,6 +242,17 @@
                 });
             }
         });
+
+        //Common.gotoPin(2);
+        //self.doGenerateAni(self.objSelect.background);
+        //weixinshare({
+        //    title1: 'tt',
+        //    des: 'des',
+        //    link: 'http://guitarstrapvalentino.samesamechina.com/match?id=1',
+        //    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
+        //},function(){
+        //
+        //});
 
 
 

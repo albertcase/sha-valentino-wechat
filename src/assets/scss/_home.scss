@@ -195,8 +195,8 @@ html,body{
   background: #e5dacf;
   .show-word{
     @include transform(rotate(6deg));
-    left: 38%;
-    top: 32%;
+    left: 36%;
+    top: 20%;
   }
 }
 .switch-menu{
@@ -329,7 +329,7 @@ html,body{
   z-index: 1;
   .show-img{
     @include size(120%,100%);
-    @include transform(translate(16%,-45%));
+    @include transform(translate(16%,-25%));
   }
 
 }
@@ -511,7 +511,7 @@ html,body{
 .pin-result{
   .p3-t1{
     padding-top: 0.3rem;
-    @include size(3.82rem,1.51rem);
+    @include size(5.02rem,1.21rem);
     margin: 0 auto 0.3rem;
   }
   .guide-share{
@@ -543,8 +543,24 @@ html,body{
     z-index: 3;
   }
   .p3-t2{
-    @include size(1.9rem,0.53rem);
+    @include size(3.61rem,0.59rem);
     margin: 0.3rem auto;
+  }
+  .btn{
+    width: 2.6rem;
+    background: #9e7a59;
+    padding: 0.1rem;
+    font-size: 0.32rem;
+    color: #fff;
+    margin: 0.35rem auto 0;
+    a{
+      color: #fff;
+      display: block;
+      text-indent: -999em;
+      background: url("../images/text-btn.png") no-repeat;
+      background-size: 1.58rem;
+      background-position: 0.6rem 0.08rem;
+    }
   }
 }
 
