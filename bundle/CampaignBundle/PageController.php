@@ -31,6 +31,16 @@ class PageController extends Controller {
 		$this->render('match', array('ismy' => $ismy));
 	}
 
+	public function loginAction() {
+		$user = new \stdClass();
+		$user->uid = 2;
+		$user->openid = '123';
+		$user->nickname = 'vincen';
+		$user->headimgurl = '111';
+		setcookie('_user', json_encode($user), time()+3600*24*30, '/');
+
+	}
+
 	public function clearCookieAction() {
 		setcookie('_user', json_encode($user), time(), '/');
 		$this->statusPrint('success');
