@@ -27,7 +27,7 @@ define("REDIS_HOST", '127.0.0.1');
 define("REDIS_PORT", '6379');
 
 //Database config info
-define("DBHOST", '127.0.0.1');
+define("DBHOST", '10.10.153.132');
 define("DBUSER", 'root');
 define("DBPASS", '1qazxsw2');
 define("DBNAME", 'valentino_valentine');
