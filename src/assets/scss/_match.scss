@@ -86,16 +86,24 @@
       display: block;
       margin-bottom: 0.1rem;
     }
-    .from,.and{
+    .fromlabel,.andlabel{
       text-indent: -999em;
       background: url("../images/m-2.png") no-repeat;
       background-size: 3.11rem;
       background-position: -45% 0;
     }
+    .fromlabel{
+      background-position: -50% 29%;
+    }
+    .andlabel{
+      background-position: -57% 60%;
+    }
     .name-me,.name-you{
       text-align: center;
       font-size: 0.32rem;
+      color: #484848;
     }
+
   }
   .show-word{
     top: 50%;

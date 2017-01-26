@@ -171,9 +171,9 @@
                 '<span class="num">'+self.matchFilter(obj.msg.background,obj.list[i].background,obj.msg.color,obj.list[i].color)+'<sup>%</sup></span>'+
                 '</div>'+
                 '<div class="fromto">'+
-                '<span class="from">from</span>'+
+                '<span class="fromlabel">from</span>'+
                 '<span class="name-me">'+obj.msg.nickname+'</span>'+
-                '<span class="and">and</span>'+
+                '<span class="andlabel">and</span>'+
                 '<span class="name-you">'+obj.list[i].nickname+'</span>'+
                 '</div></div></div></div>';
         }

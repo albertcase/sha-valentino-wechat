@@ -1,6 +1,6 @@
 /*All the api collection*/
 Api = {
-    //是否还有库存
+    //生成自己的结果
     make:function(obj,callback){
         Common.msgBox('loading...');
         $.ajax({
@@ -52,7 +52,7 @@ Api = {
 
     },
     //预约到店
-    //sex  name  mobile  province city store month day time
+    //sex name mobile email store
     reservation:function(obj,callback){
         Common.msgBox('loading...');
         $.ajax({
