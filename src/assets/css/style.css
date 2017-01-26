@@ -1142,8 +1142,8 @@ html, body {
   left: 0;
 }
 #landing-page .p1-t1 {
-  width: 4.65rem;
-  height: 1.97rem;
+  width: 4.02rem;
+  height: 2.03rem;
   margin: 0 auto 0.9rem;
 }
 #landing-page .content {
@@ -1152,6 +1152,8 @@ html, body {
 }
 #landing-page .btn-start-custom {
   text-align: center;
+  width: 1rem;
+  margin: 0 auto;
 }
 #landing-page .btn-start-custom .text {
   width: 0.95rem;
@@ -1162,18 +1164,17 @@ html, body {
   position: relative;
   display: block;
   margin: 0.7rem auto 0;
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.48rem;
+  height: 0.48rem;
 }
 #landing-page .btn-start-custom .icon .circle {
   width: 0.4rem;
   height: 0.4rem;
-  border: #000 0.03rem solid;
+  border: #9e7a59 0.04rem solid;
   border-radius: 100%;
-  -webkit-animation: circle 2s infinite;
-  -moz-animation: circle 2s infinite;
-  animation: circle 2s infinite;
-  box-sizing: border-box;
+  -webkit-animation: circle 1.5s infinite;
+  -moz-animation: circle 1.5s infinite;
+  animation: circle 1.5s infinite;
 }
 #landing-page .btn-start-custom .icon .dot {
   position: absolute;
@@ -1183,66 +1184,83 @@ html, body {
   height: 0.16rem;
   margin-top: -0.08rem;
   margin-left: -0.08rem;
-  background: #000;
+  background: #9e7a59;
   border-radius: 100%;
 }
 @-webkit-keyframes circle {
   0% {
     opacity: 1;
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(0.4);
   }
-  50% {
+  33% {
+    opacity: 0.8;
+    -webkit-transform: scale(0.8);
+  }
+  66% {
     opacity: 0;
     -webkit-transform: scale(1.2);
   }
   100% {
     opacity: 0;
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(0.4);
   }
 }
 @-moz-keyframes circle {
   0% {
     opacity: 1;
-    -moz-transform: scale(1);
+    -moz-transform: scale(0.4);
   }
-  50% {
+  33% {
+    opacity: 0.8;
+    -moz-transform: scale(0.8);
+  }
+  66% {
     opacity: 0;
     -moz-transform: scale(1.2);
   }
   100% {
     opacity: 0;
-    -moz-transform: scale(1);
+    -moz-transform: scale(0.4);
   }
 }
 @-o-keyframes circle {
   0% {
     opacity: 1;
-    -o-transform: scale(1);
+    -o-transform: scale(0.4);
   }
-  50% {
+  33% {
+    opacity: 0.8;
+    -o-transform: scale(0.8);
+  }
+  66% {
     opacity: 0;
     -o-transform: scale(1.2);
   }
   100% {
     opacity: 0;
-    -o-transform: scale(1);
+    -o-transform: scale(0.4);
   }
 }
 @keyframes circle {
   0% {
     opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
   }
-  50% {
+  33% {
+    opacity: 0.8;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  66% {
     opacity: 0;
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
   }
   100% {
     opacity: 0;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
   }
 }
 #landing-page .video-block {
