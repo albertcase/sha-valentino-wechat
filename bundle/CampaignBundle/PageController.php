@@ -38,6 +38,7 @@ class PageController extends Controller {
 		$user->nickname = 'vincen';
 		$user->headimgurl = '111';
 		setcookie('_user', json_encode($user), time()+3600*24*30, '/');
+		exit;
 
 	}
 
