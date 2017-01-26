@@ -1,0 +1,25 @@
+//for match page
+.swiper-container {
+  width: 100%;
+  //height: 7.12rem;
+}
+.generate-show{
+  background: #f4f4f6;
+  color: #000;
+  border: #fff 5px solid;
+  .item-match{
+    position: absolute;
+    top: 0;
+    width: 2.25rem;
+  }
+  .item-match-me{
+    left: 0;
+  }
+  .item-match-you{
+    right: 0;
+  }
+  .match-des{
+    width: 1.9rem;
+    margin: 0 auto;
+  }
+}

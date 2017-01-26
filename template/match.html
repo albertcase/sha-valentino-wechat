@@ -8,8 +8,9 @@
     <meta name="x5-fullscreen" content="true">
     <meta name="full-screen" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" type="text/css" href="/src/dist/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/src/dist/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="/src/assets/css/match.css" />
+    <link rel="stylesheet" type="text/css" href="/src/dist/css/style.css" />
     <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/80c73ea5-de82-4aff-98ff-fd79aad6041d/wechat"></script>
     <script src="/src/assets/js/lib/zepto.min.js"></script>
     <script src="/src/assets/js/lib/swiper.min.js"></script>
@@ -33,27 +34,53 @@
             <div class="guide-share">
                 <img src="/src/dist/images/guide-share.png" alt=""/>
             </div>
-            <div class="match-name">
-                leo 和 我
-            </div>
             <!-- Slider main container -->
-            <div class="swiper-container">
+            <div class="swiper-container" id="match-list    ">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
+                        <div class="nickname">
+                            <span class="name-you">leo</span>和
+                            <span class="name-me">我</span>
+                        </div>
                         <div class="generate-show">
-                            <div class="show-bg">
-                                <img src="/src/dist/images/done-bg-1.jpg" alt=""/>
+                            <div class="item-match item-match-me">
+                                <div class="pipe">
+                                    <img src="/src/dist/images/single-pipe-1.png" alt=""/>
+                                </div>
+                                <!--whiteandblack-->
+                                <div class="show-word">
+                                    <span class="letter letter-a"></span>
+                                    <span class="letter letter-b"></span>
+                                </div>
                             </div>
-                            <div class="show-pipe">
-                                <img src="/src/dist/images/single-pipe-1.png" alt=""/>
+                            <div class="item-match item-match-you">
+                                <div class="pipe">
+                                    <img src="/src/dist/images/single-pipe-2.png" alt=""/>
+                                </div>
+                                <!--whiteandblack-->
+                                <div class="show-word">
+                                    <span class="letter letter-a"></span>
+                                    <span class="letter letter-b"></span>
+                                </div>
                             </div>
-                            <!--whiteandblack-->
-                            <div class="show-word">
-                                <span class="letter letter-a" id="first-letter-1"></span>
-                                <span class="letter letter-b" id="second-letter-2"></span>
+                            <div class="match-des">
+                                <div class="title">
+                                    <img src="/src/dist/images/m-1.png" alt=""/>
+                                </div>
+                                <div class="match-percent">
+                                    <label>相配指数</label>
+                                    <span class="num">98<sup>%</sup></span>
+                                </div>
+                                <div class="fromto">
+                                    <span class="from">from</span>
+                                    <span class="name-me">demi</span>
+                                    <span class="and">and</span>
+                                    <span class="name-you">Leo</span>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

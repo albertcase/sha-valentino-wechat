@@ -1,0 +1,24 @@
+.swiper-container {
+  width: 100%;
+}
+
+.generate-show {
+  background: #f4f4f6;
+  color: #000;
+  border: #fff 5px solid;
+}
+.generate-show .item-match {
+  position: absolute;
+  top: 0;
+  width: 2.25rem;
+}
+.generate-show .item-match-me {
+  left: 0;
+}
+.generate-show .item-match-you {
+  right: 0;
+}
+.generate-show .match-des {
+  width: 1.9rem;
+  margin: 0 auto;
+}
