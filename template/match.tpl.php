@@ -12,13 +12,7 @@
     <!--<link rel="stylesheet" type="text/css" href="/src/assets/css/match.css" />-->
     <link rel="stylesheet" type="text/css" href="/src/dist/css/style.css" />
     <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/80c73ea5-de82-4aff-98ff-fd79aad6041d/wechat"></script>
-    <script src="/src/assets/js/lib/zepto.min.js"></script>
-    <script src="/src/assets/js/lib/swiper.min.js"></script>
-    <script src="/src/assets/js/lib/pre-loader.js"></script>
-    <script src="/src/assets/js/rem.js"></script>
-    <script src="/src/assets/js/common.js"></script>
-    <script src="/src/assets/js/api.js"></script>
-    <script src="/src/assets/js/match.js"></script>
+    <script src="/src/dist/js/all_match.min.js"></script>
 </head>
 <body class="page-home">
 <div id="orientLayer" class="mod-orient-layer">
