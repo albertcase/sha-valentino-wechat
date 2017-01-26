@@ -60,7 +60,10 @@
                 Api.matchlist({id:1},function(data){
                     console.log(data);
                     self.match(data);
-                })
+                });
+
+            //    test
+            //    console.log(self.matchFilter(1,1,2,2));
 
             }
         });
@@ -84,6 +87,7 @@
 
     //match all the pipe
     controller.prototype.match = function(obj){
+        var self = this;
         if(!(obj.status == 1)){
             alert(obj.msg);
             return;
@@ -164,7 +168,7 @@
                 '</div>'+
                 '<div class="match-percent">'+
                 '<label>相配指数</label>'+
-                '<span class="num">98<sup>%</sup></span>'+
+                '<span class="num">'+self.matchFilter(obj.msg.background,obj.list[i].background,obj.msg.color,obj.list[i].color)+'<sup>%</sup></span>'+
                 '</div>'+
                 '<div class="fromto">'+
                 '<span class="from">from</span>'+
@@ -191,6 +195,33 @@
             // And if we need scrollbar
             //scrollbar: '.swiper-scrollbar',
         })
+
+    };
+
+    //匹配度
+    controller.prototype.matchFilter = function(a1,a2,b1,b2){
+    //    包带相同，字体颜色相同，95-100随机
+    //    包带相同，字体颜色不同，90-94随机
+    //    包带不同，字体颜色相同，85-89随机
+    //    包带不同，字体颜色不同，80-84随机
+    //    a is 包带，b is 字体颜色
+        var matchNum=80;
+        if(a1==a2){
+            if(b1==b2){
+                matchNum = Math.random()*5+95;
+            }else{
+                matchNum = Math.random()*5+90;
+            }
+        }else{
+            if(b1==b2){
+                matchNum = Math.random()*5+85;
+            }else{
+                matchNum = Math.random()*5+80;
+            }
+        };
+        return Math.round(matchNum);
+
+
 
     };
     //bind event
