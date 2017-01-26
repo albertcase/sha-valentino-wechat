@@ -646,11 +646,11 @@ Api = {
             }
         });
 
-
-
+        
         //return callback({
         //    status:'1',
-        //    msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
+        //    //msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
+        //    msg : null,
         //    //list:[]
         //    list : [{'nickname': 'bbb','background':1, 'color':1,'content':'AB'}, {'nickname': 'ccc','background':2, 'color':3,'content':'BC'}]
         //})
@@ -796,13 +796,6 @@ Api = {
 
     };
 
-    //welcome page
-    controller.prototype.welcomePage = function(){
-        var self = this;
-
-
-    };
-
     //go next step:custom letter
     controller.prototype.goCustomLetter = function(){
         var self = this;
@@ -819,6 +812,11 @@ Api = {
         };
 
         var slideHtml = '';
+        //not custom,go custom page
+        if(!obj.msg){
+            window.location.href = window.location.origin;
+        }
+
         //nobody match, show yourself pipe
         if(obj.list.length<1){
 
@@ -837,39 +835,6 @@ Api = {
         };
 
     //    has match, do the list
-    //    slideHtml = '<div class="nickname"><span class="name-you">leo</span>和<span class="name-me">我</span></div>'+
-    //        '<div class="generate-show">'+
-    //    '<div class="item-match item-match-me"> <div class="pipe"> <img src="/src/dist/images/single-pipe-1.png" alt=""/> </div>'+
-    //    '<div class="show-word">'+
-    //    '<span class="sw-1 letter letter-a"></span>'+
-    //    '<span class="sw-2 dot"></span>'+
-    //    '<span class="sw-3 letter letter-b"></span>'+
-    //    '<span class="sw-4 dot"></span>'+
-    //    '</div>'+
-    //    '</div>'+
-    //    '<div class="item-match item-match-you">'+
-    //    '<div class="pipe">'+
-    //    '<img src="/src/dist/images/single-pipe-2.png" alt=""/>'+
-    //    '</div>'+
-    //    '<div class="show-word">'+
-    //    '<span class="letter letter-a"></span>'+
-    //    '<span class="letter letter-b"></span>'+
-    //    '</div>'+
-    //    '</div>'+
-    //    '<div class="match-des">'+
-    //    '<div class="title">'+
-    //    '<img src="/src/dist/images/m-1.png" alt=""/>'+
-    //    '</div>'+
-    //    '<div class="match-percent">'+
-    //    '<label>相配指数</label>'+
-    //    '<span class="num">98<sup>%</sup></span>'+
-    //    '</div>'+
-    //    '<div class="fromto">'+
-    //    '<span class="from">from</span>'+
-    //        '<span class="name-me">demi</span>'+
-    //        '<span class="and">and</span>'+
-    //    '<span class="name-you">Leo</span>'+
-    //    '</div></div></div>';
         for(var i=0;i<obj.list.length;i++){
             slideHtml = slideHtml+'<div class="swiper-slide"><div class="nickname"><span class="name-you">'+obj.list[i].nickname+'</span>和<span class="name-me">我</span></div>'+
                 '<div class="generate-show">'+
