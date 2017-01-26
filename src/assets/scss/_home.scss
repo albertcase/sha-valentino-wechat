@@ -122,7 +122,7 @@ html,body{
 
   }
   .p1-t1{
-    @include size(4.65rem,1.97rem);
+    @include size(4.02rem,2.03rem);
     margin: 0 auto 0.9rem;
   }
   .content{
@@ -131,6 +131,8 @@ html,body{
   }
   .btn-start-custom{
     text-align: center;
+    width: 1rem;
+    margin: 0 auto;
     .text{
       @include size(0.95rem,0.23rem);
       margin: 0.2rem auto 0;
@@ -139,13 +141,12 @@ html,body{
       position: relative;
       display: block;
       margin: 0.7rem auto 0;
-      @include size(0.4rem,0.4rem);
+      @include size(0.48rem,0.48rem);
       .circle{
         @include size(0.4rem,0.4rem);
-        border: #000 0.03rem solid;
+        border: #9e7a59 0.04rem solid;
         border-radius: 100%;
-        @include animation(circle 2s infinite);
-        box-sizing: border-box;
+        @include animation(circle 1.5s infinite);
       }
       .dot{
         position: absolute;
@@ -154,21 +155,26 @@ html,body{
         @include size(0.16rem,0.16rem);
         margin-top: -0.08rem;
         margin-left: -0.08rem;
-        background: #000;
+        background: #9e7a59;
         border-radius: 100%;
+        //@include animation(circle 1s infinite);
       }
       @include keyframes(circle){
         0%{
           opacity: 1;
-          @include transform(scale(1));
+          @include transform(scale(0.4));
         }
-        50%{
+        33%{
+          opacity: 0.8;
+          @include transform(scale(0.8));
+        }
+        66%{
           opacity: 0;
           @include transform(scale(1.2));
         }
         100%{
           opacity: 0;
-          @include transform(scale(1));
+          @include transform(scale(0.4));
         }
       }
     }
@@ -190,7 +196,7 @@ html,body{
   .show-word{
     @include transform(rotate(6deg));
     left: 38%;
-    top: 25%;
+    top: 32%;
   }
 }
 .switch-menu{
@@ -202,10 +208,18 @@ html,body{
   @include size(100%,2.1rem);
   .tips{
     text-align: center;
+    width: 1.55rem;
+    height: 0.3rem;
+    margin: 0 auto 0.2rem;
+    background: url('../images/text-step-tip.png') no-repeat;
+    background-size: 1.55rem;
+    background-position: 0 100%;
+    text-indent: -999em;
   }
   .step{
     display: none;
     position: absolute;
+    padding-top: 0.4rem;
     top: 50%;
     @include size(100%,auto);
     @include transform(translateY(-50%));
@@ -213,16 +227,20 @@ html,body{
       display: block;
     }
   }
-  .step-1{
-    padding-top: 0.4rem;
-    .control{
-      position: absolute;
-      top: 0.96rem;
-      right: 0.4rem;
-      background: #9e7a59;
-      color: #fff;
-      padding: 0.1rem 0.2rem;
-    }
+  .control{
+    position: absolute;
+    top: 0.9rem;
+    right: 0.5rem;
+    width: 1rem;
+    height: .6rem;
+    background-color: #9e7a59;
+    color: #fff;
+    padding: 0 .2rem;
+    text-indent: -999em;
+    background-image: url(../images/text-btn.png);
+    background-size: 1.58rem;
+    background-repeat: no-repeat;
+    background-position: 0.4rem 111%;
   }
   .lists{
     text-align: center;
@@ -233,7 +251,7 @@ html,body{
       background: url('../images/list-straps.png') no-repeat;
       background-size: auto 100%;
       border-radius: 100%;
-      margin: 0.2rem;
+      margin: 0 0.2rem;
       box-sizing: border-box;
       border: #d0c4b8 1px solid;
       &.active{
@@ -292,15 +310,6 @@ html,body{
         background-position: 100% 0;
       }
     }
-    .btn-finish{
-      display: inline-block;
-      background: #000;
-      color: #fff;
-      height: 0.7rem;
-      line-height: 0.7rem;
-      box-sizing: border-box;
-      padding: 0 0.3rem;
-    }
     .input-custom{
       font-size: 0.28rem;
       float: left;
@@ -320,8 +329,7 @@ html,body{
   z-index: 1;
   .show-img{
     @include size(120%,100%);
-    //transform: translate(20%,-20%);
-    @include transform(translate(16%,-20%));
+    @include transform(translate(16%,-45%));
   }
 
 }
@@ -472,25 +480,30 @@ html,body{
   z-index: 2;
   @include size(100%,100%);
   .p2-t1{
-    @include size(2.31rem,1.23rem);
+    @include size(1.9rem,1.23rem);
     margin-top: 0.75rem;
-    margin-left: 0.25rem;
+    margin-left: 0.3rem;
   }
   .steps{
-    position: absolute;
-    top: 40%;
-    width: 100%;
+    position: relative;
+    margin-left: 0.3rem;
+    margin-top: 0.5rem;
+    text-indent: -999em;
+    width: 1.48rem;
+    height: 1.7rem;
+    background: url('../images/text-step.png') no-repeat;
+    background-size: 100%;
+    &.next{
+      background-position: 0 124%;
+    }
   }
-  .control{
+  .go-prev{
+    display: none;
     position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-  }
-  .num{
-    position: absolute;
-    left: 0;
-    top: 0;
+    top: 1rem;
+    right: 0.2rem;
+    width: 1.06rem;
+    height: 0.26rem;
   }
 }
 

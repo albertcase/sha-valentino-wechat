@@ -157,179 +157,6 @@ var Zepto=function(){function L(t){return null==t?String(t):j[S.call(t)]||"objec
 	}
 }).call(this);
 
-// http://www.makeitgo.ws/articles/animationframe/
-;(function() {
-    var lastFrame, method, now, queue, requestAnimationFrame, timer, vendor, _i, _len, _ref, _ref1;
-    method = 'native';
-    now = Date.now || function() {
-        return new Date().getTime();
-    };
-    requestAnimationFrame = window.requestAnimationFrame;
-    _ref = ['webkit', 'moz', 'o', 'ms'];
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        vendor = _ref[_i];
-        if (requestAnimationFrame == null) {
-            requestAnimationFrame = window[vendor + 'RequestAnimationFrame'];
-        }
-    }
-    if (requestAnimationFrame == null) {
-        method = 'timer';
-        lastFrame = 0;
-        queue = timer = null;
-        requestAnimationFrame = function(callback) {
-            var fire, nextFrame, time;
-            if (queue != null) {
-                queue.push(callback);
-                return;
-            }
-            time = now();
-            nextFrame = Math.max(0, 16.66 - (time - lastFrame));
-            queue = [callback];
-            lastFrame = time + nextFrame;
-            fire = function() {
-                var cb, q, _j, _len1;
-                q = queue;
-                queue = null;
-                for (_j = 0, _len1 = q.length; _j < _len1; _j++) {
-                    cb = q[_j];
-                    cb(lastFrame);
-                }
-            };
-            timer = setTimeout(fire, nextFrame);
-        };
-    }
-    requestAnimationFrame(function(time) {
-        var offset, _ref1;
-        if (time < 1e12) {
-            if (((_ref1 = window.performance) != null ? _ref1.now : void 0) != null) {
-                requestAnimationFrame.now = function() {
-                    return window.performance.now();
-                };
-                requestAnimationFrame.method = 'native-highres';
-            } else {
-                offset = now() - time;
-                requestAnimationFrame.now = function() {
-                    return now() - offset;
-                };
-                requestAnimationFrame.method = 'native-highres-noperf';
-            }
-        } else {
-            requestAnimationFrame.now = now;
-        }
-    });
-    requestAnimationFrame.now = ((_ref1 = window.performance) != null ? _ref1.now : void 0) != null ? (function() {
-        return window.performance.now();
-    }) : now;
-    requestAnimationFrame.method = method;
-    window.requestAnimationFrame = requestAnimationFrame;
-
-    if (!window.cancelAnimationFrame)
-        window.cancelAnimationFrame = function(timer) {
-            clearTimeout(timer);
-        };
-})();
-
-
-/**
- * Created by Eric Lee on 8/24/14.
- * Modified by Eric Lee on 6/17/16.
- */
-;(function(){
-    'use strict';
-
-    var reqAnimate = function(element, options) {
-        this.options = {
-            fps: 30,
-            totalFrames: 16,
-            time: Infinity,
-            processAnimation: function(){},
-            doneAnimation: function(){}
-        };
-        this.element = element;
-        this.currentFrame = 0;
-        this.lastFrame = 0;
-        this.frameNum = 0;
-        this.startTime = window.requestAnimationFrame.now();
-        //requestId = null;
-        this.timeIndex = 1;
-
-        options && typeof options == 'object' && this.setOptions(options);
-
-        // this.options.fps=6;
-
-    };
-    var requestId = null;
-    var canceled = 0;
-
-    reqAnimate.prototype.start = function() {
-        canceled = 0;
-        this.loop(this.startTime);
-    };
-
-    reqAnimate.prototype.cancel = function() {
-        if (requestId) {
-            window.cancelAnimationFrame(requestId);
-            requestId = null;
-            canceled = 1;
-        }
-    };
-
-    reqAnimate.prototype.setOptions = function(options){
-        // shallow copy
-        var o = this.options,
-            key;
-
-        for (key in options) options.hasOwnProperty(key) && (o[key] = options[key]);
-
-        return this;
-    };
-
-    reqAnimate.prototype.loop = function(time) {
-        var o = this.options;
-        if (!canceled) {
-            this.updateFrame(time);
-            requestId = window.requestAnimationFrame(this.loop.bind(this));
-
-            if ((this.frameNum + 1 == o.totalFrames) && o.time !== Infinity && this.timeIndex >= o.time) {
-                this.cancel();
-                o.doneAnimation && o.doneAnimation.call(this, this.element);
-            }
-        }
-    };
-
-    reqAnimate.prototype.updateFrame = function(time) {
-        var o = this.options
-            , delta = (time - this.startTime) / 1000;
-        this.currentFrame += (delta * o.fps);
-
-        this.frameNum = Math.floor(this.currentFrame);
-
-        if (this.frameNum >= o.totalFrames) {
-            this.currentFrame = this.frameNum = 0;
-            this.timeIndex++;
-            this.lastFrame = -1;
-        }
-
-        this.frameNum >= 0
-        && this.frameNum > this.lastFrame
-        && o.processAnimation
-        && o.processAnimation.call(this, this.element, this.frameNum);
-
-        this.startTime = window.requestAnimationFrame.now();
-        this.lastFrame = this.frameNum;
-    };
-
-    if (typeof define === 'function' && define.amd){
-        // we have an AMD loader.
-        define(function(){
-            return reqAnimate;
-        });
-    }
-    else {
-        this.reqAnimate = reqAnimate;
-    }
-
-}).call(this);
 (function(doc, win) {
     var docEl = doc.documentElement,
     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
@@ -584,6 +411,79 @@ $(document).ready(function(){
 
 
 
+/*All the api collection*/
+Api = {
+    //生成自己的结果
+    make:function(obj,callback){
+        Common.msgBox('loading...');
+        $.ajax({
+            url:'/api/make',
+            type:'POST',
+            dataType:'json',
+            data:obj,
+            success:function(data){
+                $('.ajaxpop').remove();
+                return callback(data);
+                //status=1 有库存
+            }
+        });
+
+        //return callback({
+        //    status:1,
+        //    msg:'success'
+        //})
+
+
+    },
+
+    //获取匹配列表
+    //id
+    matchlist:function(obj,callback){
+        Common.msgBox('loading...');
+        $.ajax({
+            url:'/api/list',
+            type:'POST',
+            dataType:'json',
+            data:obj,
+            success:function(data){
+                //data.msg : {'nickname': aaa,'background':1, 'color':1,'content':'AB'},
+                //data.list : [{'nickname': bbb,'background':1, 'color':1,'content':'AB'},
+                //    {'nickname': ccc,'background':2, 'color':3,'content':'BC'}]
+                $('.ajaxpop').remove();
+                return callback(data);
+            }
+        });
+
+
+
+        //return callback({
+        //    status:'1',
+        //    msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
+        //    //list:[]
+        //    list : [{'nickname': 'bbb','background':1, 'color':1,'content':'AB'}, {'nickname': 'ccc','background':2, 'color':3,'content':'BC'}]
+        //})
+
+
+    },
+    //预约到店
+    //sex name mobile email store
+    reservation:function(obj,callback){
+        Common.msgBox('loading...');
+        $.ajax({
+            url:'/api/submit',
+            type:'POST',
+            dataType:'json',
+            data:obj,
+            success:function(data){
+                $('.ajaxpop').remove();
+                return callback(data);
+            }
+        });
+    },
+
+
+
+};
 ;(function(){
     function weixinshare(obj,callback){
         wx.ready(function(){
@@ -623,263 +523,158 @@ $(document).ready(function(){
     this.weixinshare = weixinshare;
 }).call(this);
 
-weixinshare({
-    title1: 'tt',
-    des: 'des',
-    link: 'http://guitarstrapvalentino.samesamechina.com',
-    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
-},function(){
-
-});
+//weixinshare({
+//    title1: 'tt',
+//    des: 'des',
+//    link: 'http://guitarstrapvalentino.samesamechina.com',
+//    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
+//},function(){
+//
+//});
 ;(function(){
 
     var controller = function(){
-
-        this.stropsList = [
-            {
-                id:'1',
-                src:'/src/dist/images/straps-1.png'
-            },
-            {
-                id:'2',
-                src:'/src/dist/images/straps-3.png'
-            },
-            {
-                id:'3',
-                src:'/src/dist/images/straps-4.png'
-            },
-            {
-                id:'4',
-                src:'/src/dist/images/straps-2.png'
-            },
-        ];
-        //default selected value
-        //background has three: 1,2,3,4
-        //color has two: 1,2
-        //content:a-zA-Z
-        this.objSelect = {
-            background:'1',
-            color:'1',
-            content:'ab'
-            //background  color  content
-        };
-
     };
     //init
     controller.prototype.init = function(){
         var self = this;
-        var baseurl = '/src/dist/images/';
-        var imagesArray = [
-            baseurl+'logo.png',
-        ];
-        var i = 0;
-        new preLoader(imagesArray, {
-            onProgress: function(){
-                i++;
-                var progress = parseInt(i/imagesArray.length*100);
-                //console.log(progress);
-                $('.preload .v-content').html('已加载'+progress+'%');
-            },
-            onComplete: function(){
-                //
-                //
-                $('.preload').remove();
-                $('.container').addClass('fade');
-
-                Common.gotoPin(0);
-                self.bindEvent();
-                //self.doGenerateAni(1);
-            }
-        });
-
-
+        self.orderForm();
     };
 
-    //go next step:custom letter
-    controller.prototype.goCustomLetter = function(){
+    //fill the order information
+    controller.prototype.orderForm = function(){
         var self = this;
-        $('.switch-menu .step-1').removeClass('current').siblings('.step').addClass('current');
-        $('#select-page .show-word').addClass('fadein');
-    };
-    //bind event
-    controller.prototype.bindEvent = function(){
-
-        var self  = this;
-        $('.btn-start-custom').on('touchstart',function(){
-            Common.gotoPin(1);
-        });
-
-    //    select the style
-        $('.step-1 .lists .item').on('touchstart',function(){
-            var curIndex = $(this).index();
-            $(this).addClass('active').siblings('.item').removeClass('active');
-            $('.show-img img').attr('src',self.stropsList[curIndex].src);
-            self.objSelect.background = curIndex+1;
-        });
-
-        //select the color
-        $('.step-2 .lists .item').on('touchstart',function(){
-            var curIndex = $(this).index();
-            self.objSelect.color = curIndex+1;
-            $(this).addClass('active').siblings('.item').removeClass('active');
-            if(curIndex==1){
-                $('.show-word').addClass('whiteandblack');
-            }else{
-                $('.show-word').removeClass('whiteandblack');
-            }
-        });
-
-    //   go next step
-        var nextStep = true;
-        $('.control').on('touchstart',function(){
-            if(nextStep){
-                nextStep = false;
-                self.goCustomLetter();
-            }else{
-                var customAlphabet = $('.input-custom').val()?$('.input-custom').val():'ab';
-                self.objSelect.content = customAlphabet;
-                self.generate();
-            }
-
-        });
-
-    //    input the alphabet
-        $('.input-custom').on('keyup',function(){
-            //console.log($(this).val());
-            var curVal = $(this).val();
-            var firstLetter = curVal.substring(0,1);
-            var secondLetter = curVal.substring(1,2);
-            if(self.validateAlphabet(firstLetter)){
-                $('#select-page .sw-1').attr('class','sw-1 letter letter-'+firstLetter.toLowerCase());
-            };
-            if(self.validateAlphabet(secondLetter)){
-                $('#select-page .sw-3').attr('class','sw-3 letter letter-'+secondLetter.toLowerCase());
-            };
-
-        });
-
-        //$('.btn-goreservation').on('touchstart',function(){
-        //
+        Common.gotoPin(0);
+        //$('#form-contact input').on('keyup',function(){
+        //    self.validateForm();
         //});
+        //
+        //$('#form-contact select').on('change',function(){
+        //    self.validateForm();
+        //});
+        //submit the reservation
+        $('#form-contact .btn-submit').on('touchstart', function(){
+
+            if(self.validateForm()){
+                if(!$('#input-receive').is(':checked')){
+                    alert('请接受隐私条款方能提交');
+                    return;
+                }
+                //console.log('通过前端验证，可以提交');
+                //sex  name  mobile email province city address
+                var sex = document.getElementById('input-title').value,
+                    name = document.getElementById('input-name').value,
+                    mobile = document.getElementById('input-mobile').value,
+                    email = document.getElementById('input-mail').value,
+                    store = document.getElementById('select-shop').value;
+                //sex name mobile email store
+
+                var orderInfo = {
+                    sex:sex,
+                    name:name,
+                    mobile:mobile,
+                    email:email,
+                    store:store
+                };
+                Api.reservation(orderInfo,function(data){
+                    if(data.status==1){
+                        //    提交成功，去提示预约成功页面
+                        Common.gotoPin(1);
+                    }else{
+                        alert(data.msg);
+                    }
+                })
+
+            }
+        });
 
 
     };
-    //validate the input is a-z or A-Z
-    controller.prototype.validateAlphabet = function(val){
-        var self = this;
-        var regAlphabet=/^[A-Za-z]$/;
-        return regAlphabet.test(val);
 
-    };
-    //go generate part and do animation
-    //controller.prototype.doGenerateAni = function(){
-    //
-    //};
-    //位数不足 补0
-    controller.prototype.appendLeft = function(str){
+
+    controller.prototype.validateForm = function(){
         var self = this;
-        if (str.length == 5){
-            return str;
+        var validate = true,
+            inputTitle = document.getElementById('input-title'),
+            inputShop = document.getElementById('select-shop'),
+            inputName = document.getElementById('input-name'),
+            inputMobile = document.getElementById('input-mobile'),
+            inputMail = document.getElementById('input-mail'),
+            inputCheck = $('#input-receive');
+
+        if(!inputTitle.value || (inputTitle.value=="称谓")){
+            Common.errorMsg.add(inputTitle.parentElement,'请选择合适的称谓');
+            validate = false;
         }else{
-            return self.appendLeft("0" + str);
+            Common.errorMsg.remove(inputTitle.parentElement);
+        };
+
+        if(!inputName.value){
+            Common.errorMsg.add(inputName.parentElement,'请填写姓名');
+            validate = false;
+        }else{
+            Common.errorMsg.remove(inputName.parentElement);
+        };
+
+        if(!inputMobile.value){
+            Common.errorMsg.add(inputMobile.parentElement,'手机号码不能为空');
+            validate = false;
+        }else{
+            var reg=/^1\d{10}$/;
+            if(!(reg.test(inputMobile.value))){
+                validate = false;
+                Common.errorMsg.add(inputMobile.parentElement,'手机号格式错误，请重新输入');
+            }else{
+                Common.errorMsg.remove(inputMobile.parentElement);
+            }
         }
 
-    };
-    controller.prototype.doGenerateAni = function (num) {
-        var self = this;
-        var i= 0;
-        //background-size
-        var doGenerateAni;
-        var increase = true;
-        var imgSrc='';
-        var doAni = new reqAnimate($('.show-animate img'),{
-            fps: 6,
-            totalFrames: 25,
-            time: 2,
-            processAnimation: function(){
-                //num is 1,2,3,in fact num is selected background
-                switch(num){
-                    case 1:
-                        imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
-                        break;
-                    case 2:
-                        imgSrc = '/src/dist/images/straps2/straps2__'+self.appendLeft(i)+'.jpg';
-                        break;
-                    case 3:
-                        imgSrc = '/src/dist/images/straps3/straps3__'+self.appendLeft(i)+'.jpg';
-                        break;
-                    default:
-                        imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
-                }
-                $('.show-animate img').attr('src',imgSrc);
-                if(increase){
-                    i = i+4;
-                    if(i>99){
-                        increase = false;
-                    }
-                }else{
-                    i=i-4;
-                    if(i<4){
-                        increase = true;
-                    }
-                };
-
-            },
-            doneAnimation: function(){
-
-                //show box and letter
+        if(!inputMail.value){
+            Common.errorMsg.add(inputMail.parentElement,'邮箱不能为空');
+            validate = false;
+        }else{
+            var regMail=/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+            if(!(regMail.test(inputMail.value))){
+                validate = false;
+                Common.errorMsg.add(inputMail.parentElement,'邮箱格式错误，请重新输入');
+            }else{
+                Common.errorMsg.remove(inputMail.parentElement);
             }
-        });
-        doAni.start();
+        }
+
+        //if(!inputShop.value || (inputShop.value=="精品店")){
+        //    Common.errorMsg.add(inputShop.parentElement,'请选择合适的称谓');
+        //    validate = false;
+        //}else{
+        //    Common.errorMsg.remove(inputShop.parentElement);
+        //};
 
 
-    };
-    //generate product,go share page
-    controller.prototype.generate = function(){
-        var self = this;
-        //    api
-        Api.make(self.objSelect,function(data){
-            if(data.status==1){
-                var curid = data.id;
-                Common.gotoPin(2);
-                self.doGenerateAni(self.objSelect.background);
-                weixinshare({
-                    title1: 'tt',
-                    des: 'des',
-                    link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+curid,
-                    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
-                },function(){
-
-                });
-            }
-        });
+        //if(!inputCheck.is(':checked')){
+        //    validate = false;
+        //    Common.errorMsg.add(inputCheck[0].parentElement,'请接受隐私条款');
+        //}else{
+        //    Common.errorMsg.remove(inputCheck[0].parentElement);
+        //}
 
 
-
-
+        if(validate){
+            return true;
+        }
+        return false;
     };
 
-    if (typeof define === 'function' && define.amd){
-        // we have an AMD loader.
-        define(function(){
-            return controller;
-        });
-    }
-    else {
-        this.controller = controller;
-    }
-
-}).call(this);
-
-//dom ready
-$(document).ready(function(){
-
-    var welcome = new controller();
-    welcome.init();
 
 
-});
+    //dom ready
+    $(document).ready(function(){
+
+        var valentino = new controller();
+        valentino.init();
 
 
+    });
 
+
+})();
 

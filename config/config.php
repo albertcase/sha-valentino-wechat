@@ -27,9 +27,9 @@ define("REDIS_HOST", '127.0.0.1');
 define("REDIS_PORT", '6379');
 
 //Database config info
-define("DBHOST", '10.10.153.132');
+define("DBHOST", '127.0.0.1');
 define("DBUSER", 'root');
-define("DBPASS", '4IF5SvHFFBFhRXi0');
+define("DBPASS", '');
 define("DBNAME", 'valentino_valentine');
 
 //Wechat Authorize

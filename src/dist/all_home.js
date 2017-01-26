@@ -584,6 +584,79 @@ $(document).ready(function(){
 
 
 
+/*All the api collection*/
+Api = {
+    //生成自己的结果
+    make:function(obj,callback){
+        Common.msgBox('loading...');
+        $.ajax({
+            url:'/api/make',
+            type:'POST',
+            dataType:'json',
+            data:obj,
+            success:function(data){
+                $('.ajaxpop').remove();
+                return callback(data);
+                //status=1 有库存
+            }
+        });
+
+        //return callback({
+        //    status:1,
+        //    msg:'success'
+        //})
+
+
+    },
+
+    //获取匹配列表
+    //id
+    matchlist:function(obj,callback){
+        Common.msgBox('loading...');
+        $.ajax({
+            url:'/api/list',
+            type:'POST',
+            dataType:'json',
+            data:obj,
+            success:function(data){
+                //data.msg : {'nickname': aaa,'background':1, 'color':1,'content':'AB'},
+                //data.list : [{'nickname': bbb,'background':1, 'color':1,'content':'AB'},
+                //    {'nickname': ccc,'background':2, 'color':3,'content':'BC'}]
+                $('.ajaxpop').remove();
+                return callback(data);
+            }
+        });
+
+
+
+        //return callback({
+        //    status:'1',
+        //    msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
+        //    //list:[]
+        //    list : [{'nickname': 'bbb','background':1, 'color':1,'content':'AB'}, {'nickname': 'ccc','background':2, 'color':3,'content':'BC'}]
+        //})
+
+
+    },
+    //预约到店
+    //sex name mobile email store
+    reservation:function(obj,callback){
+        Common.msgBox('loading...');
+        $.ajax({
+            url:'/api/submit',
+            type:'POST',
+            dataType:'json',
+            data:obj,
+            success:function(data){
+                $('.ajaxpop').remove();
+                return callback(data);
+            }
+        });
+    },
+
+
+
+};
 ;(function(){
     function weixinshare(obj,callback){
         wx.ready(function(){
@@ -623,14 +696,14 @@ $(document).ready(function(){
     this.weixinshare = weixinshare;
 }).call(this);
 
-weixinshare({
-    title1: 'tt',
-    des: 'des',
-    link: 'http://guitarstrapvalentino.samesamechina.com',
-    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
-},function(){
-
-});
+//weixinshare({
+//    title1: 'tt',
+//    des: 'des',
+//    link: 'http://guitarstrapvalentino.samesamechina.com',
+//    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
+//},function(){
+//
+//});
 ;(function(){
 
     var controller = function(){
@@ -686,7 +759,7 @@ weixinshare({
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(0);
+                Common.gotoPin(1);
                 self.bindEvent();
                 //self.doGenerateAni(1);
             }
@@ -700,6 +773,16 @@ weixinshare({
         var self = this;
         $('.switch-menu .step-1').removeClass('current').siblings('.step').addClass('current');
         $('#select-page .show-word').addClass('fadein');
+        $('#select-page .steps').addClass('next');
+        $('.go-prev').addClass('show');
+    };
+    //go prev step:custom style
+    controller.prototype.goCustomStyle = function(){
+        var self = this;
+        $('.switch-menu .step-1').addClass('current').siblings('.step').removeClass('current');
+        $('#select-page .show-word').removeClass('fadein');
+        $('#select-page .steps').removeClass('next');
+        $('.go-prev').removeClass('show');
     };
     //bind event
     controller.prototype.bindEvent = function(){
@@ -735,12 +818,24 @@ weixinshare({
             if(nextStep){
                 nextStep = false;
                 self.goCustomLetter();
-            }else{
-                var customAlphabet = $('.input-custom').val()?$('.input-custom').val():'ab';
-                self.objSelect.content = customAlphabet;
-                self.generate();
+                return;
+            };
+
+            if(!($('.input-custom').val().length==2 && self.validateAlphabet($('.input-custom').val().substring(0,1)) && self.validateAlphabet($('.input-custom').val().substring(1,2)))){
+                Common.alertBox.add('请输入两个字母');
+                return;
             }
 
+            var customAlphabet = $('.input-custom').val()?$('.input-custom').val():'ab';
+            self.objSelect.content = customAlphabet;
+            self.generate();
+
+        });
+
+    //    go prev step
+        $('.go-prev').on('touchstart',function(){
+            nextStep = true;
+            self.goCustomStyle();
         });
 
     //    input the alphabet
@@ -751,10 +846,10 @@ weixinshare({
             var secondLetter = curVal.substring(1,2);
             if(self.validateAlphabet(firstLetter)){
                 $('#select-page .sw-1').attr('class','sw-1 letter letter-'+firstLetter.toLowerCase());
-            };
+            }
             if(self.validateAlphabet(secondLetter)){
                 $('#select-page .sw-3').attr('class','sw-3 letter letter-'+secondLetter.toLowerCase());
-            };
+            }
 
         });
 

@@ -1142,8 +1142,8 @@ html, body {
   left: 0;
 }
 #landing-page .p1-t1 {
-  width: 4.65rem;
-  height: 1.97rem;
+  width: 4.02rem;
+  height: 2.03rem;
   margin: 0 auto 0.9rem;
 }
 #landing-page .content {
@@ -1152,6 +1152,8 @@ html, body {
 }
 #landing-page .btn-start-custom {
   text-align: center;
+  width: 1rem;
+  margin: 0 auto;
 }
 #landing-page .btn-start-custom .text {
   width: 0.95rem;
@@ -1162,18 +1164,17 @@ html, body {
   position: relative;
   display: block;
   margin: 0.7rem auto 0;
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.48rem;
+  height: 0.48rem;
 }
 #landing-page .btn-start-custom .icon .circle {
   width: 0.4rem;
   height: 0.4rem;
-  border: #000 0.03rem solid;
+  border: #9e7a59 0.04rem solid;
   border-radius: 100%;
-  -webkit-animation: circle 2s infinite;
-  -moz-animation: circle 2s infinite;
-  animation: circle 2s infinite;
-  box-sizing: border-box;
+  -webkit-animation: circle 1.5s infinite;
+  -moz-animation: circle 1.5s infinite;
+  animation: circle 1.5s infinite;
 }
 #landing-page .btn-start-custom .icon .dot {
   position: absolute;
@@ -1183,66 +1184,83 @@ html, body {
   height: 0.16rem;
   margin-top: -0.08rem;
   margin-left: -0.08rem;
-  background: #000;
+  background: #9e7a59;
   border-radius: 100%;
 }
 @-webkit-keyframes circle {
   0% {
     opacity: 1;
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(0.4);
   }
-  50% {
+  33% {
+    opacity: 0.8;
+    -webkit-transform: scale(0.8);
+  }
+  66% {
     opacity: 0;
     -webkit-transform: scale(1.2);
   }
   100% {
     opacity: 0;
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(0.4);
   }
 }
 @-moz-keyframes circle {
   0% {
     opacity: 1;
-    -moz-transform: scale(1);
+    -moz-transform: scale(0.4);
   }
-  50% {
+  33% {
+    opacity: 0.8;
+    -moz-transform: scale(0.8);
+  }
+  66% {
     opacity: 0;
     -moz-transform: scale(1.2);
   }
   100% {
     opacity: 0;
-    -moz-transform: scale(1);
+    -moz-transform: scale(0.4);
   }
 }
 @-o-keyframes circle {
   0% {
     opacity: 1;
-    -o-transform: scale(1);
+    -o-transform: scale(0.4);
   }
-  50% {
+  33% {
+    opacity: 0.8;
+    -o-transform: scale(0.8);
+  }
+  66% {
     opacity: 0;
     -o-transform: scale(1.2);
   }
   100% {
     opacity: 0;
-    -o-transform: scale(1);
+    -o-transform: scale(0.4);
   }
 }
 @keyframes circle {
   0% {
     opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
   }
-  50% {
+  33% {
+    opacity: 0.8;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  66% {
     opacity: 0;
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
   }
   100% {
     opacity: 0;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
   }
 }
 #landing-page .video-block {
@@ -1266,7 +1284,7 @@ html, body {
   -o-transform: rotate(6deg);
   transform: rotate(6deg);
   left: 38%;
-  top: 25%;
+  top: 32%;
 }
 
 .switch-menu {
@@ -1280,10 +1298,18 @@ html, body {
 }
 .switch-menu .tips {
   text-align: center;
+  width: 1.55rem;
+  height: 0.3rem;
+  margin: 0 auto 0.2rem;
+  background: url("../images/text-step-tip.png") no-repeat;
+  background-size: 1.55rem;
+  background-position: 0 100%;
+  text-indent: -999em;
 }
 .switch-menu .step {
   display: none;
   position: absolute;
+  padding-top: 0.4rem;
   top: 50%;
   width: 100%;
   height: auto;
@@ -1296,16 +1322,20 @@ html, body {
 .switch-menu .step.current {
   display: block;
 }
-.switch-menu .step-1 {
-  padding-top: 0.4rem;
-}
-.switch-menu .step-1 .control {
+.switch-menu .control {
   position: absolute;
-  top: 0.96rem;
-  right: 0.4rem;
-  background: #9e7a59;
+  top: 0.9rem;
+  right: 0.5rem;
+  width: 1rem;
+  height: .6rem;
+  background-color: #9e7a59;
   color: #fff;
-  padding: 0.1rem 0.2rem;
+  padding: 0 .2rem;
+  text-indent: -999em;
+  background-image: url(../images/text-btn.png);
+  background-size: 1.58rem;
+  background-repeat: no-repeat;
+  background-position: 0.4rem 111%;
 }
 .switch-menu .lists {
   text-align: center;
@@ -1318,7 +1348,7 @@ html, body {
   background: url("../images/list-straps.png") no-repeat;
   background-size: auto 100%;
   border-radius: 100%;
-  margin: 0.2rem;
+  margin: 0 0.2rem;
   box-sizing: border-box;
   border: #d0c4b8 1px solid;
 }
@@ -1383,15 +1413,6 @@ html, body {
 .switch-menu .input-box .lists .item-2 {
   background-position: 100% 0;
 }
-.switch-menu .input-box .btn-finish {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  height: 0.7rem;
-  line-height: 0.7rem;
-  box-sizing: border-box;
-  padding: 0 0.3rem;
-}
 .switch-menu .input-box .input-custom {
   font-size: 0.28rem;
   float: left;
@@ -1411,11 +1432,11 @@ html, body {
 .switch-content .show-img {
   width: 120%;
   height: 100%;
-  -webkit-transform: translate(16%, -20%);
-  -moz-transform: translate(16%, -20%);
-  -ms-transform: translate(16%, -20%);
-  -o-transform: translate(16%, -20%);
-  transform: translate(16%, -20%);
+  -webkit-transform: translate(16%, -45%);
+  -moz-transform: translate(16%, -45%);
+  -ms-transform: translate(16%, -45%);
+  -o-transform: translate(16%, -45%);
+  transform: translate(16%, -45%);
 }
 
 .show-word {
@@ -1578,26 +1599,31 @@ html, body {
   height: 100%;
 }
 .switch-text .p2-t1 {
-  width: 2.31rem;
+  width: 1.9rem;
   height: 1.23rem;
   margin-top: 0.75rem;
-  margin-left: 0.25rem;
+  margin-left: 0.3rem;
 }
 .switch-text .steps {
-  position: absolute;
-  top: 40%;
-  width: 100%;
+  position: relative;
+  margin-left: 0.3rem;
+  margin-top: 0.5rem;
+  text-indent: -999em;
+  width: 1.48rem;
+  height: 1.7rem;
+  background: url("../images/text-step.png") no-repeat;
+  background-size: 100%;
 }
-.switch-text .control {
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: pointer;
+.switch-text .steps.next {
+  background-position: 0 124%;
 }
-.switch-text .num {
+.switch-text .go-prev {
+  display: none;
   position: absolute;
-  left: 0;
-  top: 0;
+  top: 1rem;
+  right: 0.2rem;
+  width: 1.06rem;
+  height: 0.26rem;
 }
 
 .pin-result .p3-t1 {

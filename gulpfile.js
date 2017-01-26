@@ -16,6 +16,9 @@ var path = {
     template:['./template/*.html'],
     css:['./src/assets/css/style.css'],
     js:['./src/assets/js/lib/zepto.min.js','./src/assets/js/lib/pre-loader.js','./src/assets/js/lib/reqAnimate.js','./src/assets/js/rem.js','./src/assets/js/common.js','./src/assets/js/wxshare.js','./src/assets/js/home.js'],
+    homejs:['./src/assets/js/lib/zepto.min.js','./src/assets/js/lib/pre-loader.js','./src/assets/js/lib/reqAnimate.js','./src/assets/js/rem.js','./src/assets/js/common.js','./src/assets/js/api.js','./src/assets/js/wxshare.js','./src/assets/js/home.js'],
+    matchjs:['./src/assets/js/lib/zepto.min.js','./src/assets/js/lib/swiper.min.js','./src/assets/js/lib/pre-loader.js','./src/assets/js/lib/reqAnimate.js','./src/assets/js/rem.js','./src/assets/js/common.js','./src/assets/js/api.js','./src/assets/js/wxshare.js','./src/assets/js/match.js'],
+    reservationjs:['./src/assets/js/lib/zepto.min.js','./src/assets/js/lib/pre-loader.js','./src/assets/js/rem.js','./src/assets/js/common.js','./src/assets/js/api.js','./src/assets/js/wxshare.js','./src/assets/js/reservation.js'],
     images:['./src/assets/images/*','./src/assets/images/*/*'],
 };
 // Browser-sync
@@ -48,11 +51,31 @@ gulp.task('compressCss',['clean'],function () {
 });
 
 // Concatenate & Minify
-gulp.task('scripts',['clean'], function() {
-    return gulp.src(path.js)
-        .pipe(concat('all.js'))
+gulp.task('scripts_home',['clean'], function() {
+    return gulp.src(path.homejs)
+        .pipe(concat('all_home.js'))
         .pipe(gulp.dest('./src/dist'))
-        .pipe(rename('all.min.js'))
+        .pipe(rename('all_home.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./src/dist/js'));
+});
+
+//match
+gulp.task('scripts_match',['clean'], function() {
+    return gulp.src(path.matchjs)
+        .pipe(concat('all_match.js'))
+        .pipe(gulp.dest('./src/dist'))
+        .pipe(rename('all_match.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./src/dist/js'));
+});
+
+//reservation
+gulp.task('scripts_reservation',['clean'], function() {
+    return gulp.src(path.reservationjs)
+        .pipe(concat('all_reservation.js'))
+        .pipe(gulp.dest('./src/dist'))
+        .pipe(rename('all_reservation.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./src/dist/js'));
 });
@@ -74,9 +97,11 @@ gulp.task("tinypng", function(){
 // Watch Files For Changes
 gulp.task('watch',function() {
     gulp.watch(path.css,['compressCss']);
-    gulp.watch(path.js,['scripts']);
+    gulp.watch(path.homejs,['scripts_home']);
+    gulp.watch(path.matchjs,['scripts_match']);
+    gulp.watch(path.reservationjs,['scripts_reservation']);
 });
 
 // Default Task
-gulp.task('default', ['compressCss','tinypng','scripts','watch','browser-sync']);
+gulp.task('default', ['compressCss','watch','scripts_home','scripts_match','scripts_reservation','browser-sync']);
 
