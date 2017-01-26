@@ -22,8 +22,11 @@ class PageController extends Controller {
 		$product = $databaseAPI->loadMakeById($id);
 
 		//绑定
-		$databaseAPI->bandShare($user->uid, $product->uid);
-		$databaseAPI->bandShare($product->uid, $user->uid);
+		if ($user->uid != $product->uid) {
+			$databaseAPI->bandShare($user->uid, $product->uid);
+			$databaseAPI->bandShare($product->uid, $user->uid);
+		}
+		
 		$this->render('index', array('product' => $product));
 	}
 
