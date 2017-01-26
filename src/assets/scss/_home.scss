@@ -187,6 +187,11 @@ html,body{
 //for select page
 #select-page{
   background: #e5dacf;
+  .show-word{
+    @include transform(rotate(6deg));
+    left: 38%;
+    top: 25%;
+  }
 }
 .switch-menu{
   position: absolute;
@@ -210,6 +215,14 @@ html,body{
   }
   .step-1{
     padding-top: 0.4rem;
+    .control{
+      position: absolute;
+      top: 0.96rem;
+      right: 0.4rem;
+      background: #9e7a59;
+      color: #fff;
+      padding: 0.1rem 0.2rem;
+    }
   }
   .lists{
     text-align: center;
@@ -317,26 +330,54 @@ html,body{
   position: absolute;
   top: 25%;
   left: 44%;
-  @include size(2rem,1rem);
-  //background: red;
-  @include transform(rotate(4deg));
+  @include size(3rem,1rem);
+  text-align: center;
+  //@include transform(rotate(4deg));
   &.fadein{
     opacity: 1;
+    span{
+      opacity: 1;
+    }
   }
   span{
+    opacity: 0;
     display: inline-block;
-    @include size(1.1rem,0.97rem);
+    //@include size(1.1rem,0.97rem);
+    height: 0.97rem;
     //background: green;
+  }
+  .sw-1{
+    @include transition(opacity 1s 1s);
+  }
+  .sw-2{
+    @include transition(opacity 1s 1.5s);
+  }
+  .sw-3{
+    @include transition(opacity 1s 2s);
+  }
+  .sw-4{
+    @include transition(opacity 1s 2.5s);
   }
   #second-letter{
     position: absolute;
     left: 0.9rem;
   }
+  .dot{
+    width: 0.29rem;
+    margin-left: -0.2rem;
+    background-image: url('../images/alphabet/dot.png');
+    background-repeat: no-repeat;
+    background-size: 0.29rem;
+  }
   .letter{
+    width: 0.8rem;
     background-image: url('../images/alphabet/alphabet-color.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 1.1rem;
     background-position: center 0;
+    &.sw-3{
+      margin-left: -0.2rem;
+    }
     &.letter-a{
       background-position: 0 0%;
     }
@@ -494,10 +535,6 @@ html,body{
   }
 }
 
-.swiper-container {
-  width: 100%;
-  height: 7.12rem;
-}
 
 //for reservation page
 #form-contact{

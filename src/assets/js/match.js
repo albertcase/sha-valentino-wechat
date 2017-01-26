@@ -54,6 +54,17 @@
                 $('.container').addClass('fade');
                 //self.welcomePage();
                 self.bindEvent();
+
+            //    load match
+
+                Api.matchlist({id:1},function(data){
+                    console.log(data);
+                    self.match(data);
+                });
+
+            //    test
+            //    console.log(self.matchFilter(1,1,2,2));
+
             }
         });
 
@@ -72,6 +83,146 @@
         var self = this;
         $('.switch-menu .step-1').removeClass('current').siblings('.step').addClass('current');
         $('#select-page .show-word').addClass('fadein');
+    };
+
+    //match all the pipe
+    controller.prototype.match = function(obj){
+        var self = this;
+        if(!(obj.status == 1)){
+            alert(obj.msg);
+            return;
+        };
+
+        var slideHtml = '';
+        //nobody match, show yourself pipe
+        if(obj.list.length<1){
+
+            slideHtml = '<div class="show-animate">'+
+                '<img src="/src/dist/images/straps1/straps1_00000.jpg" alt=""/>'+
+                '</div>'+
+                '<div class="show-word">'+
+                '<span class="letter letter-a" id="first-letter-1"></span>'+
+                '<span class="letter letter-b" id="second-letter-2"></span>'+
+                '</div>';
+
+            return;
+        };
+
+    //    has match, do the list
+    //    slideHtml = '<div class="nickname"><span class="name-you">leo</span>和<span class="name-me">我</span></div>'+
+    //        '<div class="generate-show">'+
+    //    '<div class="item-match item-match-me"> <div class="pipe"> <img src="/src/dist/images/single-pipe-1.png" alt=""/> </div>'+
+    //    '<div class="show-word">'+
+    //    '<span class="sw-1 letter letter-a"></span>'+
+    //    '<span class="sw-2 dot"></span>'+
+    //    '<span class="sw-3 letter letter-b"></span>'+
+    //    '<span class="sw-4 dot"></span>'+
+    //    '</div>'+
+    //    '</div>'+
+    //    '<div class="item-match item-match-you">'+
+    //    '<div class="pipe">'+
+    //    '<img src="/src/dist/images/single-pipe-2.png" alt=""/>'+
+    //    '</div>'+
+    //    '<div class="show-word">'+
+    //    '<span class="letter letter-a"></span>'+
+    //    '<span class="letter letter-b"></span>'+
+    //    '</div>'+
+    //    '</div>'+
+    //    '<div class="match-des">'+
+    //    '<div class="title">'+
+    //    '<img src="/src/dist/images/m-1.png" alt=""/>'+
+    //    '</div>'+
+    //    '<div class="match-percent">'+
+    //    '<label>相配指数</label>'+
+    //    '<span class="num">98<sup>%</sup></span>'+
+    //    '</div>'+
+    //    '<div class="fromto">'+
+    //    '<span class="from">from</span>'+
+    //        '<span class="name-me">demi</span>'+
+    //        '<span class="and">and</span>'+
+    //    '<span class="name-you">Leo</span>'+
+    //    '</div></div></div>';
+        for(var i=0;i<obj.list.length;i++){
+            slideHtml = slideHtml+'<div class="swiper-slide"><div class="nickname"><span class="name-you">'+obj.list[i].nickname+'</span>和<span class="name-me">我</span></div>'+
+                '<div class="generate-show">'+
+                '<div class="item-match item-match-me"> <div class="pipe"> <img src="/src/dist/images/single-pipe-'+obj.msg.background+'.png" alt=""/> </div>'+
+                '<div class="show-word">'+
+                '<span class="sw-1 letter letter-'+obj.msg.content.substring(0,1)+'"></span>'+
+                '<span class="sw-2 dot"></span>'+
+                '<span class="sw-3 letter letter-'+obj.msg.content.substring(1,2)+'"></span>'+
+                '<span class="sw-4 dot"></span>'+
+                '</div>'+
+                '</div>'+
+                '<div class="item-match item-match-you">'+
+                '<div class="pipe">'+
+                '<img src="/src/dist/images/single-pipe-'+obj.list[i].background+'.png" alt=""/>'+
+                '</div>'+
+                '<div class="show-word">'+
+                '<span class="letter letter-'+obj.list[i].content.substring(0,1)+'"></span>'+
+                '<span class="letter letter-'+obj.list[i].content.substring(1,2)+'"></span>'+
+                '</div>'+
+                '</div>'+
+                '<div class="match-des">'+
+                '<div class="title">'+
+                '<img src="/src/dist/images/m-1.png" alt=""/>'+
+                '</div>'+
+                '<div class="match-percent">'+
+                '<label>相配指数</label>'+
+                '<span class="num">'+self.matchFilter(obj.msg.background,obj.list[i].background,obj.msg.color,obj.list[i].color)+'<sup>%</sup></span>'+
+                '</div>'+
+                '<div class="fromto">'+
+                '<span class="fromlabel">from</span>'+
+                '<span class="name-me">'+obj.msg.nickname+'</span>'+
+                '<span class="andlabel">and</span>'+
+                '<span class="name-you">'+obj.list[i].nickname+'</span>'+
+                '</div></div></div></div>';
+        }
+
+        $('.swiper-wrapper').append(slideHtml);
+
+        var mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            //direction: 'horizen',
+            loop: true,
+
+            // If we need pagination
+            //pagination: '.swiper-pagination',
+
+            // Navigation arrows
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+
+            // And if we need scrollbar
+            //scrollbar: '.swiper-scrollbar',
+        })
+
+    };
+
+    //匹配度
+    controller.prototype.matchFilter = function(a1,a2,b1,b2){
+    //    包带相同，字体颜色相同，95-100随机
+    //    包带相同，字体颜色不同，90-94随机
+    //    包带不同，字体颜色相同，85-89随机
+    //    包带不同，字体颜色不同，80-84随机
+    //    a is 包带，b is 字体颜色
+        var matchNum=80;
+        if(a1==a2){
+            if(b1==b2){
+                matchNum = Math.random()*5+95;
+            }else{
+                matchNum = Math.random()*5+90;
+            }
+        }else{
+            if(b1==b2){
+                matchNum = Math.random()*5+85;
+            }else{
+                matchNum = Math.random()*5+80;
+            }
+        };
+        return Math.round(matchNum);
+
+
+
     };
     //bind event
     controller.prototype.bindEvent = function(){
@@ -121,21 +272,7 @@
 
         });
 
-        var mySwiper = new Swiper ('.swiper-container', {
-            // Optional parameters
-            //direction: 'horizen',
-            loop: true,
 
-            // If we need pagination
-            //pagination: '.swiper-pagination',
-
-            // Navigation arrows
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-
-            // And if we need scrollbar
-            //scrollbar: '.swiper-scrollbar',
-        })
 
 
     };

@@ -32,13 +32,16 @@
                 var sex = document.getElementById('input-title').value,
                     name = document.getElementById('input-name').value,
                     mobile = document.getElementById('input-mobile').value,
-                    email = document.getElementById('input-mail').value;
+                    email = document.getElementById('input-mail').value,
+                    store = document.getElementById('select-shop').value;
+                //sex name mobile email store
 
                 var orderInfo = {
                     sex:sex,
                     name:name,
                     mobile:mobile,
-                    email:email
+                    email:email,
+                    store:store
                 };
                 Api.reservation(orderInfo,function(data){
                     if(data.status==1){

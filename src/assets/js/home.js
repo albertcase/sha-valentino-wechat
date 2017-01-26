@@ -21,7 +21,7 @@
             },
         ];
         //default selected value
-        //background has four: 1,2,3,4
+        //background has three: 1,2,3,4
         //color has two: 1,2
         //content:a-zA-Z
         this.objSelect = {
@@ -53,19 +53,11 @@
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(2);
-                //self.welcomePage();
+                Common.gotoPin(0);
                 self.bindEvent();
-                self.doGenerateAni(1);
+                //self.doGenerateAni(1);
             }
         });
-
-
-    };
-
-    //welcome page
-    controller.prototype.welcomePage = function(){
-        var self = this;
 
 
     };
@@ -89,13 +81,13 @@
             var curIndex = $(this).index();
             $(this).addClass('active').siblings('.item').removeClass('active');
             $('.show-img img').attr('src',self.stropsList[curIndex].src);
-            self.objSelect.background = curIndex;
+            self.objSelect.background = curIndex+1;
         });
 
         //select the color
         $('.step-2 .lists .item').on('touchstart',function(){
             var curIndex = $(this).index();
-            self.objSelect.color = curIndex;
+            self.objSelect.color = curIndex+1;
             $(this).addClass('active').siblings('.item').removeClass('active');
             if(curIndex==1){
                 $('.show-word').addClass('whiteandblack');
@@ -125,10 +117,10 @@
             var firstLetter = curVal.substring(0,1);
             var secondLetter = curVal.substring(1,2);
             if(self.validateAlphabet(firstLetter)){
-                $('#first-letter').attr('class','letter letter-'+firstLetter.toLowerCase());
+                $('#select-page .sw-1').attr('class','sw-1 letter letter-'+firstLetter.toLowerCase());
             };
             if(self.validateAlphabet(secondLetter)){
-                $('#second-letter').attr('class','letter letter-'+secondLetter.toLowerCase());
+                $('#select-page .sw-3').attr('class','sw-3 letter letter-'+secondLetter.toLowerCase());
             };
 
         });
@@ -178,10 +170,10 @@
                         imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
                         break;
                     case 2:
-                        imgSrc = '/src/dist/images/straps1/straps2_'+self.appendLeft(i)+'.jpg';
+                        imgSrc = '/src/dist/images/straps2/straps2__'+self.appendLeft(i)+'.jpg';
                         break;
                     case 3:
-                        imgSrc = '/src/dist/images/straps1/straps3_'+self.appendLeft(i)+'.jpg';
+                        imgSrc = '/src/dist/images/straps3/straps3__'+self.appendLeft(i)+'.jpg';
                         break;
                     default:
                         imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
@@ -218,6 +210,8 @@
         //        Common.gotoPin(2);
         //    }
         //});
+        console.log(self.objSelect.background);
+        self.doGenerateAni(self.objSelect.background);
         Common.gotoPin(2);
 
 
