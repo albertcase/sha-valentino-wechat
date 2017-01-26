@@ -42,7 +42,7 @@ class PageController extends Controller {
 	}
 
 	public function bandAction() {
-
+		ini_set('display_errors', '1');
 		$request = $this->request;
 		$fields = array(
 			'id' => array('notnull', '120'),
