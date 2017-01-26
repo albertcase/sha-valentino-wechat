@@ -51,11 +51,11 @@ class PageController extends Controller {
 		$id = $request->query->get('id');
 		$databaseAPI = new \Lib\DatabaseAPI();
 		$product = $databaseAPI->loadMakeById($id);
-
+		var_dump($product);exit;
 		//绑定
 		$databaseAPI->bandShare(10, $product->uid);
 		$databaseAPI->bandShare($product->uid, 10);
-		var_dump($product);exit;
+		
 		$this->render('index', array('product' => $product));
     }
 }
