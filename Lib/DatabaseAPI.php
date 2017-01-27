@@ -165,7 +165,7 @@ class DatabaseAPI {
 	 * 
 	 */
 	public function insertMake($data){
-		$sql = "INSERT INTO `product` SET `uid` = ?, `nickanme` = ?, `background` = ?, `color` = ?, `content` = ?"; 
+		$sql = "INSERT INTO `product` SET `uid` = ?, `nickname` = ?, `background` = ?, `color` = ?, `content` = ?"; 
 		$res = $this->connect()->prepare($sql); 
 		$res->bind_param("sssss", $data->uid, $data->nickname, $data->background, $data->color, $data->content);
 		if($res->execute()) 
