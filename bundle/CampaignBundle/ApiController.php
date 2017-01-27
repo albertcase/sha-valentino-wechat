@@ -44,7 +44,7 @@ class ApiController extends Controller {
     }
 
     public function makeAction() {
-
+    	ini_set("display_errors",1);
     	global $user;
 
     	$request = $this->request;
