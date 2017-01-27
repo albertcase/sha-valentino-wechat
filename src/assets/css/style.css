@@ -1873,6 +1873,7 @@ html, body {
 #match-page .btn a {
   text-decoration: none;
   color: #fff;
+  background-position: 0.5rem 34%;
 }
 #match-page .p3-t2 {
   width: 3.11rem;
