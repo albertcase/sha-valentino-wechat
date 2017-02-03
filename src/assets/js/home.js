@@ -9,21 +9,46 @@
             },
             {
                 id:'2',
-                src:'/src/dist/images/straps-3.png'
-            },
-            {
-                id:'3',
                 src:'/src/dist/images/straps-4.png'
             },
             {
-                id:'4',
+                id:'3',
                 src:'/src/dist/images/straps-2.png'
+            },
+            {
+                id:'4',
+                src:'/src/dist/images/straps-3.png'
             },
         ];
         //default selected value
         //background has three: 1,2,3,4
         //color has two: 1,2
         //content:a-zA-Z
+
+        var ArrLength=101;
+        this.straps1 = [];
+        this.straps2 = [];
+        this.straps3 = [];
+        var newstring1='',newstring2='',newstring3='';
+        for(var i=0;i<ArrLength;i=i+4){
+            if(i<10){
+                newstring1='/src/dist/images/'+'straps1/straps1_0000'+i+'.jpg';
+                newstring2='/src/dist/images/'+'straps2/straps2__0000'+i+'.jpg';
+                newstring3='/src/dist/images/'+'straps3/straps3__0000'+i+'.jpg';
+            }else if(i>9 && i<100){
+                newstring1='/src/dist/images/'+'straps1/straps1_000'+i+'.jpg';
+                newstring2='/src/dist/images/'+'straps2/straps2__000'+i+'.jpg';
+                newstring3='/src/dist/images/'+'straps3/straps3__000'+i+'.jpg';
+            }else{
+                newstring1='/src/dist/images/'+'straps1/straps1_00'+i+'.jpg';
+                newstring2='/src/dist/images/'+'straps2/straps2__00'+i+'.jpg';
+                newstring3='/src/dist/images/'+'straps3/straps3__00'+i+'.jpg';
+            }
+            this.straps1.push(newstring1);
+            this.straps2.push(newstring2);
+            this.straps3.push(newstring3);
+        };
+
         this.objSelect = {
             background:'1',
             color:'1',
@@ -38,7 +63,26 @@
         var baseurl = '/src/dist/images/';
         var imagesArray = [
             baseurl+'logo.png',
+            baseurl+'pipe-1.png',
+            baseurl+'pipe-2.png',
+            baseurl+'p1-t1.png',
+            baseurl+'p2-text-1.png',
+            baseurl+'done-bg-1.jpg',
+            baseurl+'done-bg-4.jpg',
+            baseurl+'done-bg-3.jpg',
+            baseurl+'dot.png',
+            baseurl+'list-color.png',
+            baseurl+'list-straps.png',
+            baseurl+'poster.jpg',
+            baseurl+'prev-step.png',
+            baseurl+'straps-1.png',
+            baseurl+'straps-4.png',
+            baseurl+'straps-3.png',
+            baseurl+'alphabet/alphabet-black.png',
+            baseurl+'alphabet/alphabet-color.png',
         ];
+        imagesArray = imagesArray.concat(self.straps1).concat(self.straps2).concat(self.straps3);
+
         var i = 0;
         new preLoader(imagesArray, {
             onProgress: function(){
@@ -48,14 +92,12 @@
                 $('.preload .v-content').html('已加载'+progress+'%');
             },
             onComplete: function(){
-                //
-                //
+
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
                 Common.gotoPin(0);
                 self.bindEvent();
-                //self.doGenerateAni(1);
             }
         });
 
@@ -192,10 +234,10 @@
                         imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
                         break;
                     case 2:
-                        imgSrc = '/src/dist/images/straps3/straps3__'+self.appendLeft(i)+'.jpg';
+                        imgSrc = '/src/dist/images/straps2/straps2__'+self.appendLeft(i)+'.jpg';
                         break;
                     case 3:
-                        imgSrc = '/src/dist/images/straps2/straps2__'+self.appendLeft(i)+'.jpg';
+                        imgSrc = '/src/dist/images/straps3/straps3__'+self.appendLeft(i)+'.jpg';
                         break;
                     default:
                         imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';

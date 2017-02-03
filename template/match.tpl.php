@@ -69,8 +69,5 @@
         </div>
     </div>
 </div>
-<script>
-    var isMine=<?php print $ismy;?>;
-</script>
 </body>
 </html>

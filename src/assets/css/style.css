@@ -1391,10 +1391,10 @@ video::-webkit-media-controls-start-playback-button {
   background: rgba(0, 0, 0, 0.4);
 }
 .switch-menu .lists .item-2 {
-  background-position: 33% 0;
+  background-position: 66% 0;
 }
 .switch-menu .lists .item-3 {
-  background-position: 66% 0;
+  background-position: 100% 0;
 }
 .switch-menu .lists .item-4 {
   background-position: 100% 0;

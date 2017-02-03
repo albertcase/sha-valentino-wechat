@@ -38,6 +38,12 @@
         var baseurl = '/src/dist/images/';
         var imagesArray = [
             baseurl+'logo.png',
+            baseurl+'single-pipe-1.png',
+            baseurl+'single-pipe-4.png',
+            baseurl+'single-pipe-3.png',
+            baseurl+'m-1.png',
+            baseurl+'m-2.png',
+            baseurl+'m-3.png',
         ];
         var i = 0;
         new preLoader(imagesArray, {
@@ -86,12 +92,13 @@
             return;
         };
 
-        var slideHtml = '';
+
         //not custom,go custom page
         //console.log(!obj.msg);
         //console.log(typeof obj.msg);
         if(!obj.msg){
             Common.goHomePage();
+            return;
         }
 
         //nobody match, show yourself pipe
@@ -111,6 +118,7 @@
             return;
         };
 
+        var slideHtml = '';
     //    has match, do the list
         for(var i=0;i<obj.list.length;i++){
             slideHtml = slideHtml+'<div class="swiper-slide"><div class="nickname"><span class="name-you">'+obj.list[i].nickname+'</span>和<span class="name-me">我</span></div>'+
