@@ -1637,7 +1637,7 @@ html, body {
   background-size: 100%;
 }
 .switch-text .steps.next {
-  background-position: 0 124%;
+  background-position: 0 120%;
 }
 .switch-text .go-prev {
   display: none;
