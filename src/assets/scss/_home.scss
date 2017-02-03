@@ -179,22 +179,25 @@ html,body{
       }
     }
   }
-  .video-block{
+  .vb{
+    position: relative;
     @include size(3.1rem,1.9rem);
     border: #fff 2px solid;
     margin: 0 auto;
     box-shadow: 0 0 5px #333;
-    video{
-      @include size(100%,100%);
-
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      @include size(0,0);
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%,-50%));
+      border-left: #fff 10px solid;
+      border-top: transparent 8px solid;
+      border-bottom: transparent 8px solid;
     }
   }
-}
-
-//for video
-video::-webkit-media-controls-start-playback-button {
-  //display: none;
-  background: red;
 }
 
 //for select page

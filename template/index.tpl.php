@@ -48,10 +48,8 @@
                 <div class="p1-t1">
                     <img src="/src/dist/images/p1-t1.png" alt="精致刺绣，魅惑无限"/>
                 </div>
-                <div class="video-block">
-                    <video src="/src/dist/video/guitar.mov"  poster="/src/dist/images/poster.jpg">
-
-                    </video>
+                <div class="vb">
+                    <img src="/src/dist/images/poster.jpg">
                 </div>
                 <div class="btn btn-start-custom">
                     <div class="icon">
@@ -131,8 +129,13 @@
                 <a href="/template/reservation.html">开始预约</a>
             </div>
         </div>
-
     </div>
+</div>
+<div class="video-wrap">
+    <div class="video-block">
+        <video id="myvideo" src="/src/dist/video/guitar.mov"  poster="/src/dist/images/poster.jpg"></video>
+    </div>
+    <div class="btn-closevideo"></div>
 </div>
 </body>
 </html>

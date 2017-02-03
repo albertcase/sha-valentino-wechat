@@ -840,6 +840,18 @@ weixinshare({
             Common.gotoPin(1);
         });
 
+        //video play
+        $('.vb').on('touchstart',function(){
+            $('.video-wrap').addClass('show');
+            $('#myvideo')[0].play();
+        });
+
+    //    close video
+        $('.btn-closevideo').on('touchstart',function(){
+            $('.video-wrap').removeClass('show');
+            $('#myvideo')[0].pause();
+        });
+
     //    select the style
         $('.step-1 .lists .item').on('touchstart',function(){
             var curIndex = $(this).index();
