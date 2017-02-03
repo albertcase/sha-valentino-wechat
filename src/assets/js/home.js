@@ -275,12 +275,12 @@
                 Common.gotoPin(2);
                 self.doGenerateAni(self.objSelect.background);
                 weixinshare({
-                    title1: 'tt',
-                    des: 'des',
+                    title1: 'RockStud Guitar Strap',
+                    des: 'RockStud Guitar Strap',
                     link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+curId,
-                    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
+                    img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/done-bg-1.jpg'
                 },function(){
-
+                    window.location.href = '/match?id='+curId
                 });
             }
         });
