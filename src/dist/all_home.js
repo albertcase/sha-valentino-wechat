@@ -904,10 +904,10 @@ Api = {
                         imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
                         break;
                     case 2:
-                        imgSrc = '/src/dist/images/straps2/straps2__'+self.appendLeft(i)+'.jpg';
+                        imgSrc = '/src/dist/images/straps3/straps3__'+self.appendLeft(i)+'.jpg';
                         break;
                     case 3:
-                        imgSrc = '/src/dist/images/straps3/straps3__'+self.appendLeft(i)+'.jpg';
+                        imgSrc = '/src/dist/images/straps2/straps2__'+self.appendLeft(i)+'.jpg';
                         break;
                     default:
                         imgSrc = '/src/dist/images/straps1/straps1_'+self.appendLeft(i)+'.jpg';
