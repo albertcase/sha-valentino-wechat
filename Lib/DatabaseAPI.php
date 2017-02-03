@@ -206,7 +206,7 @@ class DatabaseAPI {
 			$info->nickname = $nickname;
 			$info->background = $background;
 			$info->color = $color;
-			$info->$content = $content;
+			$info->content = $content;
 			return $info;
 		}
 		return NULL;
