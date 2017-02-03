@@ -1328,6 +1328,9 @@ html, body {
   background-position: 0 100%;
   text-indent: -999em;
 }
+.switch-menu .step-2 .tips {
+  background-position: 0 0;
+}
 .switch-menu .step {
   display: none;
   position: absolute;

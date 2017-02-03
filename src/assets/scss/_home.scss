@@ -226,6 +226,11 @@ html,body{
     background-position: 0 100%;
     text-indent: -999em;
   }
+  .step-2{
+    .tips{
+      background-position: 0 0;
+    }
+  }
   .step{
     display: none;
     position: absolute;
