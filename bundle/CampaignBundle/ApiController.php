@@ -94,7 +94,7 @@ class ApiController extends Controller {
     	global $user;
 
 		$DatabaseAPI = new \Lib\DatabaseAPI();
-		$rs = $DatabaseAPI->loadMakeByUid($user->id);
+		$rs = $DatabaseAPI->loadMakeByUid($user->uid);
 		$list = $DatabaseAPI->loadListByUid($user->uid);
 		$data = array('status' => 1, 'msg' => $rs, 'list'=>$list);
 		$this->dataPrint($data);
