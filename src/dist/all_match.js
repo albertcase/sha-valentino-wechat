@@ -821,9 +821,9 @@ Api = {
         //not custom,go custom page
         //console.log(!obj.msg);
         //console.log(typeof obj.msg);
-        //if(!obj.msg){
-            //Common.goHomePage();
-        //}
+        if(!obj.msg){
+            Common.goHomePage();
+        }
 
         //nobody match, show yourself pipe
         if(obj.list.length<1){
