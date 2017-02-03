@@ -89,7 +89,7 @@
         var slideHtml = '';
         //not custom,go custom page
         if(!obj.msg){
-            window.location.href = window.location.origin;
+            Common.gotoReservationPage();
         }
 
         //nobody match, show yourself pipe

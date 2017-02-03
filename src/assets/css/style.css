@@ -1268,10 +1268,15 @@ html, body {
   height: 1.9rem;
   border: #fff 2px solid;
   margin: 0 auto;
+  box-shadow: 0 0 5px #333;
 }
 #landing-page .video-block video {
   width: 100%;
   height: 100%;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  background: red;
 }
 
 #select-page {
