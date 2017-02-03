@@ -32,12 +32,19 @@ class PageController extends Controller {
 	}
 
 	public function loginAction() {
+		$request = $this->request;
+		$fields = array(
+			'id' => array('notnull', '120'),
+		);
+		$request->validation($fields);
+		$id = $request->query->get('id');
 		$user = new \stdClass();
-		$user->uid = 2;
-		$user->openid = '123';
-		$user->nickname = 'vincen';
+		$user->uid = $id;
+		$user->openid = 'openid_'.$id;
+		$user->nickname = 'user_'.$id;
 		$user->headimgurl = '111';
 		setcookie('_user', json_encode($user), time()+3600*24*30, '/');
+		echo 'user:login:'.$id;
 		exit;
 
 	}
