@@ -89,7 +89,7 @@
                 i++;
                 var progress = parseInt(i/imagesArray.length*100);
                 //console.log(progress);
-                $('.preload .v-content').html('已加载'+progress+'%');
+                $('.preload .v-content').html(''+progress+'%');
             },
             onComplete: function(){
 
