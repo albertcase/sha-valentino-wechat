@@ -70,9 +70,9 @@
                 </div>
                 <!--whiteandblack-->
                 <div class="show-word">
-                    <span class="sw-1 letter letter-a"></span>
+                    <span class="sw-1 letter"></span>
                     <span class="sw-2 dot"></span>
-                    <span class="sw-3 letter letter-b"></span>
+                    <span class="sw-3 letter"></span>
                     <span class="sw-4 dot"></span>
                 </div>
             </div>

@@ -52,7 +52,7 @@
         this.objSelect = {
             background:'1',
             color:'1',
-            content:'ab'
+            content:''
             //background  color  content
         };
 
@@ -174,7 +174,7 @@
                 return;
             }
 
-            var customAlphabet = $('.input-custom').val()?$('.input-custom').val():'ab';
+            var customAlphabet = $('.input-custom').val();
             self.objSelect.content = customAlphabet;
             self.generate();
 

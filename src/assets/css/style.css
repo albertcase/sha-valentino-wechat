@@ -1525,7 +1525,7 @@ html, body {
   background-image: url("../images/alphabet/alphabet-color.png");
   background-repeat: no-repeat;
   background-size: 1.1rem;
-  background-position: center 0;
+  background-position: center -100%;
 }
 .show-word .letter.sw-3 {
   margin-left: -0.2rem;
