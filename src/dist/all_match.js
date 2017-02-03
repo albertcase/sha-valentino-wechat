@@ -721,14 +721,14 @@ Api = {
     this.weixinshare = weixinshare;
 }).call(this);
 
-//weixinshare({
-//    title1: 'tt',
-//    des: 'des',
-//    link: 'http://guitarstrapvalentino.samesamechina.com',
-//    img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
-//},function(){
-//
-//});
+weixinshare({
+    title1: 'RockStud Guitar Strap',
+    des: 'RockStud Guitar Strap',
+    link: 'http://guitarstrapvalentino.samesamechina.com',
+    img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/done-bg-1.jpg'
+},function(){
+
+});
 ;(function(){
 
     var controller = function(){
@@ -775,7 +775,6 @@ Api = {
             baseurl+'m-1.png',
             baseurl+'m-2.png',
             baseurl+'m-3.png',
-            
         ];
         var i = 0;
         new preLoader(imagesArray, {
