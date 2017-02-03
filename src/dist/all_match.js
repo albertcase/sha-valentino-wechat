@@ -372,6 +372,12 @@ b.params.hashnav&&b.hashnav&&b.hashnav.init(),b.params.a11y&&b.a11y&&b.a11y.init
 			$('.wrapper .pin').removeClass('current');
 			$('.wrapper .pin').eq(num).addClass('current');
 		},
+		gotoReservationPage:function(){
+			window.location.href = '/template/reservation.html';
+		},
+		goHomePage:function(){
+			window.location.href = window.location.origin;
+		},
 		getParameterByName:function(name){
 			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
@@ -813,9 +819,11 @@ Api = {
 
         var slideHtml = '';
         //not custom,go custom page
-        if(!obj.msg){
-            window.location.href = window.location.origin;
-        }
+        //console.log(!obj.msg);
+        //console.log(typeof obj.msg);
+        //if(!obj.msg){
+            //Common.goHomePage();
+        //}
 
         //nobody match, show yourself pipe
         if(obj.list.length<1){

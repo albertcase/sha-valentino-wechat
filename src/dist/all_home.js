@@ -353,6 +353,12 @@ var Zepto=function(){function L(t){return null==t?String(t):j[S.call(t)]||"objec
 			$('.wrapper .pin').removeClass('current');
 			$('.wrapper .pin').eq(num).addClass('current');
 		},
+		gotoReservationPage:function(){
+			window.location.href = '/template/reservation.html';
+		},
+		goHomePage:function(){
+			window.location.href = window.location.origin;
+		},
 		getParameterByName:function(name){
 			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");

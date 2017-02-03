@@ -88,9 +88,11 @@
 
         var slideHtml = '';
         //not custom,go custom page
-        if(!obj.msg){
-            window.location.href = window.location.origin;
-        }
+        //console.log(!obj.msg);
+        //console.log(typeof obj.msg);
+        //if(!obj.msg){
+            //Common.goHomePage();
+        //}
 
         //nobody match, show yourself pipe
         if(obj.list.length<1){
