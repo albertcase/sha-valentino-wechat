@@ -787,8 +787,8 @@ Api = {
                 self.bindEvent();
 
             //    load match
-
-                Api.matchlist({id:1},function(data){
+                var nowId = Common.getParameterByName('id');
+                Api.matchlist({id:nowId},function(data){
                     console.log(data);
                     self.match(data);
                 });
