@@ -229,13 +229,13 @@
         //    api
         Api.make(self.objSelect,function(data){
             if(data.status==1){
-                var curid = data.id;
+                var curId = data.msg;
                 Common.gotoPin(2);
                 self.doGenerateAni(self.objSelect.background);
                 weixinshare({
                     title1: 'tt',
                     des: 'des',
-                    link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+curid,
+                    link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+curId,
                     img: 'http://guitarstrapvalentino.samesamechina.com/dist/images/done-bg-1.jpg'
                 },function(){
 
