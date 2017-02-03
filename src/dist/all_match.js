@@ -867,8 +867,10 @@ weixinshare({
                 '<img src="/src/dist/images/single-pipe-'+obj.list[i].background+'.png" alt=""/>'+
                 '</div>'+
                 '<div class="show-word">'+
-                '<span class="letter letter-'+obj.list[i].content.substring(0,1)+'"></span>'+
-                '<span class="letter letter-'+obj.list[i].content.substring(1,2)+'"></span>'+
+                '<span class="sw-1 letter letter-'+obj.list[i].content.substring(0,1)+'"></span>'+
+                '<span class="sw-2 dot"></span>'+
+                '<span class="sw-3 letter letter-'+obj.list[i].content.substring(1,2)+'"></span>'+
+                '<span class="sw-4 dot"></span>'+
                 '</div>'+
                 '</div>'+
                 '<div class="match-des">'+

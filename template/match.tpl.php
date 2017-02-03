@@ -56,8 +56,10 @@
                 </div>
                 <!--whiteandblack-->
                 <div class="show-word">
-                    <span class="letter letter-a" id="first-letter-1"></span>
-                    <span class="letter letter-b" id="second-letter-2"></span>
+                    <span class="sw-1 letter letter-a"></span>
+                    <span class="sw-2 dot"></span>
+                    <span class="sw-3 letter letter-b"></span>
+                    <span class="sw-4 dot"></span>
                 </div>
             </div>
             <div class="p3-t2">

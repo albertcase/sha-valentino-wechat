@@ -47,6 +47,33 @@
     @include transform(rotate(45deg));
     left: 5px;
   }
+  .swiper-slide-active{
+    .generate-show{
+      .item-match{
+      }
+      .item-match-me{
+        @include transform(scale(1));
+        .show-word{
+          span{
+            @include transition(opacity 1s);
+          }
+        }
+      }
+      .item-match-you{
+        @include transform(scale(1));
+        .show-word{
+          span{
+            @include transition(opacity 1s 1s);
+          }
+        }
+      }
+      .show-word{
+        span{
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 .generate-show{
   background: #f4f4f6;
@@ -58,12 +85,15 @@
     top: 0;
     width: 2.25rem;
     height: 100%;
+    @include transform(scale(0.95));
   }
   .item-match-me{
     left: 0;
+    @include transition(all 1s);
   }
   .item-match-you{
     right: 0;
+    @include transition(all 1s 0.5s);
   }
   .match-des{
     width: 1.9rem;
@@ -114,5 +144,8 @@
     top: 50%;
     left: 50%;
     @include transform(translate(-50%,-50%));
+    span{
+      opacity: 0;
+    }
   }
 }
