@@ -191,13 +191,17 @@ img{
   .device-andriod &{
     padding-top: 1.3rem;
   }
+  video{
+    width: 100%;
+  }
   .video-block{
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
     width: 100%;
-    height: 100%;
+    //height: 100%;
     z-index: 1;
+    @include transform(translateY(-50%));
   }
   &.show{
     display: block;
@@ -602,7 +606,7 @@ img{
   top:0;
   width: 100%;
   height: 100%;
-  background: #e61c58;
+  background: #000;
   color: #fff;
   z-index: 100;
 }

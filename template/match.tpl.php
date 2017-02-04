@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>RockStud Guitar Strap</title>
+    <title>ROCKSTUD GUITAR STRAPS</title>
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">
@@ -43,7 +43,7 @@
                 <img src="/src/dist/images/m-3.png" alt=""/>
             </div>
             <div class="btn btn-goreservation">
-                <a href="reservation.html">开始预约</a>
+                <a href="/template/reservation.html">开始预约</a>
             </div>
         </div>
         <div class="pin pin-3 pin-result" id="doneshare-page">
@@ -56,8 +56,10 @@
                 </div>
                 <!--whiteandblack-->
                 <div class="show-word">
-                    <span class="letter letter-a" id="first-letter-1"></span>
-                    <span class="letter letter-b" id="second-letter-2"></span>
+                    <span class="sw-1 letter letter-a"></span>
+                    <span class="sw-2 dot"></span>
+                    <span class="sw-3 letter letter-b"></span>
+                    <span class="sw-4 dot"></span>
                 </div>
             </div>
             <div class="p3-t2">
@@ -69,8 +71,5 @@
         </div>
     </div>
 </div>
-<script>
-    var isMine=<?php print $ismy;?>;
-</script>
 </body>
 </html>

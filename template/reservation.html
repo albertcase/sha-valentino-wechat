@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>RockStud Guitar Strap</title>
+    <title>ROCKSTUD GUITAR STRAPS</title>
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">

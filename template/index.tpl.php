@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>RockStud Guitar Strap</title>
+    <title>ROCKSTUD GUITAR STRAPS</title>
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">
@@ -13,6 +13,9 @@
     <script src="/src/dist/js/all_home.min.js"></script>
 </head>
 <body class="page-home">
+<div class="preload">
+    <div class="v-content"></div>
+</div>
 <div id="orientLayer" class="mod-orient-layer">
     <div class="mod-orient-layer__content">
         <i class="icon mod-orient-layer__icon-orient"></i>
@@ -45,10 +48,8 @@
                 <div class="p1-t1">
                     <img src="/src/dist/images/p1-t1.png" alt="精致刺绣，魅惑无限"/>
                 </div>
-                <div class="video-block">
-                    <video src="/src/dist/video/guitar.mov"  poster="/src/dist/images/poster.jpg">
-
-                    </video>
+                <div class="vb">
+                    <img src="/src/dist/images/poster.jpg">
                 </div>
                 <div class="btn btn-start-custom">
                     <div class="icon">
@@ -69,9 +70,9 @@
                 </div>
                 <!--whiteandblack-->
                 <div class="show-word">
-                    <span class="sw-1 letter letter-a"></span>
+                    <span class="sw-1 letter"></span>
                     <span class="sw-2 dot"></span>
-                    <span class="sw-3 letter letter-b"></span>
+                    <span class="sw-3 letter"></span>
                     <span class="sw-4 dot"></span>
                 </div>
             </div>
@@ -96,7 +97,7 @@
                 </div>
                 <div class="step step-2">
                     <h3 class="tips">专属字母</h3>
-                    <div class="input-box">
+                    <div class="input-box clearfix">
                         <ul class="lists">
                             <li class="item item-1 active"></li>
                             <li class="item item-2"></li>
@@ -113,12 +114,14 @@
             </div>
             <div class="generate-show">
                 <div class="show-animate">
-                    <img src="/src/dist/images/straps1/straps1_00000.jpg" alt=""/>
+                    <img src="" alt=""/>
                 </div>
                 <!--whiteandblack-->
                 <div class="show-word">
-                    <span class="letter letter-a" id="first-letter-1"></span>
-                    <span class="letter letter-b" id="second-letter-2"></span>
+                    <span class="sw-1 letter"></span>
+                    <span class="sw-2 dot"></span>
+                    <span class="sw-3 letter"></span>
+                    <span class="sw-4 dot"></span>
                 </div>
             </div>
             <div class="p3-t2">
@@ -128,8 +131,13 @@
                 <a href="/template/reservation.html">开始预约</a>
             </div>
         </div>
-
     </div>
+</div>
+<div class="video-wrap">
+    <div class="video-block">
+        <video id="myvideo" src="/src/dist/video/guitar.mov"  poster="/src/dist/images/poster.jpg"></video>
+    </div>
+    <div class="btn-closevideo"></div>
 </div>
 </body>
 </html>
