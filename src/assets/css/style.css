@@ -1300,13 +1300,13 @@ html, body {
   background: #e5dacf;
 }
 #select-page .show-word {
-  -webkit-transform: rotate(6deg);
-  -moz-transform: rotate(6deg);
-  -ms-transform: rotate(6deg);
-  -o-transform: rotate(6deg);
-  transform: rotate(6deg);
-  left: 36%;
-  top: 20%;
+  left: 48%;
+  top: 51%;
+  -webkit-transform: rotate(6deg) translate(-50%, -50%);
+  -moz-transform: rotate(6deg) translate(-50%, -50%);
+  -ms-transform: rotate(6deg) translate(-50%, -50%);
+  -o-transform: rotate(6deg) translate(-50%, -50%);
+  transform: rotate(6deg) translate(-50%, -50%);
 }
 
 .switch-menu {
@@ -1453,15 +1453,17 @@ html, body {
 .switch-content {
   position: relative;
   z-index: 1;
+  width: 100%;
+  height: calc(100% - 2.1rem);
 }
 .switch-content .show-img {
-  width: 120%;
+  width: auto;
   height: 100%;
-  -webkit-transform: translate(16%, -25%);
-  -moz-transform: translate(16%, -25%);
-  -ms-transform: translate(16%, -25%);
-  -o-transform: translate(16%, -25%);
-  transform: translate(16%, -25%);
+}
+.switch-content .show-img img {
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .show-word {

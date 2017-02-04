@@ -204,9 +204,9 @@ html,body{
 #select-page{
   background: #e5dacf;
   .show-word{
-    @include transform(rotate(6deg));
-    left: 36%;
-    top: 20%;
+    left: 48%;
+    top: 51%;
+    @include transform(rotate(6deg) translate(-50%,-50%));
   }
 }
 .switch-menu{
@@ -342,9 +342,15 @@ html,body{
 .switch-content{
   position: relative;
   z-index: 1;
+  @include size(100%,calc(100% - 2.1rem));
   .show-img{
-    @include size(120%,100%);
-    @include transform(translate(16%,-25%));
+    @include size(auto,100%);
+    //@include transform(translate(16%,0));
+    img{
+      width: auto;
+      height: 100%;
+      margin: 0 auto;
+    }
   }
 
 }
