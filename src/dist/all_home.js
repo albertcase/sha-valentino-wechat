@@ -983,9 +983,12 @@ weixinshare({
                     if(i>99){
                         showWord = true;
                         if(j==2){
+                            if(self.objSelect.color==2){
+                                $('.show-word').addClass('whiteandblack');
+                            }
                             $('.show-word').addClass('fadein');
-                            $('#doneshare-page .sw-1').attr('class','sw-1 letter letter-'+self.objSelect.content.substring(0,1));
-                            $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2));
+                            $('#doneshare-page .sw-1').attr('class','sw-1 letter letter-'+self.objSelect.content.substring(0,1).toLowerCase());
+                            $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2).toLowerCase());
                             //self.objSelect
                         }
                         if(j==25){

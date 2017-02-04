@@ -855,10 +855,10 @@ weixinshare({
             slideHtml = slideHtml+'<div class="swiper-slide"><div class="nickname"><span class="name-you">'+obj.list[i].nickname+'</span>和<span class="name-me">我</span></div>'+
                 '<div class="generate-show">'+
                 '<div class="item-match item-match-me"> <div class="pipe"> <img src="/src/dist/images/single-pipe-'+obj.msg.background+'.png" alt=""/> </div>'+
-                '<div class="show-word">'+
-                '<span class="sw-1 letter letter-'+obj.msg.content.substring(0,1)+'"></span>'+
+                '<div class="show-word '+((obj.msg.color==1)?'':'whiteandblack')+'">'+
+                '<span class="sw-1 letter letter-'+obj.msg.content.substring(0,1).toLowerCase()+'"></span>'+
                 '<span class="sw-2 dot"></span>'+
-                '<span class="sw-3 letter letter-'+obj.msg.content.substring(1,2)+'"></span>'+
+                '<span class="sw-3 letter letter-'+obj.msg.content.substring(1,2).toLowerCase()+'"></span>'+
                 '<span class="sw-4 dot"></span>'+
                 '</div>'+
                 '</div>'+
@@ -866,10 +866,10 @@ weixinshare({
                 '<div class="pipe">'+
                 '<img src="/src/dist/images/single-pipe-'+obj.list[i].background+'.png" alt=""/>'+
                 '</div>'+
-                '<div class="show-word">'+
-                '<span class="sw-1 letter letter-'+obj.list[i].content.substring(0,1)+'"></span>'+
+                '<div class="show-word '+((obj.list[i].color==1)?'':'whiteandblack')+'">'+
+                '<span class="sw-1 letter letter-'+obj.list[i].content.substring(0,1).toLowerCase()+'"></span>'+
                 '<span class="sw-2 dot"></span>'+
-                '<span class="sw-3 letter letter-'+obj.list[i].content.substring(1,2)+'"></span>'+
+                '<span class="sw-3 letter letter-'+obj.list[i].content.substring(1,2).toLowerCase()+'"></span>'+
                 '<span class="sw-4 dot"></span>'+
                 '</div>'+
                 '</div>'+
