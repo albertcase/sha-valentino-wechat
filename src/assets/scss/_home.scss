@@ -372,7 +372,7 @@ html,body{
   //@include transform(rotate(4deg));
   &.fadein{
     opacity: 1;
-    span{
+    span.fade{
       opacity: 1;
     }
   }
@@ -405,6 +405,7 @@ html,body{
     background-image: url('../images/alphabet/dot.png');
     background-repeat: no-repeat;
     background-size: 0.29rem;
+    background-position: 0 -100%;
   }
   .letter{
     width: 0.8rem;

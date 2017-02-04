@@ -1483,7 +1483,7 @@ html, body {
 .show-word.fadein {
   opacity: 1;
 }
-.show-word.fadein span {
+.show-word.fadein span.fade {
   opacity: 1;
 }
 .show-word span {
@@ -1529,6 +1529,7 @@ html, body {
   background-image: url("../images/alphabet/dot.png");
   background-repeat: no-repeat;
   background-size: 0.29rem;
+  background-position: 0 -100%;
 }
 .show-word .letter {
   width: 0.8rem;
