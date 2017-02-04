@@ -1983,9 +1983,7 @@ html, body {
 }
 
 .generate-show {
-  background: #f4f4f6;
   color: #000;
-  border: #fff 5px solid;
   box-sizing: border-box;
 }
 .generate-show .item-match {
