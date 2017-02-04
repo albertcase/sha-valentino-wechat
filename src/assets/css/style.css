@@ -1328,13 +1328,20 @@ html, body {
   background-position: 0 100%;
   text-indent: -999em;
 }
+.switch-menu .step-1 .control {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.5rem;
+}
 .switch-menu .step-2 .tips {
   background-position: 0 0;
+}
+.switch-menu .step-2 .control {
+  float: right;
 }
 .switch-menu .step {
   display: none;
   position: absolute;
-  padding-top: 0.4rem;
   top: 50%;
   width: 100%;
   height: auto;
@@ -1348,9 +1355,6 @@ html, body {
   display: block;
 }
 .switch-menu .control {
-  position: absolute;
-  top: 0.9rem;
-  right: 0.5rem;
   width: 1rem;
   height: .6rem;
   background-color: #9e7a59;
@@ -1360,7 +1364,7 @@ html, body {
   background-image: url(../images/text-btn.png);
   background-size: 1.58rem;
   background-repeat: no-repeat;
-  background-position: 0.4rem 111%;
+  background-position: 0.38rem 112%;
 }
 .switch-menu .lists {
   text-align: center;
@@ -1455,6 +1459,7 @@ html, body {
   z-index: 1;
   width: 100%;
   height: calc(100% - 2.1rem);
+  left: 9%;
 }
 .switch-content .show-img {
   width: auto;

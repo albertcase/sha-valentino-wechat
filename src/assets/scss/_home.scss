@@ -226,15 +226,25 @@ html,body{
     background-position: 0 100%;
     text-indent: -999em;
   }
+  .step-1{
+    .control{
+      position: absolute;
+      top: 0.55rem;
+      right: 0.5rem;
+    }
+  }
   .step-2{
     .tips{
       background-position: 0 0;
+    }
+    .control{
+      float: right;
     }
   }
   .step{
     display: none;
     position: absolute;
-    padding-top: 0.4rem;
+    //padding-top: 0.4rem;
     top: 50%;
     @include size(100%,auto);
     @include transform(translateY(-50%));
@@ -243,9 +253,6 @@ html,body{
     }
   }
   .control{
-    position: absolute;
-    top: 0.9rem;
-    right: 0.5rem;
     width: 1rem;
     height: .6rem;
     background-color: #9e7a59;
@@ -255,7 +262,7 @@ html,body{
     background-image: url(../images/text-btn.png);
     background-size: 1.58rem;
     background-repeat: no-repeat;
-    background-position: 0.4rem 111%;
+    background-position: 0.38rem 112%;
   }
   .lists{
     text-align: center;
@@ -343,6 +350,7 @@ html,body{
   position: relative;
   z-index: 1;
   @include size(100%,calc(100% - 2.1rem));
+  left: 9%;
   .show-img{
     @include size(auto,100%);
     //@include transform(translate(16%,0));

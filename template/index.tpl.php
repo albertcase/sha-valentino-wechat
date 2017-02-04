@@ -97,7 +97,7 @@
                 </div>
                 <div class="step step-2">
                     <h3 class="tips">专属字母</h3>
-                    <div class="input-box">
+                    <div class="input-box clearfix">
                         <ul class="lists">
                             <li class="item item-1 active"></li>
                             <li class="item item-2"></li>
