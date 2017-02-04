@@ -17,6 +17,22 @@ class ApiController extends Controller {
         } 
     }
 
+    public function isloginAction() {
+
+    	global $user;
+
+    	$DatabaseAPI = new \Lib\DatabaseAPI();
+		$rs = $DatabaseAPI->loadMakeByUid($user->uid);
+    	
+    	if ($rs) {
+    		$data = array('status' => 1, 'msg' => $rs);
+			$this->dataPrint($data);
+    	} else {
+    		$data = array('status' => 0, 'msg' => '未完成作品');
+			$this->dataPrint($data);
+    	}
+    }
+
     public function formAction() {
 
     	global $user;

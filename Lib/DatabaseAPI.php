@@ -246,4 +246,13 @@ class DatabaseAPI {
 			return FALSE;
 	}
 
+	public function clearMake(){
+		$sql = "TRUNCATE table product;"; 
+		$res = $this->connect()->prepare($sql); 
+		if($res->execute()) 
+			return TRUE;
+		else 
+			return FALSE;
+	}
+
 }

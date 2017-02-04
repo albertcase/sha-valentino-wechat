@@ -16,3 +16,5 @@ $routers['/api/make'] = array('CampaignBundle\Api', 'make');
 $routers['/api/list'] = array('CampaignBundle\Api', 'list');
 $routers['/api/submit'] = array('CampaignBundle\Api', 'submit');
 $routers['/api/band'] = array('CampaignBundle\Page', 'band');
+$routers['/api/islogin'] = array('CampaignBundle\Api', 'islogin');
+$routers['/api/clearmake'] = array('CampaignBundle\Page', 'clearmake');

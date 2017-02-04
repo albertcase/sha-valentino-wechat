@@ -79,4 +79,13 @@ class PageController extends Controller {
 		
 		$this->render('index', array('product' => $product));
     }
+
+    public function clearMakeAction() {
+
+    	$DatabaseAPI = new \Lib\DatabaseAPI();
+		$DatabaseAPI->clearMake();
+
+    		$data = array('status' => 1, 'msg' => 'clear');
+			$this->dataPrint($data);
+    }
 }
