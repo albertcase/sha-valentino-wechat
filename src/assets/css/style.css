@@ -1659,6 +1659,13 @@ html, body {
   height: 0.26rem;
 }
 
+#doneshare-page .show-word.fadein {
+  opacity: 1;
+}
+#doneshare-page .show-word.fadein span {
+  opacity: 1;
+}
+
 .pin-result .p3-t1 {
   padding-top: 0.3rem;
   width: 5.02rem;

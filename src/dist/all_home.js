@@ -764,7 +764,7 @@ weixinshare({
         this.objSelect = {
             background:'1',
             color:'1',
-            content:''
+            content:'ab'
             //background  color  content
         };
 
@@ -808,8 +808,12 @@ weixinshare({
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(0);
-                self.bindEvent();
+                //Common.gotoPin(0);
+                //self.bindEvent();
+
+            //    test
+                Common.gotoPin(2);
+                self.doGenerateAni();
             }
         });
 
@@ -866,9 +870,9 @@ weixinshare({
             self.objSelect.color = curIndex+1;
             $(this).addClass('active').siblings('.item').removeClass('active');
             if(curIndex==1){
-                $('.show-word').addClass('whiteandblack');
+                $('#select-page .show-word').addClass('whiteandblack');
             }else{
-                $('.show-word').removeClass('whiteandblack');
+                $('#select-page .show-word').removeClass('whiteandblack');
             }
         });
 
@@ -905,10 +909,12 @@ weixinshare({
             var firstLetter = curVal.substring(0,1);
             var secondLetter = curVal.substring(1,2);
             if(self.validateAlphabet(firstLetter)){
-                $('#select-page .sw-1').attr('class','sw-1 letter letter-'+firstLetter.toLowerCase());
+                $('#select-page .sw-1').attr('class','sw-1 letter letter-'+firstLetter.toLowerCase()).addClass('fade');
+                $('#select-page .sw-2').addClass('fade');
             }
             if(self.validateAlphabet(secondLetter)){
-                $('#select-page .sw-3').attr('class','sw-3 letter letter-'+secondLetter.toLowerCase());
+                $('#select-page .sw-3').attr('class','sw-3 letter letter-'+secondLetter.toLowerCase()).addClass('fade');
+                $('#select-page .sw-4').addClass('fade');
             }
 
         });
@@ -942,15 +948,15 @@ weixinshare({
     };
     controller.prototype.doGenerateAni = function (num) {
         var self = this;
-        var i= 0;
+        var i= 0,j=0;
         //background-size
         var doGenerateAni;
-        var increase = true;
+        var increase = true,showWord = false;
         var imgSrc='';
         var doAni = new reqAnimate($('.show-animate img'),{
             fps: 6,
-            totalFrames: 25,
-            time: 2,
+            totalFrames: 100,
+            time: 1,
             processAnimation: function(){
                 //num is 1,2,3,in fact num is selected background
                 switch(num){
@@ -968,9 +974,26 @@ weixinshare({
                 }
                 $('.show-animate img').attr('src',imgSrc);
                 if(increase){
-                    i = i+4;
+                    if(!showWord){
+                        i = i+4;
+                    }else{
+                        j++;
+                        //console.log(j);
+                    };
                     if(i>99){
-                        increase = false;
+                        showWord = true;
+                        if(j==2){
+                            $('.show-word').addClass('fadein');
+                            $('#doneshare-page .sw-1').attr('class','sw-1 letter letter-'+self.objSelect.content.substring(0,1));
+                            $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2));
+                            //self.objSelect
+                        }
+                        if(j==25){
+                            $('.show-word').removeClass('fadein');
+                        }
+                        if(j>50){
+                            increase = false;
+                        }
                     }
                 }else{
                     i=i-4;
