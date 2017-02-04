@@ -52,7 +52,7 @@
         this.objSelect = {
             background:'1',
             color:'1',
-            content:'ab'
+            content:''
             //background  color  content
         };
 
@@ -96,12 +96,12 @@
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                //Common.gotoPin(0);
-                //self.bindEvent();
+                Common.gotoPin(0);
+                self.bindEvent();
 
             //    test
-                Common.gotoPin(2);
-                self.doGenerateAni();
+            //    Common.gotoPin(2);
+            //    self.doGenerateAni();
             }
         });
 
