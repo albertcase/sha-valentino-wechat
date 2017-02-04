@@ -367,7 +367,7 @@ html,body{
   position: absolute;
   top: 25%;
   left: 44%;
-  @include size(3rem,1rem);
+  @include size(1.7rem,0.7rem);
   text-align: center;
   //@include transform(rotate(4deg));
   &.fadein{
@@ -380,7 +380,7 @@ html,body{
     opacity: 0;
     display: inline-block;
     //@include size(1.1rem,0.97rem);
-    height: 0.97rem;
+    height: 0.7rem;
     //background: green;
   }
   .sw-1{
@@ -400,21 +400,30 @@ html,body{
     left: 0.9rem;
   }
   .dot{
+    position: absolute;
+    top: 0;
     width: 0.29rem;
-    margin-left: -0.2rem;
+    //margin-left: -0.2rem;
     background-image: url('../images/alphabet/dot.png');
     background-repeat: no-repeat;
     background-size: 0.29rem;
-    background-position: 0 -100%;
+    background-position: bottom center;
+  }
+  .sw-2{
+    left: 0.6rem;
+  }
+  .sw-4{
+    left: 1.4rem;
   }
   .letter{
     width: 0.8rem;
+    float: left;
     background-image: url('../images/alphabet/alphabet-color.png');
     background-repeat: no-repeat;
-    background-size: 1.1rem;
+    background-size: 100%;
     background-position: center -100%;
     &.sw-3{
-      margin-left: -0.2rem;
+      //margin-left: -0.2rem;
     }
     &.letter-a{
       background-position: 0 0%;

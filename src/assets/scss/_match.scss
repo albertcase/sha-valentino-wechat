@@ -16,6 +16,10 @@
   .p3-t2{
     @include size(3.11rem,0.59rem);
   }
+  .generate-show{
+    background: #f4f4f6;
+    border: #fff 10px solid;
+  }
 }
 .swiper-container {
   width: 100%;
