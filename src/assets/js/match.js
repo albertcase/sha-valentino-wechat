@@ -202,7 +202,7 @@
         var imgSrc='';
         var doAni = new reqAnimate($('.show-animate img'),{
             fps: 6,
-            totalFrames: 100,
+            totalFrames: 70,
             time: 20,
             processAnimation: function(){
                 //num is 1,2,3,in fact num is selected background
@@ -228,8 +228,9 @@
                         //console.log(j);
                     };
                     if(i>99){
+                        //console.log(j);
                         showWord = true;
-                        if(j==2){
+                        if(j==1){
                             if(self.objSelect.color==2){
                                 $('.show-word').addClass('whiteandblack');
                             }
@@ -238,10 +239,10 @@
                             $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2).toLowerCase());
                             //self.objSelect
                         }
-                        if(j==25){
+                        if(j==15){
                             $('.show-word').removeClass('fadein');
                         }
-                        if(j>50){
+                        if(j>20){
                             increase = false;
                             j=0;
                         }
