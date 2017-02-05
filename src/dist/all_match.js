@@ -611,6 +611,38 @@ $(document).ready(function(){
 
 /*All the api collection*/
 Api = {
+//{"status":1,"msg":{"id":1,"uid":1,"nickname":"123","background":1,"color":1,"content":"AB"}}
+///api/islogin  没有作品的返回
+//{"status":0,"msg":"\u672a\u5b8c\u6210\u4f5c\u54c1"}
+
+    //判断用户是否已经生成自己的作品
+    isLogin:function(callback){
+        Common.msgBox('loading...');
+        $.ajax({
+            url:'/api/islogin',
+            type:'POST',
+            dataType:'json',
+            success:function(data){
+                $('.ajaxpop').remove();
+                return callback(data);
+                //status=1 有库存
+            }
+        });
+
+        //return callback({
+        //    "status":1,
+        //    "msg":{
+        //        "id":1,
+        //        "uid":1,
+        //        "nickname":"123",
+        //        "background":2,
+        //        "color":2,
+        //        "content":"AB"
+        //    }
+        //});
+
+
+    },
     //生成自己的结果
     make:function(obj,callback){
         Common.msgBox('loading...');
@@ -655,8 +687,8 @@ Api = {
         
         //return callback({
         //    status:'1',
-        //    //msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
-        //    msg : null,
+        //    msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
+        //    //msg : null,
         //    //list:[]
         //    list : [{'nickname': 'bbb','background':1, 'color':1,'content':'AB'}, {'nickname': 'ccc','background':2, 'color':3,'content':'BC'}]
         //})
@@ -722,8 +754,8 @@ Api = {
 }).call(this);
 
 weixinshare({
-    title1: 'RockStud Guitar Strap',
-    des: 'RockStud Guitar Strap',
+    title1: '情人节小测试：我们的相配指数是多少？',
+    des: '为最爱的她/他定制专属ROCKSTUD吉他肩带吧！',
     link: 'http://guitarstrapvalentino.samesamechina.com',
     img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/done-bg-1.jpg'
 },function(){
@@ -844,6 +876,11 @@ weixinshare({
             //    '</div>';
 
             Common.gotoPin(1);
+            self.objSelect = {
+                background:obj.msg.background,
+                color:obj.msg.color,
+                content:obj.msg.content
+            };
             self.doGenerateAni(obj.msg.background);
 
             return;
@@ -895,7 +932,7 @@ weixinshare({
         var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
             //direction: 'horizen',
-            loop: true,
+            loop: false,
 
             // If we need pagination
             //pagination: '.swiper-pagination',
@@ -906,7 +943,8 @@ weixinshare({
 
             // And if we need scrollbar
             //scrollbar: '.swiper-scrollbar',
-        })
+        });
+
 
     };
     controller.prototype.appendLeft = function(str){
@@ -920,15 +958,15 @@ weixinshare({
     };
     controller.prototype.doGenerateAni = function (num) {
         var self = this;
-        var i= 0;
+        var i= 0,j=0;
         //background-size
         var doGenerateAni;
-        var increase = true;
+        var increase = true,showWord = false;
         var imgSrc='';
         var doAni = new reqAnimate($('.show-animate img'),{
             fps: 6,
-            totalFrames: 25,
-            time: 2,
+            totalFrames: 70,
+            time: 20,
             processAnimation: function(){
                 //num is 1,2,3,in fact num is selected background
                 switch(num){
@@ -946,14 +984,37 @@ weixinshare({
                 }
                 $('.show-animate img').attr('src',imgSrc);
                 if(increase){
-                    i = i+4;
+                    if(!showWord){
+                        i = i+4;
+                    }else{
+                        j++;
+                        //console.log(j);
+                    };
                     if(i>99){
-                        increase = false;
+                        //console.log(j);
+                        showWord = true;
+                        if(j==1){
+                            if(self.objSelect.color==2){
+                                $('.show-word').addClass('whiteandblack');
+                            }
+                            $('.show-word').addClass('fadein');
+                            $('#doneshare-page .sw-1').attr('class','sw-1 letter letter-'+self.objSelect.content.substring(0,1).toLowerCase());
+                            $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2).toLowerCase());
+                            //self.objSelect
+                        }
+                        if(j==15){
+                            $('.show-word').removeClass('fadein');
+                        }
+                        if(j>20){
+                            increase = false;
+                            j=0;
+                        }
                     }
                 }else{
                     i=i-4;
                     if(i<4){
                         increase = true;
+                        showWord = false;
                     }
                 };
 

@@ -592,6 +592,38 @@ $(document).ready(function(){
 
 /*All the api collection*/
 Api = {
+//{"status":1,"msg":{"id":1,"uid":1,"nickname":"123","background":1,"color":1,"content":"AB"}}
+///api/islogin  没有作品的返回
+//{"status":0,"msg":"\u672a\u5b8c\u6210\u4f5c\u54c1"}
+
+    //判断用户是否已经生成自己的作品
+    isLogin:function(callback){
+        Common.msgBox('loading...');
+        $.ajax({
+            url:'/api/islogin',
+            type:'POST',
+            dataType:'json',
+            success:function(data){
+                $('.ajaxpop').remove();
+                return callback(data);
+                //status=1 有库存
+            }
+        });
+
+        //return callback({
+        //    "status":1,
+        //    "msg":{
+        //        "id":1,
+        //        "uid":1,
+        //        "nickname":"123",
+        //        "background":2,
+        //        "color":2,
+        //        "content":"AB"
+        //    }
+        //});
+
+
+    },
     //生成自己的结果
     make:function(obj,callback){
         Common.msgBox('loading...');
@@ -636,8 +668,8 @@ Api = {
         
         //return callback({
         //    status:'1',
-        //    //msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
-        //    msg : null,
+        //    msg : {'nickname': 'aaa','background':1, 'color':1,'content':'AB'},
+        //    //msg : null,
         //    //list:[]
         //    list : [{'nickname': 'bbb','background':1, 'color':1,'content':'AB'}, {'nickname': 'ccc','background':2, 'color':3,'content':'BC'}]
         //})
@@ -703,8 +735,8 @@ Api = {
 }).call(this);
 
 weixinshare({
-    title1: 'RockStud Guitar Strap',
-    des: 'RockStud Guitar Strap',
+    title1: '情人节小测试：我们的相配指数是多少？',
+    des: '为最爱的她/他定制专属ROCKSTUD吉他肩带吧！',
     link: 'http://guitarstrapvalentino.samesamechina.com',
     img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/done-bg-1.jpg'
 },function(){
@@ -808,8 +840,22 @@ weixinshare({
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(0);
-                self.bindEvent();
+                //if generate,go product page
+                Api.isLogin(function(data){
+                    if(data.status==1){
+                        Common.gotoPin(2);
+                        self.objSelect = {
+                            background:data.msg.background,
+                            color:data.msg.color,
+                            content:data.msg.content
+                        };
+                        self.doGenerateAni(self.objSelect.background);
+                    }else{
+                        Common.gotoPin(0);
+                        self.bindEvent();
+                    }
+                });
+
 
             //    test
             //    Common.gotoPin(2);
@@ -955,8 +1001,8 @@ weixinshare({
         var imgSrc='';
         var doAni = new reqAnimate($('.show-animate img'),{
             fps: 6,
-            totalFrames: 100,
-            time: 1,
+            totalFrames: 70,
+            time: 20,
             processAnimation: function(){
                 //num is 1,2,3,in fact num is selected background
                 switch(num){
@@ -981,8 +1027,9 @@ weixinshare({
                         //console.log(j);
                     };
                     if(i>99){
+                        //console.log(j);
                         showWord = true;
-                        if(j==2){
+                        if(j==1){
                             if(self.objSelect.color==2){
                                 $('.show-word').addClass('whiteandblack');
                             }
@@ -991,17 +1038,19 @@ weixinshare({
                             $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2).toLowerCase());
                             //self.objSelect
                         }
-                        if(j==25){
+                        if(j==15){
                             $('.show-word').removeClass('fadein');
                         }
-                        if(j>50){
+                        if(j>20){
                             increase = false;
+                            j=0;
                         }
                     }
                 }else{
                     i=i-4;
                     if(i<4){
                         increase = true;
+                        showWord = false;
                     }
                 };
 
@@ -1025,8 +1074,8 @@ weixinshare({
                 Common.gotoPin(2);
                 self.doGenerateAni(self.objSelect.background);
                 weixinshare({
-                    title1: 'RockStud Guitar Strap',
-                    des: 'RockStud Guitar Strap',
+                    title1: '情人节小测试：我们的相配指数是多少？',
+                    des: '为最爱的她/他定制专属ROCKSTUD吉他肩带吧！',
                     link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+curId,
                     img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/done-bg-1.jpg'
                 },function(){

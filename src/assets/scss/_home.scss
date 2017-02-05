@@ -55,13 +55,7 @@ html,body{
   }
 }
 
-//verticle align
-.v-content{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  @include transform(translate(-50%,-50%));
-}
+
 
 //for home page
 #landing-page{
@@ -363,12 +357,13 @@ html,body{
 
 }
 .show-word{
+  //background: red;
   opacity: 0;
   position: absolute;
   top: 25%;
-  left: 44%;
-  @include size(3rem,1rem);
-  text-align: center;
+  left: 49%;
+  @include size(1.6rem,0.7rem);
+  //text-align: center;
   //@include transform(rotate(4deg));
   &.fadein{
     opacity: 1;
@@ -380,41 +375,51 @@ html,body{
     opacity: 0;
     display: inline-block;
     //@include size(1.1rem,0.97rem);
-    height: 0.97rem;
+    height: 0.7rem;
+    float: left;
     //background: green;
   }
   .sw-1{
-    @include transition(opacity 1s 1s);
+    @include transition(opacity 1s);
   }
   .sw-2{
-    @include transition(opacity 1s 1.5s);
+    @include transition(opacity 1s 0.5s);
   }
   .sw-3{
-    @include transition(opacity 1s 2s);
+    @include transition(opacity 1s 1s);
   }
   .sw-4{
-    @include transition(opacity 1s 2.5s);
+    @include transition(opacity 1s 1.5s);
   }
   #second-letter{
     position: absolute;
     left: 0.9rem;
   }
   .dot{
-    width: 0.29rem;
-    margin-left: -0.2rem;
+    //position: absolute;
+    //top: 0;
+    width: 0.2rem;
+    margin-left: -0.15rem;
     background-image: url('../images/alphabet/dot.png');
     background-repeat: no-repeat;
-    background-size: 0.29rem;
-    background-position: 0 -100%;
+    background-size: 100%;
+    background-position: bottom center;
   }
+  //.sw-2{
+  //  left: 0.75rem;
+  //}
+  //.sw-4{
+  //  left: 1.5rem;
+  //}
   .letter{
-    width: 0.8rem;
+    width: 0.7rem;
+    //float: left;
     background-image: url('../images/alphabet/alphabet-color.png');
     background-repeat: no-repeat;
-    background-size: 1.1rem;
+    background-size: 100%;
     background-position: center -100%;
     &.sw-3{
-      margin-left: -0.2rem;
+      //margin-left: -0.2rem;
     }
     &.letter-a{
       background-position: 0 0%;
@@ -672,7 +677,20 @@ html,body{
   .input-checkbox{
     text-align: center;
     label{
-      color: #000;
+      position: relative;
+      //color: #000;
+      @include size(2.75rem,0.29rem);
+      background: url("../images/text-privacy.png") no-repeat;
+      background-size: 100%;
+      text-indent: -999em;
+      display: inline-block;
+      a{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        @include size(1.2rem,0.29rem);
+      }
     }
     a{
       color: #000;
@@ -775,7 +793,7 @@ html,body{
     padding: 0.1rem;
     font-size: 0.32rem;
     color: #fff;
-    margin: 0.35rem auto 0;
+    margin: 0.6rem auto 0;
   }
   .input-checkbox{
     margin: 0.35rem auto;
