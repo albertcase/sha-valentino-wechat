@@ -1002,7 +1002,7 @@ weixinshare({
         var doAni = new reqAnimate($('.show-animate img'),{
             fps: 6,
             totalFrames: 100,
-            time: 1,
+            time: 20,
             processAnimation: function(){
                 //num is 1,2,3,in fact num is selected background
                 switch(num){
@@ -1042,12 +1042,14 @@ weixinshare({
                         }
                         if(j>50){
                             increase = false;
+                            j=0;
                         }
                     }
                 }else{
                     i=i-4;
                     if(i<4){
                         increase = true;
+                        showWord = false;
                     }
                 };
 

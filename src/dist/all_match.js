@@ -923,7 +923,7 @@ weixinshare({
 
         $('.swiper-wrapper').append(slideHtml);
         Common.gotoPin(0);
-        
+
         var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
             //direction: 'horizen',
