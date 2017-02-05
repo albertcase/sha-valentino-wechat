@@ -96,8 +96,22 @@
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(0);
-                self.bindEvent();
+                //if generate,go product page
+                Api.isLogin(function(data){
+                    if(data.status==1){
+                        Common.gotoPin(2);
+                        self.objSelect = {
+                            background:data.msg.background,
+                            color:data.msg.color,
+                            content:data.msg.content
+                        };
+                        self.doGenerateAni(self.objSelect.background);
+                    }else{
+                        Common.gotoPin(0);
+                        self.bindEvent();
+                    }
+                });
+
 
             //    test
             //    Common.gotoPin(2);

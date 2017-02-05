@@ -592,6 +592,10 @@ $(document).ready(function(){
 
 /*All the api collection*/
 Api = {
+//{"status":1,"msg":{"id":1,"uid":1,"nickname":"123","background":1,"color":1,"content":"AB"}}
+///api/islogin  没有作品的返回
+//{"status":0,"msg":"\u672a\u5b8c\u6210\u4f5c\u54c1"}
+
     //判断用户是否已经生成自己的作品
     isLogin:function(callback){
         Common.msgBox('loading...');
@@ -607,9 +611,16 @@ Api = {
         });
 
         //return callback({
-        //    status:1,
-        //    msg:'success'
-        //})
+        //    "status":1,
+        //    "msg":{
+        //        "id":1,
+        //        "uid":1,
+        //        "nickname":"123",
+        //        "background":2,
+        //        "color":2,
+        //        "content":"AB"
+        //    }
+        //});
 
 
     },
@@ -829,8 +840,22 @@ weixinshare({
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                Common.gotoPin(0);
-                self.bindEvent();
+                //if generate,go product page
+                Api.isLogin(function(data){
+                    if(data.status==1){
+                        Common.gotoPin(2);
+                        self.objSelect = {
+                            background:data.msg.background,
+                            color:data.msg.color,
+                            content:data.msg.content
+                        };
+                        self.doGenerateAni(self.objSelect.background);
+                    }else{
+                        Common.gotoPin(0);
+                        self.bindEvent();
+                    }
+                });
+
 
             //    test
             //    Common.gotoPin(2);
