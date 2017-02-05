@@ -876,6 +876,11 @@ weixinshare({
             //    '</div>';
 
             Common.gotoPin(1);
+            self.objSelect = {
+                background:obj.msg.background,
+                color:obj.msg.color,
+                content:obj.msg.content
+            };
             self.doGenerateAni(obj.msg.background);
 
             return;
