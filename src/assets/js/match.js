@@ -190,15 +190,15 @@
     };
     controller.prototype.doGenerateAni = function (num) {
         var self = this;
-        var i= 0;
+        var i= 0,j=0;
         //background-size
         var doGenerateAni;
-        var increase = true;
+        var increase = true,showWord = false;
         var imgSrc='';
         var doAni = new reqAnimate($('.show-animate img'),{
             fps: 6,
-            totalFrames: 25,
-            time: 2,
+            totalFrames: 100,
+            time: 20,
             processAnimation: function(){
                 //num is 1,2,3,in fact num is selected background
                 switch(num){
@@ -216,14 +216,36 @@
                 }
                 $('.show-animate img').attr('src',imgSrc);
                 if(increase){
-                    i = i+4;
+                    if(!showWord){
+                        i = i+4;
+                    }else{
+                        j++;
+                        //console.log(j);
+                    };
                     if(i>99){
-                        increase = false;
+                        showWord = true;
+                        if(j==2){
+                            if(self.objSelect.color==2){
+                                $('.show-word').addClass('whiteandblack');
+                            }
+                            $('.show-word').addClass('fadein');
+                            $('#doneshare-page .sw-1').attr('class','sw-1 letter letter-'+self.objSelect.content.substring(0,1).toLowerCase());
+                            $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2).toLowerCase());
+                            //self.objSelect
+                        }
+                        if(j==25){
+                            $('.show-word').removeClass('fadein');
+                        }
+                        if(j>50){
+                            increase = false;
+                            j=0;
+                        }
                     }
                 }else{
                     i=i-4;
                     if(i<4){
                         increase = true;
+                        showWord = false;
                     }
                 };
 
