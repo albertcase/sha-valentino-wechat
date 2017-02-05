@@ -11,7 +11,13 @@
 
 //just for weibo and pc
 .v-content{
+  top: 35%;
   img{
     max-width: 300px;
+  }
+}
+.page-brandzone .v-content{
+  img{
+    max-width: 250px;
   }
 }

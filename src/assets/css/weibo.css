@@ -1045,6 +1045,13 @@ img {
   color: #000;
 }
 
+.v-content {
+  top: 35%;
+}
 .v-content img {
   max-width: 300px;
+}
+
+.page-brandzone .v-content img {
+  max-width: 250px;
 }
