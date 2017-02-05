@@ -367,8 +367,8 @@ html,body{
   opacity: 0;
   position: absolute;
   top: 25%;
-  left: 47%;
-  @include size(1.8rem,0.7rem);
+  left: 49%;
+  @include size(1.6rem,0.7rem);
   //text-align: center;
   //@include transform(rotate(4deg));
   &.fadein{
@@ -405,7 +405,7 @@ html,body{
     //position: absolute;
     //top: 0;
     width: 0.2rem;
-    margin-left: -0.1rem;
+    margin-left: -0.15rem;
     background-image: url('../images/alphabet/dot.png');
     background-repeat: no-repeat;
     background-size: 100%;

@@ -38,7 +38,7 @@
   .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
     background: transparent;
     margin-top: 0.8rem;
-    @include size(0.4rem,0.4rem);
+    @include size(0.28rem,0.28rem);
     border-bottom: #000 0.06rem solid;
   }
   .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
