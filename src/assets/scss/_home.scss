@@ -386,16 +386,16 @@ html,body{
     //background: green;
   }
   .sw-1{
-    @include transition(opacity 1s 1s);
+    @include transition(opacity 1s);
   }
   .sw-2{
-    @include transition(opacity 1s 1.5s);
+    @include transition(opacity 1s 0.5s);
   }
   .sw-3{
-    @include transition(opacity 1s 2s);
+    @include transition(opacity 1s 1s);
   }
   .sw-4{
-    @include transition(opacity 1s 2.5s);
+    @include transition(opacity 1s 1.5s);
   }
   #second-letter{
     position: absolute;

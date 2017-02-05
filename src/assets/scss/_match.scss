@@ -51,6 +51,37 @@
     @include transform(rotate(45deg));
     left: 5px;
   }
+  .item-match-me{
+    .show-word{
+      opacity: 1;
+      @include transition(opacity 1s);
+      span{
+        //@include transition(opacity 1s);
+      }
+    }
+  }
+  .item-match-you{
+    .show-word{
+      opacity: 1;
+      @include transition(opacity 1s 2s);
+      span{
+        //@include transition(opacity 1s 1s);
+        //@include transition(opacity 1s 2s);
+      }
+      .sw-1{
+        @include transition(opacity 1s 2s);
+      }
+      .sw-2{
+        @include transition(opacity 1s 2.5s);
+      }
+      .sw-3{
+        @include transition(opacity 1s 3s);
+      }
+      .sw-4{
+        @include transition(opacity 1s 3.5s);
+      }
+    }
+  }
   .swiper-slide-active{
     .generate-show{
       .item-match{
@@ -58,22 +89,28 @@
       .item-match-me{
         @include transform(scale(1));
         .show-word{
+          opacity: 1;
+          //@include transition(opacity 1s 1s);
           span{
-            @include transition(opacity 1s);
+            //@include transition(opacity 1s);
+            opacity: 1;
           }
         }
       }
       .item-match-you{
         @include transform(scale(1));
         .show-word{
+          opacity: 1;
+          //@include transition(opacity 1s 2s);
           span{
-            @include transition(opacity 1s 1s);
+            opacity: 1;
+            //@include transition(opacity 1s 1s);
           }
         }
       }
       .show-word{
         span{
-          opacity: 1;
+          //opacity: 1;
         }
       }
     }
@@ -97,13 +134,14 @@
   }
   .item-match-you{
     right: 0;
-    @include transition(all 1s 0.5s);
+    @include transition(all 1s 2s);
   }
   .match-des{
     width: 1.9rem;
     margin: 0 auto;
   }
   .match-percent{
+    margin: 0.7rem auto 0.3rem;
     text-align: center;
     label{
       //width: 3.11rem;
@@ -114,9 +152,15 @@
       background-position: -45% 0;
     }
     .num{
-      font-size: 1.05rem;
+      font-size: 0.8rem;
+      font-weight: lighter;
+      position: relative;
+      padding-right: 0.2rem;
       sup{
-        font-size: 0.48rem;
+        position: absolute;
+        top: 0;
+        right: -0.2rem;
+        font-size: .36rem;
       }
     }
   }
@@ -139,12 +183,14 @@
     }
     .name-me,.name-you{
       text-align: center;
-      font-size: 0.32rem;
+      font-size: 0.24rem;
+      font-weight: lighter;
       color: #484848;
     }
 
   }
   .show-word{
+    opacity: 0;
     top: 50%;
     left: 50%;
     @include transform(translate(-50%,-50%));
