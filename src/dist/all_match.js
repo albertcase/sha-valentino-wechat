@@ -923,11 +923,11 @@ weixinshare({
 
         $('.swiper-wrapper').append(slideHtml);
         Common.gotoPin(0);
-
+        
         var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
             //direction: 'horizen',
-            loop: true,
+            loop: false,
 
             // If we need pagination
             //pagination: '.swiper-pagination',
@@ -938,7 +938,8 @@ weixinshare({
 
             // And if we need scrollbar
             //scrollbar: '.swiper-scrollbar',
-        })
+        });
+
 
     };
     controller.prototype.appendLeft = function(str){
