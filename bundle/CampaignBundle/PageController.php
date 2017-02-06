@@ -31,6 +31,10 @@ class PageController extends Controller {
 		$this->render('match', array('ismy' => $ismy));
 	}
 
+	public function reservationAction() {	
+		$this->render('reservation');
+	}
+
 	public function loginAction() {
 		$request = $this->request;
 		$fields = array(
