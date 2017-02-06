@@ -553,6 +553,14 @@ html,body{
 //for doneshare-page
 #doneshare-page{
   .show-word{
+    width: 1.7rem;
+    height: .8rem;
+    span{
+      height: .8rem;
+    }
+    .letter{
+      width: 0.8rem;
+    }
     @include transition(all 1s);
     &.fadein{
       opacity: 1;

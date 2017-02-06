@@ -1661,10 +1661,18 @@ html, body {
 }
 
 #doneshare-page .show-word {
+  width: 1.7rem;
+  height: .8rem;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   -webkit-transition: all 1s;
   transition: all 1s;
+}
+#doneshare-page .show-word span {
+  height: .8rem;
+}
+#doneshare-page .show-word .letter {
+  width: 0.8rem;
 }
 #doneshare-page .show-word.fadein {
   opacity: 1;
