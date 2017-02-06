@@ -144,7 +144,7 @@
 </div>
 <div class="video-wrap">
     <div class="video-block">
-        <video id="myvideo" src="/src/dist/video/guitar.mov"  poster="/src/dist/images/poster.jpg"></video>
+        <video id="myvideo" src="/src/dist/video/guitar.mp4"  poster="/src/dist/images/poster.jpg"></video>
     </div>
     <div class="btn-closevideo"></div>
 </div>
