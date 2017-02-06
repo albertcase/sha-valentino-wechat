@@ -17,8 +17,17 @@
     @include size(3.11rem,0.59rem);
   }
   .generate-show{
+    width: 6.13rem;
+    height: 7.2rem;
     background: #f4f4f6;
     border: #fff 10px solid;
+    .pipe{
+      img{
+        width: auto;
+        height: 7.2rem;
+        margin: 0 auto;
+      }
+    }
   }
 }
 .swiper-container {
@@ -59,6 +68,10 @@
         //@include transition(opacity 1s);
       }
     }
+  }
+  .show-word{
+    left: 54%;
+    top: 51%;
   }
   .item-match-you{
     .show-word{
@@ -124,7 +137,7 @@
   .item-match{
     position: absolute;
     top: 0;
-    width: 2.25rem;
+    width: 1.68rem;
     height: 100%;
     @include transform(scale(1));
   }
@@ -137,7 +150,7 @@
     @include transition(all 1s 2s);
   }
   .match-des{
-    width: 1.9rem;
+    width: 2.26rem;
     margin: 0 auto;
   }
   .match-percent{
@@ -149,7 +162,7 @@
       text-indent: -999em;
       background: url("../images/m-2.png") no-repeat;
       background-size: 3.11rem;
-      background-position: -45% 0;
+      background-position: -72% 0;
     }
     .num{
       font-size: 0.8rem;
@@ -173,17 +186,17 @@
       text-indent: -999em;
       background: url("../images/m-2.png") no-repeat;
       background-size: 3.11rem;
-      background-position: -45% 0;
+      //background-position: -45% 0;
     }
     .fromlabel{
-      background-position: -50% 29%;
+      background-position: -93% 29%;
     }
     .andlabel{
-      background-position: -57% 60%;
+      background-position: -100% 60%;
     }
     .name-me,.name-you{
       text-align: center;
-      font-size: 0.24rem;
+      font-size: 0.2rem;
       font-weight: lighter;
       color: #484848;
     }
