@@ -52,7 +52,7 @@
             </div>
             <div class="generate-show">
                 <div class="show-animate">
-                    <img src="/src/dist/images/straps1/straps1_00000.jpg" alt=""/>
+                    <img src="" alt=""/>
                 </div>
                 <!--whiteandblack-->
                 <div class="show-word">
