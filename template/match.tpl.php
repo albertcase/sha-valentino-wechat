@@ -11,6 +11,15 @@
     <link rel="stylesheet" type="text/css" href="/src/dist/css/swiper.min.css" />
     <!--<link rel="stylesheet" type="text/css" href="/src/assets/css/match.css" />-->
     <link rel="stylesheet" type="text/css" href="/src/dist/css/style.css" />
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d7d1af7688a53ead0361f6fbfe4c00c8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
     <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/80c73ea5-de82-4aff-98ff-fd79aad6041d/wechat"></script>
     <script src="/src/dist/js/all_match.min.js"></script>
 </head>
