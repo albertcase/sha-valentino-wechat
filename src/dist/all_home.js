@@ -942,6 +942,29 @@ weixinshare({
 
         });
 
+        //swipe to prev step
+        var x1 = 0,x2= 0;
+        $('#select-page').on('touchstart',function(e){
+            x1 = e.changedTouches[0].clientX;
+        });
+        $('#select-page').on('touchend',function(e){
+            x2=e.changedTouches[0].clientX;
+            if(x2>x1 && $('.go-prev').hasClass('show')){
+                console.log('go prev');
+                nextStep = true;
+                self.goCustomStyle();
+            };
+
+            if(x2<x1 && !$('.go-prev').hasClass('show')){
+                console.log('go next');
+                if(nextStep){
+                    nextStep = false;
+                    self.goCustomLetter();
+                    return;
+                };
+            }
+        });
+
     //    go prev step
         $('.go-prev').on('touchstart',function(){
             nextStep = true;
