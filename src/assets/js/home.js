@@ -355,7 +355,7 @@
                 Common.gotoPin(2);
                 self.doGenerateAni(self.objSelect.background);
                 weixinshare({
-                    title1: '情人节小测试：我们的相配指数是多少？',
+                    title1: '相配指数大揭秘：这个情人节，你和我是最佳CP吗？',
                     des: '为最爱的她/他定制专属ROCKSTUD吉他肩带吧！',
                     link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+curId,
                     img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/share.jpg'
