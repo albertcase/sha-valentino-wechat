@@ -181,7 +181,7 @@ var Zepto=function(){function L(t){return null==t?String(t):j[S.call(t)]||"objec
 			$('.wrapper .pin').eq(num).addClass('current');
 		},
 		gotoReservationPage:function(){
-			window.location.href = '/template/reservation.html';
+			window.location.href = '/reservation';
 		},
 		goHomePage:function(){
 			window.location.href = window.location.origin;
@@ -468,7 +468,7 @@ Api = {
 
         //return callback({
         //    status:1,
-        //    msg:'success'
+        //    msg:'12'
         //})
 
 
@@ -564,7 +564,7 @@ Api = {
 weixinshare({
     title1: '情人节小测试：我们的相配指数是多少？',
     des: '为最爱的她/他定制专属ROCKSTUD吉他肩带吧！',
-    link: window.location.href,
+    link: window.location.origin,
     img: window.location.origin+'/src/dist/images/share.jpg'
 },function(){
 

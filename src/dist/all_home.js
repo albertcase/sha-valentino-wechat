@@ -354,7 +354,7 @@ var Zepto=function(){function L(t){return null==t?String(t):j[S.call(t)]||"objec
 			$('.wrapper .pin').eq(num).addClass('current');
 		},
 		gotoReservationPage:function(){
-			window.location.href = '/template/reservation.html';
+			window.location.href = '/reservation';
 		},
 		goHomePage:function(){
 			window.location.href = window.location.origin;
@@ -641,7 +641,7 @@ Api = {
 
         //return callback({
         //    status:1,
-        //    msg:'success'
+        //    msg:'12'
         //})
 
 
@@ -737,7 +737,7 @@ Api = {
 weixinshare({
     title1: '情人节小测试：我们的相配指数是多少？',
     des: '为最爱的她/他定制专属ROCKSTUD吉他肩带吧！',
-    link: window.location.href,
+    link: window.location.origin,
     img: window.location.origin+'/src/dist/images/share.jpg'
 },function(){
 
@@ -840,16 +840,17 @@ weixinshare({
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                //if generate,go product page
+                //if generate,go match page
                 Api.isLogin(function(data){
                     if(data.status==1){
-                        Common.gotoPin(2);
-                        self.objSelect = {
-                            background:data.msg.background,
-                            color:data.msg.color,
-                            content:data.msg.content
-                        };
-                        self.doGenerateAni(self.objSelect.background);
+                        //Common.gotoPin(2);
+                        //self.objSelect = {
+                        //    background:data.msg.background,
+                        //    color:data.msg.color,
+                        //    content:data.msg.content
+                        //};
+                        //self.doGenerateAni(self.objSelect.background);
+                        window.location.href = '/match?id='+data.msg.id;
                     }else{
                         Common.gotoPin(0);
                         self.bindEvent();

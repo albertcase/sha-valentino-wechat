@@ -10,6 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="/src/dist/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/src/dist/css/swiper.min.css" />
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d7d1af7688a53ead0361f6fbfe4c00c8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
     <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/80c73ea5-de82-4aff-98ff-fd79aad6041d/wechat"></script>
     <script src="/src/dist/js/all_reservation.min.js"></script>
 </head>
@@ -62,11 +71,6 @@
                                 <option value="成都国际金融中心旗舰店">成都国际金融中心旗舰店</option>
                                 <option value="北京SKP女士手袋精品店">北京SKP女士手袋精品店</option>
                                 <option value="北京SKP男装精品店">北京SKP男装精品店</option>
-                                <option value="香港国金中心女装精品店">香港国金中心女装精品店</option>
-                                <option value="香港广东道旗舰店">香港广东道旗舰店</option>
-                                <option value="香港铜锣湾利园女装精品店">香港铜锣湾利园女装精品店</option>
-                                <option value="香港置地广场男装精品店">香港置地广场男装精品店</option>
-                                <option value="香港Elements圆方男装精品店">香港Elements圆方男装精品店</option>
                             </select>
                         </div>
                         <div class="input-box input-checkbox">

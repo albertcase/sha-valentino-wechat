@@ -1175,6 +1175,12 @@ html, body {
   height: 0.48rem;
 }
 #landing-page .btn-start-custom .icon .circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.2rem;
+  margin-top: -0.2rem;
+  box-sizing: border-box;
   width: 0.4rem;
   height: 0.4rem;
   border: #9e7a59 0.04rem solid;
