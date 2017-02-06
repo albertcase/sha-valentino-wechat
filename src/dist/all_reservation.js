@@ -534,7 +534,7 @@ Api = {
                 dataUrl: '',
                 success: function () {
                     callback();
-                    //_hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareAppMessage']);
+                    _hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareAppMessage']);
 
                 },
                 cancel: function () {
@@ -547,7 +547,7 @@ Api = {
                 imgUrl: obj.img,
                 success: function () {
                     callback();
-                    //_hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareTimeline']);
+                    _hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareTimeline']);
                 },
                 cancel: function () {
 
