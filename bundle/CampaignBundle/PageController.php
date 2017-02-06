@@ -47,7 +47,7 @@ class PageController extends Controller {
 		$user->openid = 'openid_'.$id;
 		$user->nickname = 'user_'.$id;
 		$user->headimgurl = '111';
-		setcookie('_user', json_encode($user), time()+3600*24*30, '/');
+		setcookie('_user0206', json_encode($user), time()+3600*24*30, '/');
 		echo 'user:login:'.$id;
 		exit;
 
