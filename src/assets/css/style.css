@@ -1163,26 +1163,26 @@ html, body {
   margin: 0 auto;
 }
 #landing-page .btn-start-custom .text {
-  width: 0.95rem;
-  height: 0.23rem;
+  width: 1.11rem;
+  height: 0.26rem;
   margin: 0.2rem auto 0;
 }
 #landing-page .btn-start-custom .icon {
   position: relative;
   display: block;
   margin: 0.7rem auto 0;
-  width: 0.48rem;
-  height: 0.48rem;
+  width: 0.56rem;
+  height: 0.56rem;
 }
 #landing-page .btn-start-custom .icon .circle {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -0.2rem;
-  margin-top: -0.2rem;
+  margin-left: -0.28rem;
+  margin-top: -0.28rem;
   box-sizing: border-box;
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.56rem;
+  height: 0.56rem;
   border: #9e7a59 0.04rem solid;
   border-radius: 100%;
   -webkit-animation: circle 1.5s infinite;
@@ -1193,10 +1193,10 @@ html, body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 0.16rem;
-  height: 0.16rem;
-  margin-top: -0.08rem;
-  margin-left: -0.08rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  margin-top: -0.14rem;
+  margin-left: -0.14rem;
   background: #9e7a59;
   border-radius: 100%;
 }
