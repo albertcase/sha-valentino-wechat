@@ -87,7 +87,7 @@
       .item-match{
       }
       .item-match-me{
-        @include transform(scale(1));
+        @include transform(scale(1.05));
         .show-word{
           opacity: 1;
           //@include transition(opacity 1s 1s);
@@ -98,7 +98,7 @@
         }
       }
       .item-match-you{
-        @include transform(scale(1));
+        @include transform(scale(1.05));
         .show-word{
           opacity: 1;
           //@include transition(opacity 1s 2s);
@@ -126,7 +126,7 @@
     top: 0;
     width: 2.25rem;
     height: 100%;
-    @include transform(scale(0.95));
+    @include transform(scale(1));
   }
   .item-match-me{
     left: 0;
