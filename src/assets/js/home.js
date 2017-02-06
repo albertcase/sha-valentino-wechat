@@ -198,6 +198,29 @@
 
         });
 
+        //swipe to prev step
+        var x1 = 0,x2= 0;
+        $('#select-page').on('touchstart',function(e){
+            x1 = e.changedTouches[0].clientX;
+        });
+        $('#select-page').on('touchend',function(e){
+            x2=e.changedTouches[0].clientX;
+            if(x2>x1 && $('.go-prev').hasClass('show')){
+                console.log('go prev');
+                nextStep = true;
+                self.goCustomStyle();
+            };
+
+            if(x2<x1 && !$('.go-prev').hasClass('show')){
+                console.log('go next');
+                if(nextStep){
+                    nextStep = false;
+                    self.goCustomLetter();
+                    return;
+                };
+            }
+        });
+
     //    go prev step
         $('.go-prev').on('touchstart',function(){
             nextStep = true;
@@ -333,7 +356,7 @@
                     title1: '情人节小测试：我们的相配指数是多少？',
                     des: '为最爱的她/他定制专属ROCKSTUD吉他肩带吧！',
                     link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+curId,
-                    img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/done-bg-1.jpg'
+                    img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/share.jpg'
                 },function(){
                     window.location.href = '/match?id='+curId
                 });

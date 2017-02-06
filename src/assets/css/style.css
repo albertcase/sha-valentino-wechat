@@ -1025,26 +1025,6 @@ img {
   display: block !important;
 }
 
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: #000;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #000;
-}
-
-:-ms-input-placeholder {
-  /* IE 10+ */
-  color: #000;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: #000;
-}
-
 html, body {
   width: 100%;
   height: 100%;
@@ -1919,6 +1899,22 @@ html, body {
 }
 #pin-reservation .input-checkbox {
   margin: 0.35rem auto;
+}
+#pin-reservation ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #000;
+}
+#pin-reservation ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000;
+}
+#pin-reservation :-ms-input-placeholder {
+  /* IE 10+ */
+  color: #000;
+}
+#pin-reservation :-moz-placeholder {
+  /* Firefox 18- */
+  color: #000;
 }
 
 #show-qrcode .qr {
