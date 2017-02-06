@@ -350,6 +350,7 @@
         //    api
         Api.make(self.objSelect,function(data){
             if(data.status==1){
+                _hmt.push(['_trackEvent', '肩带类型', 'select', '肩带'+self.objSelect.background]);
                 var curId = data.msg;
                 Common.gotoPin(2);
                 self.doGenerateAni(self.objSelect.background);
@@ -361,6 +362,8 @@
                 },function(){
                     window.location.href = '/match?id='+curId
                 });
+            }else{
+                Common.alertBox.add(data.msg);
             }
         });
 

@@ -707,7 +707,7 @@ Api = {
                 dataUrl: '',
                 success: function () {
                     callback();
-                    //_hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareAppMessage']);
+                    _hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareAppMessage']);
 
                 },
                 cancel: function () {
@@ -720,7 +720,7 @@ Api = {
                 imgUrl: obj.img,
                 success: function () {
                     callback();
-                    //_hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareTimeline']);
+                    _hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareTimeline']);
                 },
                 cancel: function () {
 
@@ -1094,6 +1094,7 @@ weixinshare({
         //    api
         Api.make(self.objSelect,function(data){
             if(data.status==1){
+                _hmt.push(['_trackEvent', '肩带类型', 'select', '肩带'+self.objSelect.background]);
                 var curId = data.msg;
                 Common.gotoPin(2);
                 self.doGenerateAni(self.objSelect.background);
@@ -1105,6 +1106,8 @@ weixinshare({
                 },function(){
                     window.location.href = '/match?id='+curId
                 });
+            }else{
+                Common.alertBox.add(data.msg);
             }
         });
 
