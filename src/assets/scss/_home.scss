@@ -137,10 +137,18 @@ html,body{
       margin: 0.7rem auto 0;
       @include size(0.48rem,0.48rem);
       .circle{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -0.2rem;
+        margin-top: -0.2rem;
+        box-sizing: border-box;
         @include size(0.4rem,0.4rem);
         border: #9e7a59 0.04rem solid;
         border-radius: 100%;
         @include animation(circle 1.5s infinite);
+        //@include transform-origin(50% 50%);
+        //@include transform(scale(0.6));
       }
       .dot{
         position: absolute;
