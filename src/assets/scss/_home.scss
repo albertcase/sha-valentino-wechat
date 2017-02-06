@@ -552,10 +552,13 @@ html,body{
 
 //for doneshare-page
 #doneshare-page{
-  .show-word.fadein{
-    opacity: 1;
-    span{
+  .show-word{
+    @include transition(all 1s);
+    &.fadein{
       opacity: 1;
+      span{
+        opacity: 1;
+      }
     }
   }
 }

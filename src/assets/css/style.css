@@ -1661,6 +1661,12 @@ html, body {
   height: 0.26rem;
 }
 
+#doneshare-page .show-word {
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
 #doneshare-page .show-word.fadein {
   opacity: 1;
 }

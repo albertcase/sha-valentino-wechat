@@ -239,7 +239,7 @@
                             $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2).toLowerCase());
                             //self.objSelect
                         }
-                        if(j==15){
+                        if(j==18){
                             $('.show-word').removeClass('fadein');
                         }
                         if(j>20){
