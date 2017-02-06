@@ -641,7 +641,7 @@ Api = {
 
         //return callback({
         //    status:1,
-        //    msg:'success'
+        //    msg:'12'
         //})
 
 
@@ -840,16 +840,17 @@ weixinshare({
                 $('.preload').remove();
                 $('.container').addClass('fade');
 
-                //if generate,go product page
+                //if generate,go match page
                 Api.isLogin(function(data){
                     if(data.status==1){
-                        Common.gotoPin(2);
-                        self.objSelect = {
-                            background:data.msg.background,
-                            color:data.msg.color,
-                            content:data.msg.content
-                        };
-                        self.doGenerateAni(self.objSelect.background);
+                        //Common.gotoPin(2);
+                        //self.objSelect = {
+                        //    background:data.msg.background,
+                        //    color:data.msg.color,
+                        //    content:data.msg.content
+                        //};
+                        //self.doGenerateAni(self.objSelect.background);
+                        window.location.href = '/match?id='+data.msg.id;
                     }else{
                         Common.gotoPin(0);
                         self.bindEvent();
