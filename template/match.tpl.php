@@ -43,7 +43,7 @@
                 <img src="/src/dist/images/m-3.png" alt=""/>
             </div>
             <div class="btn btn-goreservation">
-                <a href="/template/reservation.html">开始预约</a>
+                <a href="/reservation">开始预约</a>
             </div>
         </div>
         <div class="pin pin-3 pin-result" id="doneshare-page">
@@ -66,7 +66,7 @@
                 <img src="/src/dist/images/text-p3-t1.png" alt=""/>
             </div>
             <div class="btn btn-goreservation">
-                <a href="/template/reservation.html">开始预约</a>
+                <a href="/reservation">开始预约</a>
             </div>
         </div>
     </div>

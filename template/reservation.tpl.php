@@ -62,11 +62,6 @@
                                 <option value="成都国际金融中心旗舰店">成都国际金融中心旗舰店</option>
                                 <option value="北京SKP女士手袋精品店">北京SKP女士手袋精品店</option>
                                 <option value="北京SKP男装精品店">北京SKP男装精品店</option>
-                                <option value="香港国金中心女装精品店">香港国金中心女装精品店</option>
-                                <option value="香港广东道旗舰店">香港广东道旗舰店</option>
-                                <option value="香港铜锣湾利园女装精品店">香港铜锣湾利园女装精品店</option>
-                                <option value="香港置地广场男装精品店">香港置地广场男装精品店</option>
-                                <option value="香港Elements圆方男装精品店">香港Elements圆方男装精品店</option>
                             </select>
                         </div>
                         <div class="input-box input-checkbox">

@@ -373,7 +373,7 @@ b.params.hashnav&&b.hashnav&&b.hashnav.init(),b.params.a11y&&b.a11y&&b.a11y.init
 			$('.wrapper .pin').eq(num).addClass('current');
 		},
 		gotoReservationPage:function(){
-			window.location.href = '/template/reservation.html';
+			window.location.href = '/reservation';
 		},
 		goHomePage:function(){
 			window.location.href = window.location.origin;

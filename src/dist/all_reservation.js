@@ -181,7 +181,7 @@ var Zepto=function(){function L(t){return null==t?String(t):j[S.call(t)]||"objec
 			$('.wrapper .pin').eq(num).addClass('current');
 		},
 		gotoReservationPage:function(){
-			window.location.href = '/template/reservation.html';
+			window.location.href = '/reservation';
 		},
 		goHomePage:function(){
 			window.location.href = window.location.origin;
