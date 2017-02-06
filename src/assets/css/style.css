@@ -1185,9 +1185,9 @@ html, body {
   height: 0.4rem;
   border: #9e7a59 0.04rem solid;
   border-radius: 100%;
-  -webkit-animation: circle 0.15s infinite;
-  -moz-animation: circle 0.15s infinite;
-  animation: circle 0.15s infinite;
+  -webkit-animation: circle 1.5s infinite;
+  -moz-animation: circle 1.5s infinite;
+  animation: circle 1.5s infinite;
 }
 #landing-page .btn-start-custom .icon .dot {
   position: absolute;
