@@ -19,7 +19,7 @@
     })();
     </script>
     <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/80c73ea5-de82-4aff-98ff-fd79aad6041d/wechat"></script>
-    <script src="/src/dist/js/all_home.min.js?t=1"></script>
+    <script src="/src/dist/js/all_home.min.js"></script>
 </head>
 <body class="page-home">
 <div class="preload">
