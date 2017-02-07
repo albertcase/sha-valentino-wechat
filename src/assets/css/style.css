@@ -1283,12 +1283,11 @@ html, body {
   margin: 0 auto;
   box-shadow: 0 0 5px #333;
 }
-#landing-page .vb:after {
-  content: '';
+#landing-page .vb .btn-play {
   display: block;
   position: absolute;
-  width: 0;
-  height: 0;
+  width: 0.6rem;
+  height: 0.6rem;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -1296,9 +1295,25 @@ html, body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  border-left: #fff 10px solid;
-  border-top: transparent 8px solid;
-  border-bottom: transparent 8px solid;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 100%;
+}
+#landing-page .vb .btn-play:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 57%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-left: #333 0.24rem solid;
+  border-top: transparent 0.16rem solid;
+  border-bottom: transparent 0.16rem solid;
 }
 
 #select-page {

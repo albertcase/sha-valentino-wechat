@@ -59,6 +59,7 @@
                 </div>
                 <div class="vb">
                     <img src="/src/dist/images/poster.jpg">
+                    <span class="btn-play"></span>
                 </div>
                 <div class="btn btn-start-custom">
                     <div class="icon">

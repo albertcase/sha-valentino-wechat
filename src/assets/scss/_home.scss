@@ -187,17 +187,27 @@ html,body{
     border: #fff 2px solid;
     margin: 0 auto;
     box-shadow: 0 0 5px #333;
-    &:after{
-      content: '';
+    .btn-play{
       display: block;
       position: absolute;
-      @include size(0,0);
+      @include size(0.6rem,0.6rem);
       top: 50%;
       left: 50%;
       @include transform(translate(-50%,-50%));
-      border-left: #fff 10px solid;
-      border-top: transparent 8px solid;
-      border-bottom: transparent 8px solid;
+      background: rgba(255,255,255,0.8);
+      border-radius: 100%;
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        @include size(0,0);
+        top: 50%;
+        left: 57%;
+        @include transform(translate(-50%,-50%));
+        border-left: #333 0.24rem solid;
+        border-top: transparent 0.16rem solid;
+        border-bottom: transparent 0.16rem solid;
+      }
     }
   }
 }
