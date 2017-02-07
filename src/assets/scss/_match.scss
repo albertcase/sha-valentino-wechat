@@ -43,22 +43,50 @@
     height: 0.8rem;
     line-height: 0.8rem;
   }
-  .swiper-button-next, .swiper-container-rtl .swiper-button-prev,
-  .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+  .swiper-button-next,
+  .swiper-button-prev{
     background: transparent;
     margin-top: 0.8rem;
     @include size(0.28rem,0.28rem);
     border-bottom: #000 0.06rem solid;
   }
-  .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+  .swiper-button-next{
     border-right: #000 0.06rem solid;
     @include transform(rotate(-45deg));
     right: 5px;
+    @include animation(gonext 1s 1s infinite);
+    @include keyframes(gonext){
+      0%{
+        right: 15px;
+        opacity: 0;
+      }
+      100%{
+        right: 8px;
+        opacity: 1;
+      }
+    }
+    &.swiper-button-disabled{
+      display: none;
+    }
   }
-  .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+  .swiper-button-prev{
     border-left: #000 0.06rem solid;
     @include transform(rotate(45deg));
     left: 5px;
+    @include animation(goprev 1s 1s infinite);
+    @include keyframes(goprev){
+      0%{
+        left: 15px;
+        opacity: 0;
+      }
+      100%{
+        left: 8px;
+        opacity: 1;
+      }
+    }
+    &.swiper-button-disabled{
+      display: none;
+    }
   }
   .item-match-me{
     .show-word{

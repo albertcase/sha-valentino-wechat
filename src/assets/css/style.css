@@ -2003,15 +2003,15 @@ html, body {
   height: 0.8rem;
   line-height: 0.8rem;
 }
-#match-list .swiper-button-next, #match-list .swiper-container-rtl .swiper-button-prev,
-#match-list .swiper-button-prev, #match-list .swiper-container-rtl .swiper-button-next {
+#match-list .swiper-button-next,
+#match-list .swiper-button-prev {
   background: transparent;
   margin-top: 0.8rem;
   width: 0.28rem;
   height: 0.28rem;
   border-bottom: #000 0.06rem solid;
 }
-#match-list .swiper-button-next, #match-list .swiper-container-rtl .swiper-button-prev {
+#match-list .swiper-button-next {
   border-right: #000 0.06rem solid;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -2019,8 +2019,54 @@ html, body {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   right: 5px;
+  -webkit-animation: gonext 1s 1s infinite;
+  -moz-animation: gonext 1s 1s infinite;
+  animation: gonext 1s 1s infinite;
 }
-#match-list .swiper-button-prev, #match-list .swiper-container-rtl .swiper-button-next {
+@-webkit-keyframes gonext {
+  0% {
+    right: 15px;
+    opacity: 0;
+  }
+  100% {
+    right: 8px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes gonext {
+  0% {
+    right: 15px;
+    opacity: 0;
+  }
+  100% {
+    right: 8px;
+    opacity: 1;
+  }
+}
+@-o-keyframes gonext {
+  0% {
+    right: 15px;
+    opacity: 0;
+  }
+  100% {
+    right: 8px;
+    opacity: 1;
+  }
+}
+@keyframes gonext {
+  0% {
+    right: 15px;
+    opacity: 0;
+  }
+  100% {
+    right: 8px;
+    opacity: 1;
+  }
+}
+#match-list .swiper-button-next.swiper-button-disabled {
+  display: none;
+}
+#match-list .swiper-button-prev {
   border-left: #000 0.06rem solid;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -2028,6 +2074,52 @@ html, body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   left: 5px;
+  -webkit-animation: goprev 1s 1s infinite;
+  -moz-animation: goprev 1s 1s infinite;
+  animation: goprev 1s 1s infinite;
+}
+@-webkit-keyframes goprev {
+  0% {
+    left: 15px;
+    opacity: 0;
+  }
+  100% {
+    left: 8px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes goprev {
+  0% {
+    left: 15px;
+    opacity: 0;
+  }
+  100% {
+    left: 8px;
+    opacity: 1;
+  }
+}
+@-o-keyframes goprev {
+  0% {
+    left: 15px;
+    opacity: 0;
+  }
+  100% {
+    left: 8px;
+    opacity: 1;
+  }
+}
+@keyframes goprev {
+  0% {
+    left: 15px;
+    opacity: 0;
+  }
+  100% {
+    left: 8px;
+    opacity: 1;
+  }
+}
+#match-list .swiper-button-prev.swiper-button-disabled {
+  display: none;
 }
 #match-list .item-match-me .show-word {
   opacity: 1;

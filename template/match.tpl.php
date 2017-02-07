@@ -34,9 +34,6 @@
 <div class="wrapper">
     <div class="container">
         <div class="pin pin-2 current pin-result" id="match-page">
-            <!--<div class="guide-share">-->
-                <!--<img src="/src/dist/images/guide-share.png" alt=""/>-->
-            <!--</div>-->
             <!-- Slider main container -->
             <div class="swiper-container" id="match-list">
                 <!-- Additional required wrapper -->
