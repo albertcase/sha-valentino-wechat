@@ -1042,19 +1042,20 @@ weixinshare({
     //    包带不同，字体颜色相同，85-89随机
     //    包带不同，字体颜色不同，80-84随机
     //    a is 包带，b is 字体颜色
+        console.log(a1,a2,b1,b2);
         var matchNum=80;
         //console.log(a1,a2);
         if(a1==a2){
             if(b1==b2){
-                matchNum = (a1+a2-1)+95;
+                matchNum = (parseInt(a1)+parseInt(a2)-1)+95;
             }else{
-                matchNum = (a1+a2-2)+90;
+                matchNum = (parseInt(a1)+parseInt(a2)-2)+90;
             }
         }else{
             if(b1==b2){
-                matchNum = (a1+a2-2)+85;
+                matchNum = (parseInt(a1)+parseInt(a2)-2)+85;
             }else{
-                matchNum = (a1+a2-2)+80;
+                matchNum = (parseInt(a1)+parseInt(a2)-2)+80;
             }
         };
         return Math.round(matchNum);
