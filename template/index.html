@@ -2,24 +2,29 @@
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>RockStud Guitar Strap</title>
+    <title>ROCKSTUD GUITAR STRAPS</title>
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">
     <meta name="full-screen" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="/src/dist/css/style.css" />
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?d7d1af7688a53ead0361f6fbfe4c00c8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
     <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/80c73ea5-de82-4aff-98ff-fd79aad6041d/wechat"></script>
-    <!--<script src="/src/assets/js/lib/zepto.min.js"></script>-->
-    <!--<script src="/src/assets/js/lib/pre-loader.js"></script>-->
-    <!--<script src="/src/assets/js/lib/reqAnimate.js"></script>-->
-    <!--<script src="/src/assets/js/rem.js"></script>-->
-    <!--<script src="/src/assets/js/common.js"></script>-->
-    <!--<script src="/src/assets/js/api.js"></script>-->
-    <!--<script src="/src/assets/js/wxshare.js"></script>-->
     <script src="/src/dist/js/all_home.min.js"></script>
 </head>
 <body class="page-home">
+<div class="preload">
+    <div class="v-content"></div>
+</div>
 <div id="orientLayer" class="mod-orient-layer">
     <div class="mod-orient-layer__content">
         <i class="icon mod-orient-layer__icon-orient"></i>
@@ -52,10 +57,9 @@
                 <div class="p1-t1">
                     <img src="/src/dist/images/p1-t1.png" alt="精致刺绣，魅惑无限"/>
                 </div>
-                <div class="video-block">
-                    <video src="/src/dist/video/test.mp4"  poster="/src/dist/images/poster.jpg">
-                        Sorry, your browser doesn't support embedded videos
-                    </video>
+                <div class="vb">
+                    <img src="/src/dist/images/poster.jpg">
+                    <span class="btn-play"></span>
                 </div>
                 <div class="btn btn-start-custom">
                     <div class="icon">
@@ -63,7 +67,7 @@
                         <div class="dot"></div>
                     </div>
                     <div class="text">
-                        <img src="/src/dist/images/btn-text-1.png" alt="valentino"/>
+                        <img src="/src/dist/images/text-custom.png" alt="valentino"/>
                     </div>
                 </div>
             </div>
@@ -75,14 +79,10 @@
                     <img src="/src/dist/images/straps-1.png" alt="valentino"/>
                 </div>
                 <!--whiteandblack-->
-                <!--<div class="show-word">-->
-                    <!--<span class="letter letter-a" id="first-letter"></span>-->
-                    <!--<span class="letter letter-b" id="second-letter"></span>-->
-                <!--</div>-->
                 <div class="show-word">
-                    <span class="sw-1 letter letter-a"></span>
+                    <span class="sw-1 letter"></span>
                     <span class="sw-2 dot"></span>
-                    <span class="sw-3 letter letter-b"></span>
+                    <span class="sw-3 letter"></span>
                     <span class="sw-4 dot"></span>
                 </div>
             </div>
@@ -90,9 +90,9 @@
                 <div class="p2-t1">
                     <img src="/src/dist/images/p2-text-1.png" alt=""/>
                 </div>
-                <div class="steps">
-                    <div class="num">1/2</div>
-                    <!--<div class="control">next</div>-->
+                <div class="steps"></div>
+                <div class="go-prev">
+                    <img src="/src/dist/images/prev-step.png" alt=""/>
                 </div>
             </div>
             <div class="switch-menu">
@@ -107,7 +107,7 @@
                 </div>
                 <div class="step step-2">
                     <h3 class="tips">专属字母</h3>
-                    <div class="input-box">
+                    <div class="input-box clearfix">
                         <ul class="lists">
                             <li class="item item-1 active"></li>
                             <li class="item item-2"></li>
@@ -119,31 +119,35 @@
             </div>
         </div>
         <div class="pin pin-3 pin-result" id="doneshare-page">
-            <!--<div class="guide-share">-->
-                <!--<img src="/src/dist/images/guide-share.png" alt=""/>-->
-            <!--</div>-->
             <div class="p3-t1">
-                <img src="/src/dist/images/p3-t1.png" alt=""/>
+                <img src="/src/dist/images/text-custom-finish.png" alt=""/>
             </div>
             <div class="generate-show">
                 <div class="show-animate">
-                    <img src="/src/dist/images/straps1/straps1_00000.jpg" alt=""/>
+                    <img src="" alt=""/>
                 </div>
                 <!--whiteandblack-->
                 <div class="show-word">
-                    <span class="letter letter-a" id="first-letter-1"></span>
-                    <span class="letter letter-b" id="second-letter-2"></span>
+                    <span class="sw-1 letter"></span>
+                    <span class="sw-2 dot"></span>
+                    <span class="sw-3 letter"></span>
+                    <span class="sw-4 dot"></span>
                 </div>
             </div>
             <div class="p3-t2">
-                <img src="/src/dist/images/p3-t2.png" alt=""/>
+                <img src="/src/dist/images/text-p3-t1.png" alt=""/>
             </div>
             <div class="btn btn-goreservation">
                 <a href="/reservation">开始预约</a>
             </div>
         </div>
-
     </div>
+</div>
+<div class="video-wrap">
+    <div class="video-block">
+        <video id="myvideo" src="/src/dist/video/guitar.mp4"  poster="/src/dist/images/poster.jpg"></video>
+    </div>
+    <div class="btn-closevideo"></div>
 </div>
 </body>
 </html>

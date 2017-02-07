@@ -78,6 +78,11 @@
             baseurl+'straps-1.png',
             baseurl+'straps-4.png',
             baseurl+'straps-3.png',
+            baseurl+'text-step.png',
+            baseurl+'text-step-tip.png',
+            baseurl+'text-btn.png',
+            baseurl+'text-custom-finish.png',
+            baseurl+'text-custom.png',
             baseurl+'alphabet/alphabet-black.png',
             baseurl+'alphabet/alphabet-color.png',
         ];
