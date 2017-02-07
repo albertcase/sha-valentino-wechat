@@ -85,7 +85,7 @@ class PageController extends Controller {
     }
 
     public function clearMakeAction() {
-
+    	exit;
     	$DatabaseAPI = new \Lib\DatabaseAPI();
 		$DatabaseAPI->clearMake();
 
