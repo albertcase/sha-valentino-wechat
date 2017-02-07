@@ -827,7 +827,6 @@ weixinshare({
             //    load match
                 var nowId = Common.getParameterByName('id');
                 Api.matchlist({id:nowId},function(data){
-                    console.log(data);
                     self.match(data);
                     weixinshare({
                         title1: '相配指数大揭秘：这个情人节，你和我是最佳CP吗？',
@@ -1044,17 +1043,18 @@ weixinshare({
     //    包带不同，字体颜色不同，80-84随机
     //    a is 包带，b is 字体颜色
         var matchNum=80;
+        console.log(a1,a2);
         if(a1==a2){
             if(b1==b2){
-                matchNum = Math.random()*5+95;
+                matchNum = (a1+a2-1)+95;
             }else{
-                matchNum = Math.random()*5+90;
+                matchNum = (a1+a2-2)+90;
             }
         }else{
             if(b1==b2){
-                matchNum = Math.random()*5+85;
+                matchNum = (a1+a2-2)+85;
             }else{
-                matchNum = Math.random()*5+80;
+                matchNum = (a1+a2-2)+80;
             }
         };
         return Math.round(matchNum);

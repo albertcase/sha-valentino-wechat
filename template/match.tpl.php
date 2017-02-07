@@ -24,6 +24,9 @@
     <script src="/src/dist/js/all_match.min.js"></script>
 </head>
 <body class="page-home">
+<div class="preload">
+    <div class="v-content"></div>
+</div>
 <div id="orientLayer" class="mod-orient-layer">
     <div class="mod-orient-layer__content">
         <i class="icon mod-orient-layer__icon-orient"></i>
