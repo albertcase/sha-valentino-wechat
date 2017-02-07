@@ -280,7 +280,7 @@
     //    包带不同，字体颜色不同，80-84随机
     //    a is 包带，b is 字体颜色
         var matchNum=80;
-        console.log(a1,a2);
+        //console.log(a1,a2);
         if(a1==a2){
             if(b1==b2){
                 matchNum = (a1+a2-1)+95;
