@@ -66,6 +66,14 @@
                 Api.matchlist({id:nowId},function(data){
                     console.log(data);
                     self.match(data);
+                    weixinshare({
+                        title1: '相配指数大揭秘：这个情人节，你和我是最佳CP吗？',
+                        des: '为最爱的她/他定制专属ROCKSTUD吉他肩带',
+                        link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+data.msg.id,
+                        img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/share.jpg'
+                    },function(){
+                        window.location.href = '/match?id='+data.msg.id
+                    });
                 });
 
             //    test
@@ -239,7 +247,7 @@
                             $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2).toLowerCase());
                             //self.objSelect
                         }
-                        if(j==15){
+                        if(j==18){
                             $('.show-word').removeClass('fadein');
                         }
                         if(j>20){

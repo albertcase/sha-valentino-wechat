@@ -754,8 +754,8 @@ Api = {
 }).call(this);
 
 weixinshare({
-    title1: '情人节小测试：我们的相配指数是多少？',
-    des: '为最爱的她/他定制专属ROCKSTUD吉他肩带吧！',
+    title1: '相配指数大揭秘：这个情人节，你和我是最佳CP吗？',
+    des: '为最爱的她/他定制专属ROCKSTUD吉他肩带',
     link: window.location.origin,
     img: window.location.origin+'/src/dist/images/share.jpg'
 },function(){
@@ -829,6 +829,14 @@ weixinshare({
                 Api.matchlist({id:nowId},function(data){
                     console.log(data);
                     self.match(data);
+                    weixinshare({
+                        title1: '相配指数大揭秘：这个情人节，你和我是最佳CP吗？',
+                        des: '为最爱的她/他定制专属ROCKSTUD吉他肩带',
+                        link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+data.msg.id,
+                        img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/share.jpg'
+                    },function(){
+                        window.location.href = '/match?id='+data.msg.id
+                    });
                 });
 
             //    test
@@ -1002,7 +1010,7 @@ weixinshare({
                             $('#doneshare-page .sw-3').attr('class','sw-3 letter letter-'+self.objSelect.content.substring(1,2).toLowerCase());
                             //self.objSelect
                         }
-                        if(j==15){
+                        if(j==18){
                             $('.show-word').removeClass('fadein');
                         }
                         if(j>20){

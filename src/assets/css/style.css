@@ -1095,8 +1095,8 @@ html, body {
 }
 #landing-page .layer-bg .pipe {
   position: absolute;
-  width: 100vw;
-  bottom: -10%;
+  width: 6.09rem;
+  bottom: -8%;
 }
 #landing-page .layer-bg .lbg {
   position: absolute;
@@ -1125,7 +1125,6 @@ html, body {
 }
 #landing-page .layer-bg .lbg.bg-1 .pipe {
   right: 0;
-  bottom: -10%;
 }
 #landing-page .layer-bg .lbg.bg-2 {
   right: 0;
@@ -1151,7 +1150,7 @@ html, body {
 #landing-page .p1-t1 {
   width: 4.02rem;
   height: 2.03rem;
-  margin: 0 auto 0.9rem;
+  margin: 0 auto 0.5rem;
 }
 #landing-page .content {
   position: relative;
@@ -1163,26 +1162,26 @@ html, body {
   margin: 0 auto;
 }
 #landing-page .btn-start-custom .text {
-  width: 0.95rem;
-  height: 0.23rem;
+  width: 1.11rem;
+  height: 0.26rem;
   margin: 0.2rem auto 0;
 }
 #landing-page .btn-start-custom .icon {
   position: relative;
   display: block;
   margin: 0.7rem auto 0;
-  width: 0.48rem;
-  height: 0.48rem;
+  width: 0.56rem;
+  height: 0.56rem;
 }
 #landing-page .btn-start-custom .icon .circle {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -0.2rem;
-  margin-top: -0.2rem;
+  margin-left: -0.28rem;
+  margin-top: -0.28rem;
   box-sizing: border-box;
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.56rem;
+  height: 0.56rem;
   border: #9e7a59 0.04rem solid;
   border-radius: 100%;
   -webkit-animation: circle 1.5s infinite;
@@ -1193,10 +1192,10 @@ html, body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 0.16rem;
-  height: 0.16rem;
-  margin-top: -0.08rem;
-  margin-left: -0.08rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  margin-top: -0.14rem;
+  margin-left: -0.14rem;
   background: #9e7a59;
   border-radius: 100%;
 }
@@ -1284,12 +1283,11 @@ html, body {
   margin: 0 auto;
   box-shadow: 0 0 5px #333;
 }
-#landing-page .vb:after {
-  content: '';
+#landing-page .vb .btn-play {
   display: block;
   position: absolute;
-  width: 0;
-  height: 0;
+  width: 0.6rem;
+  height: 0.6rem;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -1297,9 +1295,25 @@ html, body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  border-left: #fff 10px solid;
-  border-top: transparent 8px solid;
-  border-bottom: transparent 8px solid;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 100%;
+}
+#landing-page .vb .btn-play:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 57%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-left: #333 0.24rem solid;
+  border-top: transparent 0.16rem solid;
+  border-bottom: transparent 0.16rem solid;
 }
 
 #select-page {
@@ -1661,6 +1675,20 @@ html, body {
   height: 0.26rem;
 }
 
+#doneshare-page .show-word {
+  width: 1.7rem;
+  height: .8rem;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+#doneshare-page .show-word span {
+  height: .8rem;
+}
+#doneshare-page .show-word .letter {
+  width: 0.8rem;
+}
 #doneshare-page .show-word.fadein {
   opacity: 1;
 }
@@ -1952,8 +1980,15 @@ html, body {
   height: 0.59rem;
 }
 #match-page .generate-show {
+  width: 6.13rem;
+  height: 7.2rem;
   background: #f4f4f6;
   border: #fff 10px solid;
+}
+#match-page .generate-show .pipe img {
+  width: auto;
+  height: 7.2rem;
+  margin: 0 auto;
 }
 
 .swiper-container {
@@ -1968,15 +2003,15 @@ html, body {
   height: 0.8rem;
   line-height: 0.8rem;
 }
-#match-list .swiper-button-next, #match-list .swiper-container-rtl .swiper-button-prev,
-#match-list .swiper-button-prev, #match-list .swiper-container-rtl .swiper-button-next {
+#match-list .swiper-button-next,
+#match-list .swiper-button-prev {
   background: transparent;
   margin-top: 0.8rem;
   width: 0.28rem;
   height: 0.28rem;
   border-bottom: #000 0.06rem solid;
 }
-#match-list .swiper-button-next, #match-list .swiper-container-rtl .swiper-button-prev {
+#match-list .swiper-button-next {
   border-right: #000 0.06rem solid;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -1984,8 +2019,54 @@ html, body {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   right: 5px;
+  -webkit-animation: gonext 1s 1s infinite;
+  -moz-animation: gonext 1s 1s infinite;
+  animation: gonext 1s 1s infinite;
 }
-#match-list .swiper-button-prev, #match-list .swiper-container-rtl .swiper-button-next {
+@-webkit-keyframes gonext {
+  0% {
+    right: 15px;
+    opacity: 0;
+  }
+  100% {
+    right: 8px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes gonext {
+  0% {
+    right: 15px;
+    opacity: 0;
+  }
+  100% {
+    right: 8px;
+    opacity: 1;
+  }
+}
+@-o-keyframes gonext {
+  0% {
+    right: 15px;
+    opacity: 0;
+  }
+  100% {
+    right: 8px;
+    opacity: 1;
+  }
+}
+@keyframes gonext {
+  0% {
+    right: 15px;
+    opacity: 0;
+  }
+  100% {
+    right: 8px;
+    opacity: 1;
+  }
+}
+#match-list .swiper-button-next.swiper-button-disabled {
+  display: none;
+}
+#match-list .swiper-button-prev {
   border-left: #000 0.06rem solid;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -1993,6 +2074,52 @@ html, body {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   left: 5px;
+  -webkit-animation: goprev 1s 1s infinite;
+  -moz-animation: goprev 1s 1s infinite;
+  animation: goprev 1s 1s infinite;
+}
+@-webkit-keyframes goprev {
+  0% {
+    left: 15px;
+    opacity: 0;
+  }
+  100% {
+    left: 8px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes goprev {
+  0% {
+    left: 15px;
+    opacity: 0;
+  }
+  100% {
+    left: 8px;
+    opacity: 1;
+  }
+}
+@-o-keyframes goprev {
+  0% {
+    left: 15px;
+    opacity: 0;
+  }
+  100% {
+    left: 8px;
+    opacity: 1;
+  }
+}
+@keyframes goprev {
+  0% {
+    left: 15px;
+    opacity: 0;
+  }
+  100% {
+    left: 8px;
+    opacity: 1;
+  }
+}
+#match-list .swiper-button-prev.swiper-button-disabled {
+  display: none;
 }
 #match-list .item-match-me .show-word {
   opacity: 1;
@@ -2000,6 +2127,10 @@ html, body {
   -o-transition: opacity 1s;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
+}
+#match-list .show-word {
+  left: 54%;
+  top: 51%;
 }
 #match-list .item-match-you .show-word {
   opacity: 1;
@@ -2038,11 +2169,11 @@ html, body {
   transition: opacity 1s 3.5s;
 }
 #match-list .swiper-slide-active .generate-show .item-match-me {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 #match-list .swiper-slide-active .generate-show .item-match-me .show-word {
   opacity: 1;
@@ -2051,11 +2182,11 @@ html, body {
   opacity: 1;
 }
 #match-list .swiper-slide-active .generate-show .item-match-you {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 #match-list .swiper-slide-active .generate-show .item-match-you .show-word {
   opacity: 1;
@@ -2071,13 +2202,13 @@ html, body {
 .generate-show .item-match {
   position: absolute;
   top: 0;
-  width: 2.25rem;
+  width: 1.68rem;
   height: 100%;
-  -webkit-transform: scale(0.95);
-  -moz-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  transform: scale(0.95);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 .generate-show .item-match-me {
   left: 0;
@@ -2095,7 +2226,7 @@ html, body {
   transition: all 1s 2s;
 }
 .generate-show .match-des {
-  width: 1.9rem;
+  width: 2.26rem;
   margin: 0 auto;
 }
 .generate-show .match-percent {
@@ -2107,7 +2238,7 @@ html, body {
   text-indent: -999em;
   background: url("../images/m-2.png") no-repeat;
   background-size: 3.11rem;
-  background-position: -45% 0;
+  background-position: -72% 0;
 }
 .generate-show .match-percent .num {
   font-size: 0.8rem;
@@ -2129,17 +2260,16 @@ html, body {
   text-indent: -999em;
   background: url("../images/m-2.png") no-repeat;
   background-size: 3.11rem;
-  background-position: -45% 0;
 }
 .generate-show .fromto .fromlabel {
-  background-position: -50% 29%;
+  background-position: -93% 29%;
 }
 .generate-show .fromto .andlabel {
-  background-position: -57% 60%;
+  background-position: -100% 60%;
 }
 .generate-show .fromto .name-me, .generate-show .fromto .name-you {
   text-align: center;
-  font-size: 0.24rem;
+  font-size: 0.2rem;
   font-weight: lighter;
   color: #484848;
 }

@@ -72,8 +72,8 @@ html,body{
     }
     .pipe{
       position: absolute;
-      width: 100vw;
-      bottom: -10%;
+      width: 6.09rem;
+      bottom: -8%;
       img{
         //width: auto;
         //height: 100%;
@@ -96,7 +96,7 @@ html,body{
         }
         .pipe{
           right: 0;
-          bottom: -10%;
+          //bottom: -10%;
         }
       }
       &.bg-2{
@@ -117,7 +117,7 @@ html,body{
   }
   .p1-t1{
     @include size(4.02rem,2.03rem);
-    margin: 0 auto 0.9rem;
+    margin: 0 auto 0.5rem;
   }
   .content{
     position: relative;
@@ -128,22 +128,22 @@ html,body{
     width: 1rem;
     margin: 0 auto;
     .text{
-      @include size(0.95rem,0.23rem);
+      @include size(1.11rem,0.26rem);
       margin: 0.2rem auto 0;
     }
     .icon{
       position: relative;
       display: block;
       margin: 0.7rem auto 0;
-      @include size(0.48rem,0.48rem);
+      @include size(0.56rem,0.56rem);
       .circle{
         position: absolute;
         left: 50%;
         top: 50%;
-        margin-left: -0.2rem;
-        margin-top: -0.2rem;
+        margin-left: -0.28rem;
+        margin-top: -0.28rem;
         box-sizing: border-box;
-        @include size(0.4rem,0.4rem);
+        @include size(0.56rem,0.56rem);
         border: #9e7a59 0.04rem solid;
         border-radius: 100%;
         @include animation(circle 1.5s infinite);
@@ -154,9 +154,9 @@ html,body{
         position: absolute;
         left: 50%;
         top: 50%;
-        @include size(0.16rem,0.16rem);
-        margin-top: -0.08rem;
-        margin-left: -0.08rem;
+        @include size(0.28rem,0.28rem);
+        margin-top: -0.14rem;
+        margin-left: -0.14rem;
         background: #9e7a59;
         border-radius: 100%;
         //@include animation(circle 1s infinite);
@@ -187,17 +187,27 @@ html,body{
     border: #fff 2px solid;
     margin: 0 auto;
     box-shadow: 0 0 5px #333;
-    &:after{
-      content: '';
+    .btn-play{
       display: block;
       position: absolute;
-      @include size(0,0);
+      @include size(0.6rem,0.6rem);
       top: 50%;
       left: 50%;
       @include transform(translate(-50%,-50%));
-      border-left: #fff 10px solid;
-      border-top: transparent 8px solid;
-      border-bottom: transparent 8px solid;
+      background: rgba(255,255,255,0.8);
+      border-radius: 100%;
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        @include size(0,0);
+        top: 50%;
+        left: 57%;
+        @include transform(translate(-50%,-50%));
+        border-left: #333 0.24rem solid;
+        border-top: transparent 0.16rem solid;
+        border-bottom: transparent 0.16rem solid;
+      }
     }
   }
 }
@@ -552,10 +562,21 @@ html,body{
 
 //for doneshare-page
 #doneshare-page{
-  .show-word.fadein{
-    opacity: 1;
+  .show-word{
+    width: 1.7rem;
+    height: .8rem;
     span{
+      height: .8rem;
+    }
+    .letter{
+      width: 0.8rem;
+    }
+    @include transition(all 1s);
+    &.fadein{
       opacity: 1;
+      span{
+        opacity: 1;
+      }
     }
   }
 }

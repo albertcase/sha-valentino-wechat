@@ -17,8 +17,17 @@
     @include size(3.11rem,0.59rem);
   }
   .generate-show{
+    width: 6.13rem;
+    height: 7.2rem;
     background: #f4f4f6;
     border: #fff 10px solid;
+    .pipe{
+      img{
+        width: auto;
+        height: 7.2rem;
+        margin: 0 auto;
+      }
+    }
   }
 }
 .swiper-container {
@@ -34,22 +43,50 @@
     height: 0.8rem;
     line-height: 0.8rem;
   }
-  .swiper-button-next, .swiper-container-rtl .swiper-button-prev,
-  .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+  .swiper-button-next,
+  .swiper-button-prev{
     background: transparent;
     margin-top: 0.8rem;
     @include size(0.28rem,0.28rem);
     border-bottom: #000 0.06rem solid;
   }
-  .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+  .swiper-button-next{
     border-right: #000 0.06rem solid;
     @include transform(rotate(-45deg));
     right: 5px;
+    @include animation(gonext 1s 1s infinite);
+    @include keyframes(gonext){
+      0%{
+        right: 15px;
+        opacity: 0;
+      }
+      100%{
+        right: 8px;
+        opacity: 1;
+      }
+    }
+    &.swiper-button-disabled{
+      display: none;
+    }
   }
-  .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+  .swiper-button-prev{
     border-left: #000 0.06rem solid;
     @include transform(rotate(45deg));
     left: 5px;
+    @include animation(goprev 1s 1s infinite);
+    @include keyframes(goprev){
+      0%{
+        left: 15px;
+        opacity: 0;
+      }
+      100%{
+        left: 8px;
+        opacity: 1;
+      }
+    }
+    &.swiper-button-disabled{
+      display: none;
+    }
   }
   .item-match-me{
     .show-word{
@@ -59,6 +96,10 @@
         //@include transition(opacity 1s);
       }
     }
+  }
+  .show-word{
+    left: 54%;
+    top: 51%;
   }
   .item-match-you{
     .show-word{
@@ -87,7 +128,7 @@
       .item-match{
       }
       .item-match-me{
-        @include transform(scale(1));
+        @include transform(scale(1.05));
         .show-word{
           opacity: 1;
           //@include transition(opacity 1s 1s);
@@ -98,7 +139,7 @@
         }
       }
       .item-match-you{
-        @include transform(scale(1));
+        @include transform(scale(1.05));
         .show-word{
           opacity: 1;
           //@include transition(opacity 1s 2s);
@@ -124,9 +165,9 @@
   .item-match{
     position: absolute;
     top: 0;
-    width: 2.25rem;
+    width: 1.68rem;
     height: 100%;
-    @include transform(scale(0.95));
+    @include transform(scale(1));
   }
   .item-match-me{
     left: 0;
@@ -137,7 +178,7 @@
     @include transition(all 1s 2s);
   }
   .match-des{
-    width: 1.9rem;
+    width: 2.26rem;
     margin: 0 auto;
   }
   .match-percent{
@@ -149,7 +190,7 @@
       text-indent: -999em;
       background: url("../images/m-2.png") no-repeat;
       background-size: 3.11rem;
-      background-position: -45% 0;
+      background-position: -72% 0;
     }
     .num{
       font-size: 0.8rem;
@@ -173,17 +214,17 @@
       text-indent: -999em;
       background: url("../images/m-2.png") no-repeat;
       background-size: 3.11rem;
-      background-position: -45% 0;
+      //background-position: -45% 0;
     }
     .fromlabel{
-      background-position: -50% 29%;
+      background-position: -93% 29%;
     }
     .andlabel{
-      background-position: -57% 60%;
+      background-position: -100% 60%;
     }
     .name-me,.name-you{
       text-align: center;
-      font-size: 0.24rem;
+      font-size: 0.2rem;
       font-weight: lighter;
       color: #484848;
     }
