@@ -9,8 +9,7 @@
     <meta name="full-screen" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="/src/dist/css/swiper.min.css" />
-    <!--<link rel="stylesheet" type="text/css" href="/src/assets/css/match.css" />-->
-    <link rel="stylesheet" type="text/css" href="/src/dist/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/src/dist/css/style.css"/>
     <script>
     var _hmt = _hmt || [];
     (function() {
@@ -21,7 +20,7 @@
     })();
     </script>
     <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/80c73ea5-de82-4aff-98ff-fd79aad6041d/wechat"></script>
-    <script src="/src/dist/js/all_match.min.js"></script>
+    <script src="/src/dist/js/all_match.min.js?t=1"></script>
 </head>
 <body class="page-home">
 <div class="preload">
