@@ -12,7 +12,7 @@
 html, body { height: 100%; }
 @media all and (orientation: landscape){
   body{
-    background: url('../images/bg.jpg') center center no-repeat;
+    background: url('/src/dist/images/bg.jpg') center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
   }
@@ -21,7 +21,7 @@ html, body { height: 100%; }
 @media all and (orientation: portrait){
 
   body{
-    background: url('../images/bg-mobile.jpg')  center center no-repeat;
+    background: url('/src/dist/images/bg-mobile.jpg')  center center no-repeat;
     background-size:cover;
     background-attachment: fixed;
   }
