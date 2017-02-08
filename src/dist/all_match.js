@@ -834,6 +834,7 @@ weixinshare({
                         link: 'http://guitarstrapvalentino.samesamechina.com/match?id='+data.msg.id,
                         img: 'http://guitarstrapvalentino.samesamechina.com/src/dist/images/share.jpg'
                     },function(){
+                        _hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareAppMessage']);
                         window.location.href = '/match?id='+data.msg.id
                     });
                 });
