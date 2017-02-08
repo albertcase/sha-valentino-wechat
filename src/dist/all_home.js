@@ -821,7 +821,7 @@ weixinshare({
             baseurl+'prev-step.png',
             baseurl+'straps-1.png',
             baseurl+'straps-4.png',
-            baseurl+'straps-3.png',
+            baseurl+'straps-2.png',
             baseurl+'text-step.png',
             baseurl+'text-step-tip.png',
             baseurl+'text-btn.png',

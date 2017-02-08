@@ -1025,6 +1025,24 @@ img {
   display: block !important;
 }
 
+html, body {
+  height: 100%;
+}
+
+@media all and (orientation: landscape) {
+  body {
+    background: url("../images/bg.jpg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+@media all and (orientation: portrait) {
+  body {
+    background: url("../images/bg-mobile.jpg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
 .v-content {
   top: 45%;
 }
