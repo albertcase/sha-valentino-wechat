@@ -9,8 +9,8 @@
                 type: '',
                 dataUrl: '',
                 success: function () {
-                    callback();
                     _hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareAppMessage']);
+                    callback();
 
                 },
                 cancel: function () {
@@ -22,8 +22,8 @@
                 link: obj.link,
                 imgUrl: obj.img,
                 success: function () {
-                    callback();
                     _hmt.push(['_trackEvent', 'buttons', 'click', 'onMenuShareTimeline']);
+                    callback();
                 },
                 cancel: function () {
 
