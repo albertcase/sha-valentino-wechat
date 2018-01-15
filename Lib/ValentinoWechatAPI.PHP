@@ -6,7 +6,6 @@ use Core\Response;
 class ValentinoWechatAPI {
 	
 	public function wechatAuthorize($current_url) {
-    	$response = new Response();
     	$param = [];
     	$callback_url = BASE_URL.'wechat/callback';
 		$redirect_url = urlencode($this->generateRedirectUrl($callback_url, $param));
@@ -15,6 +14,7 @@ class ValentinoWechatAPI {
 				'redirect_uri' => $redirect_url,
 				'scope' => SCOPE,
 			));
+		$response = new Response();
 		$response->redirect($redirect);
   	}
 
