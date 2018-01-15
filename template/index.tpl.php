@@ -18,7 +18,7 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
-    <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/80c73ea5-de82-4aff-98ff-fd79aad6041d/wechat"></script>
+    <script type="text/javascript" src="http://valentinowechat.samesamechina.com/api/v1/js/65454635-a701-4ea4-b7f5-5cebae7e6674/wechat"></script>
     <script src="/src/dist/js/all_home.min.js?v=4"></script>
 </head>
 <body class="page-home">
