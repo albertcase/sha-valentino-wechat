@@ -41,7 +41,7 @@ class RequestListener {
 	}
 
 	private function valentinoWechatAuthoize($request, $current_url) {
-		$WechatAPI = new \Lib\CurioWechatAPI();
+		$WechatAPI = new \Lib\ValentinoWechatAPI();
 		$WechatAPI->wechatAuthorize($current_url);		
 	}
 }
