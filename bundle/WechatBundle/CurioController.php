@@ -3,7 +3,7 @@ namespace WechatBundle;
 
 use Core\Controller;
 
-class CurioController extends Controller {
+class ValentinoController extends Controller {
 
 	public function callbackAction() {
 		$request = $this->request;
@@ -18,17 +18,6 @@ class CurioController extends Controller {
 		}
 		$url = '';
 		$this->redirect($url);
-	}
-
-	public function receiveUserInfoAction() {
-		$data = $GLOBALS['HTTP_RAW_POST_DATA'];	
-		$data = json_decode($data);
-		if($data->code = 200) {
-			$DatabaseAPI = new \Lib\DatabaseAPI();
-			$DatabaseAPI->updateUser($data->data);
-		} else {
-			$this->statusPrint('error');
-		}
 	}
 
 }

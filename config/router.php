@@ -2,7 +2,7 @@
 
 $routers = array();
 $routers['/wechat/oauth2'] = array('WechatBundle\Wechat', 'oauth');
-$routers['/wechat/callback'] = array('WechatBundle\Wechat', 'callback');
+$routers['/wechat/callback'] = array('WechatBundle\ValentinoWechat', 'callback');
 $routers['/wechat/curio/callback'] = array('WechatBundle\Curio', 'callback');
 $routers['/wechat/curio/receive'] = array('WechatBundle\Curio', 'receiveUserInfo');
 $routers['/wechat/ws/jssdk/config/webservice'] = array('WechatBundle\WebService', 'jssdkConfigWebService');
