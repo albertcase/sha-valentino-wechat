@@ -11,17 +11,17 @@ class ValentinoController extends Controller {
 		$url = urldecode($redirect_uri);
 		if('snsapi_userinfo' == SCOPE) {
 			$wechatUserAPI = new \Lib\WechatAPI();
-			$info = $wechatUserAPI->getSnsUserInfo($access_token->openid, $request->query->get('access_token'));
+			$info = $wechatUserAPI->getSnsUserInfo($request->query->get('openid'), $request->query->get('access_token'));
 			$userAPI = new \Lib\UserAPI();
-			$user = $userAPI->userLogin($access_token->openid);
+			$user = $userAPI->userLogin($request->query->get('openid'));
 			if(!$user) {
 				$userAPI->userRegisterOauth($info);
 			}
 		} else {
 			$userAPI = new \Lib\UserAPI();
-			$user = $userAPI->userLogin($access_token->openid);
+			$user = $userAPI->userLogin($request->query->get('openid'));
 			if(!$user) {
-				$userAPI->userRegister($access_token->openid);
+				$userAPI->userRegister($request->query->get('openid'));
 			}
 		}
 		$this->redirect($url);

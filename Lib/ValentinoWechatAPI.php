@@ -7,6 +7,7 @@ class ValentinoWechatAPI {
 	
 	public function wechatAuthorize($current_url) {
     	$param = [];
+    	$param['redirect_uri'] = urlencode($current_url);
     	$callback_url = BASE_URL.'wechat/callback';
 		$redirect_url = urlencode($this->generateRedirectUrl($callback_url, $param));
 		$api_url = 'http://valentinowechat.samesamechina.com/v1/wx/web/oauth2/authorize';
