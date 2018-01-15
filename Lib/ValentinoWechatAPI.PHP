@@ -15,7 +15,7 @@ class ValentinoWechatAPI {
 				'redirect_uri' => $redirect_url,
 				'scope' => SCOPE,
 			));
-		$this->redirect($redirect);
+		$response->redirect($redirect);
   	}
 
 	public function generateUrl($router, $query = array(), $absolute = false){
