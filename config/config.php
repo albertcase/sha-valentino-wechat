@@ -8,7 +8,7 @@ define("VENDOR_ROOT", dirname(__FILE__) . '/../vendor');
 define("USER_STORAGE", 'COOKIE');
 
 //Wechat Vendor
-define("WECHAT_VENDOR", 'default'); // default | curio
+define("WECHAT_VENDOR", 'valentino'); // default | curio
 
 //Wechat config info
 define("TOKEN", '?????');
